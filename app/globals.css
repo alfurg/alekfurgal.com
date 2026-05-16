@@ -1,0 +1,57 @@
+@import "tailwindcss";
+  :root {
+  --background: #0f0f0e;
+  --surface-background: #181817;
+  --surface-border: #2a2a28;
+
+  --title-color: #f5f5f0;
+  --body-color: #c7c7bd;
+  --subtitle-color: #8f8f86;
+
+  --item-color: #f0f0e8;
+  --menu-color: #b5b5aa;
+  --tag-color: #8f8f86;
+
+  --accent-color: #d7ff72;
+}
+
+.titlefont {
+  color: var(--title-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.subtitlefont {
+  color: var(--subtitle-color);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.itemfont {
+  color: var(--item-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.bodyfont {
+  color: var(--body-color);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  line-height: 1.6;
+}
+
+.tool-card {
+  background: var(--surface-background);
+  border: 2px solid var(--surface-border);
+}

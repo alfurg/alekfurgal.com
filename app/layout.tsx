@@ -1,0 +1,39 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Alek Furgal",
+  description: "Search, content, and meaningful web experiences",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className="bg-[#0f0f0e] text-[#f5f5f0]">
+        <header className="max-w-3xl mx-auto px-6 py-6 flex justify-between items-center">
+          <a href="/" className="font-semibold text-[#c7c7bd] hover:text-white">
+            Alek Furgal
+          </a>
+
+          <nav className="flex gap-4">
+            <a href="/blog" className="text-gray-300 hover:text-[#f5f5f0]">
+              Blog
+            </a>
+            <a href="/tools" className="text-gray-300 hover:text-[#f5f5f0]">
+              Tools
+            </a>
+            <a href="/about" className="text-gray-300 hover:text-[#f5f5f0]">
+              About
+            </a>
+          </nav>
+        </header>
+
+        {children}
+      </body>
+    </html>
+  );
+}
