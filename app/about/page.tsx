@@ -1,7 +1,9 @@
+import { LogoMark } from "@/app/components/LogoMark";
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen px-6 py-24 max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold tracking-tight mb-6 text-white">
+      <h1 className="text-5xl font-bold tracking-tight leading-tight mb-8 text-[#f5f5f0]">
         About
       </h1>
 
@@ -9,13 +11,14 @@ export default function AboutPage() {
         <p>
           I’m a content and SEO person interested in how websites explain
           things, earn attention, and help people understand what they’re
-          looking at.
+          looking at. 
         </p>
 
         <p>
           This site is where I write about search, content, AI, and meaningful
           web experiences — and where I build small tools to explore those ideas
           in practice.
+          
         </p>
 
         <p>
