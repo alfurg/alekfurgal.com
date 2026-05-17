@@ -21,7 +21,7 @@ export default function RootLayout({
             href="/"
             className="flex items-center gap-2 font-semibold text-[#c7c7bd] hover:text-white"
           >
-            <LogoMark className="h-7 w-auto" />
+            <LogoMark className="h-7 w-auto translate-y-[-1px]" />
             <span>Alek Furgal</span>
           </a>
 
