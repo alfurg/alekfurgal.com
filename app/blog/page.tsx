@@ -19,16 +19,16 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen px-6 py-24 max-w-5xl mx-auto">
+    <main className="min-h-screen px-6 py-24 max-w-3xl mx-auto">
       <h1 className="text-5xl font-bold tracking-tight leading-tight mb-6 text-[#f5f5f0]">
         Blog
       </h1>
 
       <p className="text-lg text-gray-100 mb-10">
-        Essays and notes on SEO, content, AI, and meaningful web experiences.
+        Essays and notes on SEO, content, and meaningful web experiences.
       </p>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="space-y-6">
         {posts.map((post) => (
           <a
             key={post.title}

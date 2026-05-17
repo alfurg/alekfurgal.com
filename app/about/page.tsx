@@ -4,32 +4,32 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen px-6 py-24 max-w-3xl mx-auto">
       <h1 className="text-5xl font-bold tracking-tight leading-tight mb-8 text-[#f5f5f0]">
-        About
+        About me
       </h1>
 
-      <div className="space-y-6 text-xl text-[#c7c7bd] mb-10 leading-8">
+      <div className="space-y-6 text-xl text-[#c7c7bd] mb-10 leading-8" style={{ textAlign: 'justify' }}>
         <p>
-          I’m a content and SEO person interested in how websites explain
-          things, earn attention, and help people understand what they’re
-          looking at. 
+          I came into SEO through agency work, where I learned how search works across different clients, industries, and business goals. 
+          That experience gave me a&nbsp;practical foundation in on-site and off-site SEO, content strategy, website structure, and the relationship between technical health, relevance, and visibility.
+        </p>
+        
+        <p>
+          From there, I moved into SEO copywriting, drawn to the role content plays in connecting audience needs, search visibility, and business communication.
+        </p>
+        
+        <p>
+          At a software house, I wrote about web development, founder journeys, and startup culture, shaping technical subjects into clearer content for business audiences: 
+          founders, marketers, and decision-makers trying to understand the landscape they operate in and the value behind the products they can build.
         </p>
 
         <p>
-          This site is where I write about search, content, AI, and meaningful
-          web experiences — and where I build small tools to explore those ideas
-          in practice.
-          
+          Most recently, I worked for a major VPN brand, writing about cybersecurity, networking, online privacy, and technical concepts for broad, non-technical readers. 
+          My work combined SEO thinking, accessibility, and product understanding, with a strong focus on authority and trust.
         </p>
 
         <p>
-          My work sits somewhere between editorial strategy, SEO, product
-          thinking, and lightweight web experiments.
-        </p>
-
-        <p>
-          Right now, I’m especially interested in why good content doesn’t always
-          perform, how AI changes search behavior, and what makes websites feel
-          clear, useful, and worth trusting.
+        I have an MA in American Studies, which shaped the way I think about media, communication, and audience behavior. 
+        I’ve been writing my entire life, which is why I treat content not only as a way to rank, but as a way to explain, demonstrate, and create meaning.
         </p>
       </div>
     </main>

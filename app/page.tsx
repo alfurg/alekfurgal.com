@@ -2,28 +2,29 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0f0f0e] px-6 py-24 max-w-3xl mx-auto">
       <p className="text-sm text-[#8f8f86] mb-6">
-        SEO · content · AI · useful internet things
+        SEO · content · useful internet things
       </p>
 
       <h1 className="text-5xl font-bold tracking-tight leading-tight mb-8 text-[#f5f5f0]">
-        Notes on search, content, and meaningful web experiences
+        Hi, I'm Alek.
       </h1>
+      
+      <div className="space-y-6 text-xl text-[#c7c7bd] mb-10 leading-8">
+        <p>
+          This website is part portfolio, part proof of concept, and part personal project. 
+        </p>
 
-      <p className="text-xl text-[#c7c7bd] mb-10 leading-8">
-        Essays, experiments, and lightweight tools exploring what makes websites
-        clear, useful, and worth returning to.
-      </p>
+        <p>
+        I made it to share my writing and document what I’m learning about search, content, and building things for the web.
+        </p>
 
-      <div className="flex gap-6 text-lg">
-        <a href="/blog" className="text-[#b5b5aa] hover:text-[#f5f5f0] underline underline-offset-4">
-          Blog
-        </a>
-        <a href="/tools" className="text-[#b5b5aa] hover:text-[#f5f5f0] underline underline-offset-4">
-          Tools
-        </a>
-        <a href="/about" className="text-[#b5b5aa] hover:text-[#f5f5f0] underline underline-offset-4">
-          About
-        </a>
+        <p>You can contact me{" "}  
+          <a href="mailto:aleksanderfurgal@gmail.com?subject=Hello%20from%20your%20website!"
+          className="underline underline-offset-4 hover:text-white">
+          by email
+          </a>
+          .
+        </p>
       </div>
     </main>
   );

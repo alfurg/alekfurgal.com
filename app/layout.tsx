@@ -33,7 +33,7 @@ export default function RootLayout({
               Tools
             </a>
             <a href="/about" className="text-gray-300 hover:text-[#f5f5f0]">
-              About
+              About me
             </a>
           </nav>
         </header>
