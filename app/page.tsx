@@ -17,10 +17,10 @@ export default function Home() {
           It&apos;s part portfolio, part proof of concept, and part personal project — a collection of work, ideas, and experiments in progress.
         </p>
 
-        <p>If any of it resonates with you, feel free to contact me{" "}  
+        <p>If any of it resonates with you, feel free to {" "}  
           <a href="mailto:aleksanderfurgal@gmail.com"
           className="underline underline-offset-4 hover:text-white">
-          by email
+          contact me by email
           </a>
           .
         </p>
