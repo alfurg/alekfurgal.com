@@ -17,7 +17,7 @@ export default function AboutPage() {
           <div className="justify-self-center md:justify-self-end">
             <Image
               src={headshot}
-              alt="Portrait of Alek"
+              alt="Alek Furgal"
               width={180}
               height={180}
               className="h-32 w-32 md:h-[180px] md:w-[180px] rounded-2xl object-cover grayscale opacity-90"
