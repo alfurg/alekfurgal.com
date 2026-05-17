@@ -3,6 +3,9 @@ type LogoMarkProps = {
 };
 
 export function LogoMark({ className = "h-8 w-auto" }: LogoMarkProps) {
+  /**
+   * Core construction
+   */
   const outerLeftX = 150;
   const innerLeftX = 330;
 
@@ -13,30 +16,37 @@ export function LogoMark({ className = "h-8 w-auto" }: LogoMarkProps) {
 
   const outerTopY = 240;
   const innerTopY = 420;
-
   const shoulderY = 575;
 
+  /**
+   * Middle bench / negative-space F
+   */
   const benchTopY = 620;
   const benchBottomY = 780;
 
-  const cornerR = 55;
+  const cornerRadius = 55;
 
-  const upperCornerStartX = innerRightX - cornerR; // 655
-  const upperCornerEndY = benchTopY - cornerR; // 565
+  const upperBenchCornerStartX = innerRightX - cornerRadius; // 655
+  const upperBenchCornerEndY = benchTopY - cornerRadius; // 565
 
-  const lowerCornerStartY = benchBottomY + cornerR; // 835
-  const lowerCornerEndX = innerRightX - cornerR; // 655
+  const lowerBenchCornerStartY = benchBottomY + cornerRadius; // 835
+  const lowerBenchCornerEndX = innerRightX - cornerRadius; // 655
 
   const benchLeftFlatX = 565;
   const benchLeftExtremeX = 500;
 
-  const leftOuterBottomY = 920;
-  const leftInnerBottomY = 978;
+  /**
+   * Arm endings
+   */
+  const leftArmBottomY = 920;
+  const leftCapBottomY = 960;
+  const leftCapInnerX = 290;
+  const leftCapOuterX = 190;
 
-  const rightOuterStemBottomY = 845;
-  const rightBottomY = 903; // mirrored cap depth
-  const rightBottomOuterFlatEndX = 832; // 890 - 58
-  const rightBottomInnerFlatStartX = 800; // 710 + 90
+  const rightArmBottomY = 845;
+  const rightCapBottomY = 885;
+  const rightCapOuterX = 850;
+  const rightCapInnerX = 750;
 
   return (
     <svg
@@ -47,35 +57,35 @@ export function LogoMark({ className = "h-8 w-auto" }: LogoMarkProps) {
     >
       <path
         d={`
-          M ${outerLeftX} ${leftOuterBottomY}
+          M ${outerLeftX} ${leftArmBottomY}
           V ${shoulderY}
 
           C ${outerLeftX} 350, 330 ${outerTopY}, ${centerX} ${outerTopY}
           C 710 ${outerTopY}, ${outerRightX} 350, ${outerRightX} ${shoulderY}
 
-          V ${rightOuterStemBottomY}
-          C ${outerRightX} 880, 870 ${rightBottomY}, ${rightBottomOuterFlatEndX} ${rightBottomY}
-          H ${rightBottomInnerFlatStartX}
-          C 748 ${rightBottomY}, ${innerRightX} 880, ${innerRightX} ${rightOuterStemBottomY}
+          V ${rightArmBottomY}
+          C ${outerRightX} 870, 872 ${rightCapBottomY}, ${rightCapOuterX} ${rightCapBottomY}
+          H ${rightCapInnerX}
+          C 728 ${rightCapBottomY}, ${innerRightX} 870, ${innerRightX} ${rightArmBottomY}
 
-          V ${lowerCornerStartY}
-          C ${innerRightX} 805, 685 ${benchBottomY}, ${lowerCornerEndX} ${benchBottomY}
+          V ${lowerBenchCornerStartY}
+          C ${innerRightX} 805, 685 ${benchBottomY}, ${lowerBenchCornerEndX} ${benchBottomY}
 
           H ${benchLeftFlatX}
           C 530 ${benchBottomY}, ${benchLeftExtremeX} 750, ${benchLeftExtremeX} 715
           V 685
           C ${benchLeftExtremeX} 650, 530 ${benchTopY}, ${benchLeftFlatX} ${benchTopY}
 
-          H ${upperCornerStartX}
-          C 685 ${benchTopY}, ${innerRightX} 595, ${innerRightX} ${upperCornerEndY}
+          H ${upperBenchCornerStartX}
+          C 685 ${benchTopY}, ${innerRightX} 595, ${innerRightX} ${upperBenchCornerEndY}
 
           C ${innerRightX} 465, 615 ${innerTopY}, ${centerX} ${innerTopY}
           C 425 ${innerTopY}, ${innerLeftX} 475, ${innerLeftX} ${shoulderY}
 
-          V ${leftOuterBottomY}
-          C ${innerLeftX} 955, 310 ${leftInnerBottomY}, 272 ${leftInnerBottomY}
-          H 240
-          C 188 ${leftInnerBottomY}, ${outerLeftX} 955, ${outerLeftX} ${leftOuterBottomY}
+          V ${leftArmBottomY}
+          C ${innerLeftX} 945, 312 ${leftCapBottomY}, ${leftCapInnerX} ${leftCapBottomY}
+          H ${leftCapOuterX}
+          C 168 ${leftCapBottomY}, ${outerLeftX} 945, ${outerLeftX} ${leftArmBottomY}
           Z
         `}
         fill="currentColor"
