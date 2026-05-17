@@ -4,29 +4,30 @@ import headshot from "@/app/headshot.jpg";
 export default function AboutPage() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-20">
-      <section className="grid gap-10 md:grid-cols-[1fr_180px] md:items-start">
-        <div>
-          <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#8f8f86]">
-            SEO Content Strategist & Writer
-          </p>
+      <section>
+        <p className="mb-6 text-sm uppercase tracking-[0.18em] text-[#8f8f86]">
+          SEO CONTENT STRATEGIST & WRITER
+        </p>
 
+        <div className="grid gap-8 md:grid-cols-[1fr_180px] md:items-center">
           <h1 className="text-3xl md:text-4xl leading-tight text-[#f5f5f0] text-pretty">
-            I write to make tech products
-            easier to find, trust, and understand.
+            I make tech products easier&nbsp;to find, trust, and&nbsp;understand.
           </h1>
-        </div>
 
-        <Image
-          src={headshot}
-          alt="Alek Furgal"
-          width={180}
-          height={180}
-          className="aspect-square rounded-2xl object-cover grayscale opacity-90"
-          priority
-        />
+          <div className="justify-self-center md:justify-self-end">
+            <Image
+              src={headshot}
+              alt="Portrait of Alek"
+              width={180}
+              height={180}
+              className="h-32 w-32 md:h-[180px] md:w-[180px] rounded-2xl object-cover grayscale opacity-90"
+              priority
+            />
+          </div>
+        </div>
       </section>
 
-      <div className="mt-16 space-y-6">
+      <div className="text-lg text-gray-100 mt-12 space-y-6">
           <p>
             I learned SEO in a fast-paced agency environment, working across different clients, industries, and business goals.
             That gave me a practical and thorough understanding of how to measure and improve website search visibility, and how 
