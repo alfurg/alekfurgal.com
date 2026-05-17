@@ -19,7 +19,7 @@ export default function Home() {
         </p>
 
         <p>You can contact me{" "}  
-          <a href="mailto:aleksanderfurgal@gmail.com?subject=Hello%20from%20your%20website!"
+          <a href="mailto:aleksanderfurgal@gmail.com"
           className="underline underline-offset-4 hover:text-white">
           by email
           </a>

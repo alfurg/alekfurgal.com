@@ -28,7 +28,7 @@ export default function BlogPage() {
         Essays and notes on SEO, content, and meaningful web experiences.
       </p>
 
-      <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-2">
         {posts.map((post) => (
           <a
             key={post.title}
@@ -39,10 +39,10 @@ export default function BlogPage() {
               <p className="text-sm text-[#999991]">{post.image}</p>
             </div>
 
-            <div className="p-6">
+            <div className="p-4">
               <p className="text-sm text-[#c7c7bd] mb-2">{post.status}</p>
 
-              <h2 className="text-2xl font-semibold text-[#e6e6cf]">
+              <h2 className="text-xl font-semibold text-[#e6e6cf]">
                 {post.title}
               </h2>
 
