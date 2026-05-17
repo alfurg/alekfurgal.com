@@ -11,7 +11,7 @@ export default function Home() {
       
       <div className="space-y-6 text-xl text-[#c7c7bd] mb-10 leading-8">
         <p>
-          This website is part portfolio, part proof of concept, and part personal project. 
+          This website serves as part portfolio, part proof of concept, and part personal project. 
         </p>
 
         <p>

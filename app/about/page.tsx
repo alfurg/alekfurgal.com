@@ -9,7 +9,7 @@ export default function AboutPage() {
 
       <div className="space-y-6 text-xl text-[#c7c7bd] mb-10 leading-8" style={{ textAlign: 'justify' }}>
         <p>
-          I came into SEO through agency work, where I learned how search works across different clients, industries, and business goals. 
+          I came into SEO through an agency, where I learned how search works across different clients, industries, and business goals. 
           That experience gave me a&nbsp;practical foundation in on-site and off-site SEO, content strategy, website structure, and the relationship between technical health, relevance, and visibility.
         </p>
         
@@ -18,13 +18,14 @@ export default function AboutPage() {
         </p>
         
         <p>
-          At a software house, I wrote about web development, founder journeys, and startup culture, shaping technical subjects into clearer content for business audiences: 
+          At a software house, I wrote about web development, founder journeys, and startup culture, adapting technical subjects for business audiences: 
           founders, marketers, and decision-makers trying to understand the landscape they operate in and the value behind the products they can build.
         </p>
 
         <p>
-          Most recently, I worked for a major VPN brand, writing about cybersecurity, networking, online privacy, and technical concepts for broad, non-technical readers. 
-          My work combined SEO thinking, accessibility, and product understanding, with a strong focus on authority and trust.
+Most recently, I worked for a major VPN brand, creating and improving SEO content across cybersecurity, networking, online privacy, and digital products. 
+In a competitive SaaS category, that meant thinking beyond rankings: about accuracy, trust, product clarity, and how content can help people feel confident about making 
+technical decisions.
         </p>
 
         <p>
