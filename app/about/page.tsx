@@ -7,11 +7,11 @@ export default function AboutPage() {
       <section className="grid gap-10 md:grid-cols-[1fr_180px] md:items-start">
         <div>
           <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#8f8f86]">
-            About
+            SEO Content Strategist & Writer
           </p>
 
           <h1 className="text-3xl md:text-4xl leading-tight text-[#f5f5f0] text-pretty">
-            I’m a content strategist and writer focused on making tech products
+            I write to make tech products
             easier to find, trust, and understand.
           </h1>
         </div>
@@ -28,9 +28,9 @@ export default function AboutPage() {
 
       <div className="mt-16 space-y-6">
           <p>
-          I started in SEO at an agency, working across different clients, industries, and business goals. 
-            That gave me a practical understanding of how websites gain visibility, and of the relationship 
-            between technical health, relevance, and authority.
+            I learned SEO in a fast-paced agency environment, working across different clients, industries, and business goals.
+            That gave me a practical and thorough understanding of how to measure and improve website search visibility, and how 
+            technical health, relevance, and authority interact with each other.
           </p>
 
         
