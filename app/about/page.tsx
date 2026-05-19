@@ -57,7 +57,7 @@ export default function AboutPage() {
             media, communication, culture, and audience behavior. 
             I’ve been writing my entire life, and I treat content as more than a way 
             to rank: it should communicate ideas clearly, make value easier to see, 
-            and help readers make better decision.
+            and give users the context to make good decisions.
           </p>
       </div>
     </main>);    
