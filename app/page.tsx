@@ -11,7 +11,7 @@ export default function Home() {
       
       <div className="space-y-6 text-xl text-[#c7c7bd] mb-10 leading-8">
         <p>
-          I created this website as a space to share my writing and document what I&apos;m learning about search, content, and building things for the web.
+          I made this website to share my writing and document what I&apos;m learning about search, content, and building things for the web.
         </p>
         <p>
           It&apos;s part portfolio, part proof of concept, and part personal project — a collection of work, ideas, and experiments in progress.

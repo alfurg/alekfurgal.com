@@ -54,9 +54,10 @@ export default function AboutPage() {
 
           <p>
             I have an MA in American Studies, which shaped the way I think about
-            media, communication, culture, and audience behavior. I’ve been writing
-            my entire life, and I treat content as more than a way to rank: it should
-            explain ideas, show value, and help people make sense of complex topics.
+            media, communication, culture, and audience behavior. 
+            I’ve been writing my entire life, and I treat content as more than a way 
+            to rank: it should communicate ideas clearly, make value easier to see, 
+            and help readers make better decision.
           </p>
       </div>
     </main>);    
