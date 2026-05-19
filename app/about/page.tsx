@@ -54,10 +54,9 @@ export default function AboutPage() {
 
           <p>
             I have an MA in American Studies, which shaped the way I think about
-            media, communication, culture, and audience behavior. 
-            I’ve been writing my entire life, and I treat content as more than a way 
-            to rank: it should communicate ideas clearly, make value easier to see, 
-            and give users the context to make good decisions.
+            media, communication, and audience behavior. 
+            I believe good content does more than just rank — it helps a website explain who it helps, 
+            why it should be trusted, and what makes it worth choosing.
           </p>
       </div>
     </main>);    
