@@ -6,21 +6,23 @@ export default function Home() {
       </p>
 
       <h1 className="text-5xl font-bold tracking-tight leading-tight mb-8 text-[#f5f5f0]">
-        Hi! I&apos;m Alek.
+        Better websites start with better content.
       </h1>
       
       <div className="space-y-6 text-xl text-[#c7c7bd] mb-10 leading-8">
         <p>
-          I made this website to share my writing and document what I&apos;m learning about search, content, and building things for the web.
+          Content is how a website explains itself: what it offers, who it helps, and why it should be 
+          trusted. 
         </p>
         <p>
-          It&apos;s part portfolio, part proof of concept, and part personal project — a collection of work, ideas, and experiments in progress.
+         This space is where I share my writing and document what I’m learning as I think through problems, 
+         test ideas, and work out how parts of the web fit together.
         </p>
 
         <p>If any of it resonates with you, feel free to {" "}  
           <a href="mailto:aleksanderfurgal@gmail.com"
           className="underline underline-offset-4 hover:text-white">
-          contact me by email
+          reach out by email
           </a>
           .
         </p>
