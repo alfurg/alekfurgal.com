@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { LogoMark } from "@/app/components/LogoMark";
+import { LogoMark } from "@/components/LogoMark";
 
 export const metadata: Metadata = {
   title: "Alek Furgal",
@@ -21,7 +21,7 @@ export default function RootLayout({
             href="/"
             className="flex items-center gap-2 font-semibold text-[#c7c7bd] hover:text-white"
           >
-            <LogoMark className="h-7 w-auto translate-y-[-1px]" />
+            <LogoMark className="h-6 w-auto translate-y-[0px]" />
             <span>Alek Furgal</span>
           </a>
 
