@@ -3,7 +3,7 @@
   viewBox="0 0 1024 1024"
   aria-hidden="true"
 >
-  <circle cx="512" cy="512" r="460" fill="#0f0f0e" />
+  <rect width="1024" height="1024" rx="220" fill="#0f0f0e" />
 
   <g transform="matrix(1.08 0 0 1.08 -50 -136)">
     <path
