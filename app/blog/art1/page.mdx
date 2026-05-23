@@ -1,0 +1,183 @@
+import ArticleLayout from "@/components/ArticleLayout";
+import { getPostBySlug } from "@/lib/blog";
+
+export const metadata = {
+  title: "Before you publish another SEO article, ask yourself these questions",
+  description:
+    "A practical framework for deciding whether a page deserves a place in your content system.",
+};
+
+export const article = {
+  order: 1,
+};
+
+export const post = getPostBySlug("art1");
+
+<ArticleLayout
+  eyebrow="Blog"
+  title={metadata.title}
+  description={metadata.description}
+  readingTime={post?.readingTime}
+  toc={post?.toc}
+>
+
+You can usually tell when a company blog is going through the motions.
+
+The articles look right at first glance. They cover relevant topics, follow familiar structures, and answer the kinds of questions people search for. But the more you read, the more interchangeable everything starts to feel. The same safe claims. The same broad examples. The same advice that could sit on a competitor’s site with only the logo changed.
+
+Nothing is broken exactly. The problem is that the content has no real point of view.
+
+A lot of SEO content sits in that uncomfortable middle: technically fine, readable enough, and loosely optimized, but not doing much for the business beyond filling another slot in the publication calendar. It may bring in traffic, but it does not make the company easier to understand, trust, or choose.
+
+That is the gap many content strategies struggle to name. The issue is rarely just “bad writing” or “poor optimization.” More often, the page suffers from a lack of role: in the funnel, in the reader’s journey, and in the wider content system.
+
+## 1. What situation is the reader in?
+
+A keyword tells you the topic. The search query tells you why someone might be there.
+
+Someone searching “what is a VPN” is likely trying to understand a concept. Someone searching “email not syncing on iPhone” wants a fix and probably does not want a full explanation of email protocols first. Someone searching “best project management software for small teams” is comparing options within a specific constraint.
+
+Those searches may all look like content opportunities, but they ask for different kinds of help.
+
+When a page starts only from the keyword, it often ends up covering the subject without fully serving the reader. The article may be accurate, well structured, and optimized enough to compete, but still miss the intent that made the reader seek help in the first place.
+
+For most businesses, that reader is not an abstract visitor. They may be a future customer, buyer, user, or stakeholder trying to decide whether the company understands their problem well enough to be worth trusting.
+
+That changes the starting point. Before writing, ask what the reader is trying to do. Are they trying to learn, compare, fix, justify, choose, avoid a mistake, or find the right language for a problem they cannot yet name?
+
+That answer gives the page more direction than the keyword alone.
+
+## 2. What job should this page do in the content system?
+Once the reader’s situation is clear, the page needs a role.
+
+“Bring in traffic” is too broad to guide a piece of content. A page might need to build awareness, support comparison, answer a recurring sales objection, explain a feature, capture commercial intent, or move someone toward a more qualified decision.
+
+Those jobs sit in different parts of the content system.
+
+When the role is unclear, the page starts pulling in several directions at once. It opens like an educational guide, shifts into product messaging halfway through, adds sections because competitors covered them, and ends with a CTA that does not quite follow from the reader’s stage in the journey.
+
+The page may look complete, but the experience feels uneven.
+
+That usually happens when everyone knows what the article is about, but no one has decided what it should do. A topic gives the writer a subject. It does not explain what the page should help the reader understand, believe, compare, or do next.
+
+A page built for awareness should make the problem clearer. A page built for comparison should give the reader useful criteria. A product-led article should connect the product to the problem in a way that feels earned. A support article should reduce friction before it becomes a sales or customer success issue.
+
+The role also decides what to leave out. Not every related keyword deserves a section. Not every educational article needs a hard conversion push. Not every page should send the reader to the same CTA.
+
+Before drafting, ask what should be clearer, easier, or more believable after someone reads the page. If the answer is vague, the article probably will be too.
+
+## 3. What shape would actually help?
+“Write a blog post” sounds like a plan, but it often hides the more important decision.
+
+A blog post can explain, compare, diagnose, reassure, or guide. Those jobs need different shapes. A comparison needs criteria, a troubleshooting article needs common fixes before edge cases. A beginner’s guide needs context before instructions. A use-case page needs the situation to feel specific enough for the reader to recognize themselves in it.
+
+The shape of the page affects what belongs, what comes first, and what can be cut.
+
+Many SEO articles make the reader wait for the thing they came for. They open with context, restate the problem, explain why the topic matters, and only then begin to answer the query. That kind of introduction feels safe because it gives the writer a runway. From the reader’s side, especially when they have already opened three similar results, it creates friction.
+
+A definition article should define the term early. A troubleshooting article should surface the most likely fix before explaining every cause. A comparison page should make its criteria clear before listing options. A guide should show what the reader will understand or be able to do by the end.
+
+That does not mean every article needs to give everything away in the opening paragraph. Some topics need context, and some answers only become useful once the reader understands the mechanism behind them. Still, the page should reduce uncertainty early enough for the reader to trust the rest of it.
+
+Structure matters for the same reason. A reader should be able to find the part that applies to them, understand the order of the argument, and move between scanning and deeper reading without fighting the page.
+
+A useful page feels like someone thought through the path a reader would take. Examples appear where an idea needs grounding. Definitions arrive before they become necessary. Edge cases do not appear before the common answer.
+
+Clear structure also exposes padding. When a page has a real path, sections that exist only because competitors included them start to interrupt the flow. They become easier to cut because they are no longer judged by whether they are topically related, but by whether they help the reader move forward.
+
+Some pages need depth. Others become stronger when they stay short. The amount of information should match the reader’s need, not an assumed word count, competitor average, or content tool recommendation.
+
+## 4. Does the page explain how the benefit works?
+A lot of product and marketing content moves too quickly from feature to benefit.
+
+A tool saves time. A feature improves security. A platform increases productivity. A service streamlines a process.
+
+Those claims may be true, but they often arrive before the reader has a reason to believe them. Without the mechanism, the benefit becomes another polished phrase to skim past.
+
+Mechanism is what makes a claim usable.
+
+If a VPN protects privacy, what does it actually do with the user’s traffic? If a project management tool saves time, which part of the workflow becomes shorter or less chaotic? If a security feature reduces risk, what kind of risk does it reduce, and in what situation?
+
+The reader does not need every technical detail. They need enough of the chain of events to understand why the claim makes sense.
+
+This is where specificity builds trust. “Protect your data” is easy to say and easy to ignore. A stronger explanation shows what data is exposed in a recognizable situation, who could access it, and how the product changes that.
+
+The same applies outside technical categories. “Streamline your workflow” means very little until the page names what gets removed, shortened, automated, clarified, or made easier to repeat.
+
+Professional readers do not need the topic oversimplified. They need the logic made visible.
+
+## 5. What does this page add that competitors cannot easily copy?
+A lot of SEO content is built by looking at what already ranks and producing a competent version of the same thing.
+
+I know the pattern because I learned it early in agency work. You open the top-ranking results, identify the recurring points, rebuild them into a new article, and make sure the structure matches what Google already seems to reward.
+
+The result can be fast, readable, and optimized. It can even rank, especially on a strong site.
+
+But it rarely gives the reader a reason to remember the brand.
+
+AI has made that workflow faster, but it did not invent the problem. It has simply made it easier to produce content that summarizes the current SERP without adding much of its own.
+
+For a business, that kind of page may still earn impressions or clicks. The harder question is whether it creates preference, trust, or demand.
+
+Strong content adds something that makes the page harder to replace. That does not have to mean original research. It might be a clearer example, a better comparison framework, a useful screenshot, a diagram that explains what five paragraphs could not, expert input, product experience, customer insight, or a limitation the other results avoid mentioning.
+
+The point is not novelty for its own sake. It is giving the reader something they could not get from every other result.
+
+That is often where credibility comes from. Not because the article is louder or longer, but because it makes the topic more concrete, honest, or useful than the pages around it.
+
+## 6. Where should the reader go next?
+A page that ends without a clear direction often sends the reader back to Google.
+
+That is why internal linking should be treated as part of the reader’s journey, not just an SEO task. A good internal link helps the reader continue the thought. It connects the page to the next useful question, comparison, feature, case study, support article, or conversion path.
+
+The next step depends on the reader’s stage.
+
+Someone reading an introductory guide may not be ready to book a call. They may need a clearer explanation, a comparison, or a practical example before the offer makes sense. Someone reading a high-intent comparison may need pricing, proof, or a product page that answers their remaining doubts.
+
+When every page pushes toward the same CTA, the funnel starts to feel forced.
+
+A connected content system works differently. One page answers the current question and creates a natural path to the next one. A guide can lead to a more specific explanation. A comparison page can lead to pricing or a case study. A product-led article can lead to a feature page when the reader already understands the problem well enough for that to be useful.
+
+This is where individual articles start doing more than ranking on their own. Connected pages build topical authority, guide readers through different stages of the funnel, and help the site make a clearer case for what the business knows.
+
+Organic search has to feel organic.
+
+The reader should feel that the next step follows from the question they came with, not that they are being moved through a funnel before the page has earned it.
+
+## 7. Is this keyword worth a page?
+Not every keyword needs a page.
+
+That can be difficult to accept when there is pressure to grow organic visibility. There is always another query, another competitor article, another topic the company could technically cover. With AI in the workflow, the cost of producing another page can feel low enough that publishing more becomes the default.
+
+But every page adds weight to the site.
+
+A weak article may look harmless on its own. It fills a gap, targets a keyword, or gives the team something to ship. Over time, too many thin or loosely connected pages make the site harder to understand. They dilute the stronger work, distract from the topics the company should be known for, and create content debt that someone will eventually have to clean up.
+
+Before publishing, it is worth asking whether the page has a genuine strategic fit.
+
+Does the reader actually need this? Is the topic connected to the product, service, or expertise of the company? Does the business have something specific to contribute? Is there a natural next step after the page? Would someone leave with a clearer sense of what the company does and why it is relevant to them?
+
+Sometimes the honest answer is that the keyword looked attractive, but the page has no clear role.
+
+That does not make every broad informational article a mistake. Some pages support early-stage discovery, topical authority, or future demand. But if the topic has no meaningful connection to the business, attracts low-intent traffic, and gives the company nothing useful to add, it probably does not deserve space on the site.
+
+The better goal is not to publish less by default. It is to publish fewer isolated pages and more pages that strengthen the system.
+
+A focused site with fewer stronger pages is often more credible than a large blog full of loosely related articles. For businesses that sell thinking, expertise, or trust, that credibility can matter more than volume.
+
+## Make the page earn its place
+Good SEO content is shaped before the first sentence is written.
+
+It starts with a specific reader in a specific situation. It has a role in the content strategy. It takes the right format for the intent. It gives the answer early enough to earn attention. It explains how things work before asking the reader to believe the benefit. It adds something the reader could not get from every other result.
+
+And it belongs somewhere.
+
+A page becomes stronger when it supports the wider content system: the topics the business should be known for, the internal paths readers can follow, the funnel stages the site needs to serve, and the credibility the brand is trying to build.
+
+Those decisions make the difference between content that fills a calendar and content that strengthens the business behind the site.
+
+A page that gets them right can do more than rank. It can show the reader how the company thinks.
+
+And for many businesses, that is what earns the next conversation.
+
+</ArticleLayout>

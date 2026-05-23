@@ -1,14 +1,16 @@
-type LogoMarkProps = {
+type LogoIconProps = {
   className?: string;
   backgroundColor?: string;
   emblemColor?: string;
+  radius?: number;
 };
 
-export function LogoMark({
+export function LogoIcon({
   className = "h-8 w-8",
   backgroundColor = "#0f0f0e",
   emblemColor = "#f5f5f0",
-}: LogoMarkProps) {
+  radius = 220,
+}: LogoIconProps) {
   return (
     <svg
       viewBox="0 0 1024 1024"
@@ -16,7 +18,7 @@ export function LogoMark({
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="512" cy="512" r="460" fill={backgroundColor} />
+      <rect width="1024" height="1024" rx={radius} fill={backgroundColor} />
 
       <g transform="matrix(1.08 0 0 1.08 -50 -136)">
         <path
@@ -35,10 +37,10 @@ export function LogoMark({
             V 815
             C 710 790, 685 760, 655 760
 
-            H 565
-            C 530 760, 500 735, 500 705
-            V 685
-            C 500 650, 530 620, 565 620
+            H 560
+            C 538 760, 520 742, 520 720
+            V 660
+            C 520 638, 538 620, 560 620
 
             H 655
             C 685 620, 710 595, 710 565

@@ -1,17 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f0f0e;
-  --foreground: #f5f5f0;
+  --site-gutter: clamp(1.5rem, 6vw, 8rem);
+
+  --color-bg: #0f0f0e;
+
+  --color-text: #f5f5f0;
+  --color-muted: #c7c7bd;
+  --color-subtle: #8f8f86;
+  --color-article: #deded5;
+
+  --color-surface: #171714;
+  --color-border: #2a2a25;
+
+  --color-accent: #c46a3a;
+  --color-accent-soft: #e6a071;
+
+  --color-link-underline: #7a5138;
+  --color-link-underline-hover: var(--color-accent);
 }
 
-html {
-  scroll-behavior: smooth;
+@media (min-width: 1024px) {
+  :root {
+    --site-gutter: clamp(6rem, 6vw, 8rem);
+  }
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+  margin: 0;
+}
+
+.site-shell {
+  width: 100%;
+  max-width: 1380px;
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
+}
+
+.page-shell {
+  width: 100%;
+  max-width: 48rem;
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
