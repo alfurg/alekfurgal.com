@@ -135,11 +135,16 @@ export default function ArticleLayout({
                       <a
                         href={item.href}
                         className={[
-                          "block leading-6 text-[var(--color-muted)] transition hover:text-[var(--color-text)]",
+                          "group flex gap-3 leading-6 text-[var(--color-muted)] transition-colors hover:text-[var(--color-text)]",
                           item.depth === 3 ? "pl-4 text-[0.9em]" : "",
                         ].join(" ")}
                       >
-                        {item.title}
+                        <span
+                          aria-hidden="true"
+                          className="mt-[0.65em] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-link-underline)] transition-colors group-hover:bg-[var(--color-accent)]"
+                        />
+
+                        <span>{item.title}</span>
                       </a>
                     </li>
                   ))}
