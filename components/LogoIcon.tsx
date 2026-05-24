@@ -11,6 +11,37 @@ export function LogoIcon({
   emblemColor = "#f5f5f0",
   radius = 220,
 }: LogoIconProps) {
+  const outerLeftX = 145;
+  const innerLeftX = 325;
+
+  const outerRightX = 895;
+  const innerRightX = 715;
+
+  const centerX = 520;
+
+  const outerTopY = 225;
+  const shoulderY = 575;
+
+  const upperShelfY = 470;
+
+  const benchTopY = 630;
+  const benchBottomY = 770;
+
+  const fCornerR = 45;
+  const capR = 40;
+
+  const benchRightX = innerRightX - fCornerR; // 670
+  const upperShelfRightX = innerRightX - 65; // 650
+
+  const benchLeftX = 510;
+  const benchCapX = benchLeftX - capR; // 470
+
+  const leftArmBottomY = 920;
+  const leftCapBottomY = leftArmBottomY + capR; // 960
+
+  const rightArmBottomY = 845;
+  const rightCapBottomY = rightArmBottomY + capR; // 885
+
   return (
     <svg
       viewBox="0 0 1024 1024"
@@ -22,38 +53,40 @@ export function LogoIcon({
 
       <g transform="matrix(1.08 0 0 1.08 -50 -136)">
         <path
-          d="
-            M 150 920
-            V 575
+          d={`
+            M ${outerLeftX} ${leftArmBottomY}
+            V ${shoulderY}
 
-            C 150 350, 330 240, 520 240
-            C 710 240, 890 350, 890 575
+            C ${outerLeftX} 340, 325 ${outerTopY}, ${centerX} ${outerTopY}
+            C 715 ${outerTopY}, ${outerRightX} 340, ${outerRightX} ${shoulderY}
 
-            V 845
-            C 890 870, 872 885, 850 885
-            H 750
-            C 728 885, 710 870, 710 845
+            V ${rightArmBottomY}
+            C ${outerRightX} 870, ${outerRightX - 18} ${rightCapBottomY}, ${outerRightX - capR} ${rightCapBottomY}
+            H ${innerRightX + capR}
+            C ${innerRightX + 18} ${rightCapBottomY}, ${innerRightX} 870, ${innerRightX} ${rightArmBottomY}
 
             V 815
-            C 710 790, 685 760, 655 760
+            C ${innerRightX} 790, 695 ${benchBottomY}, ${benchRightX} ${benchBottomY}
 
-            H 560
-            C 538 760, 520 742, 520 720
-            V 660
-            C 520 638, 538 620, 560 620
+            H ${benchLeftX}
+            C 488 ${benchBottomY}, ${benchCapX} 752, ${benchCapX} 730
+            V 670
+            C ${benchCapX} 648, 488 ${benchTopY}, ${benchLeftX} ${benchTopY}
 
-            H 655
-            C 685 620, 710 595, 710 565
+            H ${benchRightX}
+            C 695 ${benchTopY}, ${innerRightX} 610, ${innerRightX} 585
+            V 545
 
-            C 710 465, 615 420, 520 420
-            C 425 420, 330 475, 330 575
+            C ${innerRightX} 500, 690 ${upperShelfY}, ${upperShelfRightX} ${upperShelfY}
+            H 490
+            C 400 ${upperShelfY}, ${innerLeftX} 510, ${innerLeftX} ${shoulderY}
 
-            V 920
-            C 330 945, 312 960, 290 960
-            H 190
-            C 168 960, 150 945, 150 920
+            V ${leftArmBottomY}
+            C ${innerLeftX} 945, ${innerLeftX - 18} ${leftCapBottomY}, ${innerLeftX - capR} ${leftCapBottomY}
+            H ${outerLeftX + capR}
+            C ${outerLeftX + 18} ${leftCapBottomY}, ${outerLeftX} 945, ${outerLeftX} ${leftArmBottomY}
             Z
-          "
+          `}
           fill={emblemColor}
         />
       </g>
