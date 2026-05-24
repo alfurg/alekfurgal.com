@@ -40,9 +40,9 @@ export default function ArticleLayout({
   children,
 }: ArticleLayoutProps) {
   return (
-    <main className="px-[var(--site-gutter)] xl:h-[calc(100vh-7rem)]">
-      <div className="mx-auto grid w-full max-w-[1380px] gap-12 py-12 sm:py-16 xl:h-full xl:grid-cols-[420px_minmax(0,1fr)] xl:items-start xl:gap-16 xl:py-0 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
-        <aside className="no-scrollbar mb-12 xl:sticky xl:top-0 xl:mb-0 xl:h-full xl:overflow-y-auto xl:py-16 xl:pr-2">
+    <main className="mx-auto w-full max-w-[1380px] px-[var(--site-gutter)] lg:h-[calc(100vh-7rem)]">
+      <div className="grid gap-12 py-12 sm:py-16 lg:h-full lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] lg:items-start lg:gap-10 lg:py-0 xl:grid-cols-[420px_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
+        <aside className="no-scrollbar mb-12 lg:sticky lg:top-0 lg:mb-0 lg:h-full lg:overflow-y-auto lg:py-14 lg:pr-2 xl:py-16">
           {(eyebrow || readingTime) && (
             <div className="mb-6 flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
@@ -154,7 +154,7 @@ export default function ArticleLayout({
             no-scrollbar
 
             pb-14 pt-0 sm:pb-20
-            xl:h-full xl:overflow-y-auto xl:py-16 xl:pr-2
+            lg:h-full lg:overflow-y-auto lg:py-14 lg:pr-2 xl:py-16
 
             text-[18px] leading-8 text-[var(--color-article)]
 
