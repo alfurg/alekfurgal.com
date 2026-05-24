@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 export default function BlogPage() {
   const posts = getAllPosts();
@@ -25,7 +30,7 @@ export default function BlogPage() {
             </h1>
 
             <p className="text-lg leading-8 text-[var(--color-muted)]">
-              A collection of posts on how I approach SEO and content strategy.
+              Thoughts on how websites, content, and search shape each other, and how they work as parts of larger systems.
             </p>
           </header>
         </aside>
