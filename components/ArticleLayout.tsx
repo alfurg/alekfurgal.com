@@ -40,9 +40,9 @@ export default function ArticleLayout({
   children,
 }: ArticleLayoutProps) {
   return (
-    <main className="mx-auto w-full max-w-[1380px] px-[var(--site-gutter)] lg:h-[calc(100vh-7rem)]">
-      <div className="grid gap-12 py-12 sm:py-16 lg:h-full lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] lg:items-start lg:gap-10 lg:py-0 xl:grid-cols-[420px_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
-        <aside className="no-scrollbar mb-12 lg:sticky lg:top-0 lg:mb-0 lg:h-full lg:overflow-y-auto lg:py-14 lg:pr-2 xl:py-16">
+    <main className="mx-auto w-full max-w-[1380px] px-[var(--site-gutter)] lg:h-[calc(100vh-7rem)] lg:overflow-hidden">
+      <div className="grid min-h-0 lg:h-full gap-12 py-12 sm:py-16 lg:h-full lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] lg:items-start lg:gap-10 lg:py-0 xl:grid-cols-[420px_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
+        <aside className="no-scrollbar mb-12 lg:mb-0 lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:py-14 lg:pr-2 xl:py-16 [-webkit-overflow-scrolling:touch]">
           {(eyebrow || readingTime) && (
             <div className="mb-6 flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
@@ -155,11 +155,11 @@ export default function ArticleLayout({
         </aside>
 
         <article
-          className="
+        className="
             no-scrollbar
-
             pb-14 pt-0 sm:pb-20
-            lg:h-full lg:overflow-y-auto lg:py-14 lg:pr-2 xl:py-16
+            lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:py-14 lg:pr-2 xl:py-16
+            [-webkit-overflow-scrolling:touch]
 
             text-[18px] leading-8 text-[var(--color-article)]
 

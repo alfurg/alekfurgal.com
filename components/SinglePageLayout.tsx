@@ -12,7 +12,7 @@ export default function SinglePageLayout({
   children,
 }: SinglePageLayoutProps) {
   return (
-    <main className="mx-auto w-full max-w-3xl px-[clamp(1.5rem,4vw,3rem)] py-16 sm:py-20 lg:py-24">
+     <main className="mx-auto w-full max-w-3xl px-[clamp(1.5rem,4vw,3rem)] py-16 sm:py-20 lg:min-h-[calc(100dvh-7rem)] lg:py-24">
       {eyebrow && (
         <div className="mb-6 flex items-center gap-3">
           <p className="text-[1.1rem] leading-6 text-[var(--color-subtle)] [font-variant-caps:all-small-caps]">
