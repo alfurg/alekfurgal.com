@@ -18,6 +18,8 @@
 
   --color-link-underline: #7a5138;
   --color-link-underline-hover: var(--color-accent);
+  
+  --header-height: 7rem;
 }
 
 @media (min-width: 1024px) {

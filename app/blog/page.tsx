@@ -10,7 +10,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <main className="mx-auto w-full max-w-[1380px] px-[var(--site-gutter)] lg:h-[calc(100vh-7rem)]">
+    <main className="mx-auto w-full max-w-[1380px] px-[var(--site-gutter)] lg:h-[calc(100dvh-var(--header-height))] lg:overflow-hidden">
       <div className="grid gap-12 py-12 sm:py-16 lg:h-full lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] lg:items-start lg:gap-10 lg:py-0 xl:grid-cols-[420px_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
         <aside className="lg:h-full lg:overflow-hidden lg:py-14 xl:py-16">
           <header className="max-w-xl">
