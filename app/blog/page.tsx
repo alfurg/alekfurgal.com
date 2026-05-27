@@ -26,7 +26,7 @@ export default function BlogPage() {
             </div>
 
             <h1 className="mb-8 text-[clamp(2.25rem,4.5vw,2.65rem)] font-semibold leading-tight tracking-tight text-[var(--color-text)]">
-              Notes on content, SEO, and meaningful web experiences.
+              Notes on content, SEO, and meaningful web experiences
             </h1>
 
             <p className="text-lg leading-8 text-[var(--color-muted)]">

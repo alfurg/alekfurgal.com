@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <SinglePageLayout
       eyebrow="SEO · content systems · brand positioning"
-      title="Better websites start with better content."
+      title="Better websites start with better content"
     >
         <p>
           Content is how a website explains itself: what it offers, who it helps,
