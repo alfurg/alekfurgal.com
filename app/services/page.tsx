@@ -34,7 +34,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="mx-auto w-full max-w-[1380px] px-[var(--site-gutter)] lg:h-[calc(100vh-7rem)] lg:overflow-hidden">
+    <main className="mx-auto w-full max-w-[1380px] px-[var(--site-gutter)] lg:fixed lg:inset-x-0 lg:bottom-0 lg:top-[7rem] lg:overflow-hidden">
       <div className="grid min-h-0 gap-12 py-12 sm:py-16 lg:h-full lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] lg:items-start lg:gap-10 lg:py-0 xl:grid-cols-[420px_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
         <aside className="no-scrollbar mb-12 lg:mb-0 lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:py-14 lg:pr-2 xl:py-16 [-webkit-overflow-scrolling:touch]">
           <header className="max-w-xl">
@@ -82,7 +82,7 @@ export default function ServicesPage() {
           </p>
         </aside>
 
-        <section className="no-scrollbar lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:py-14 lg:pr-2 xl:py-16">
+        <section className="no-scrollbar lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:py-14 lg:pr-2 xl:py-16 [-webkit-overflow-scrolling:touch]">
           <div className="grid gap-5">
             {services.map((service) => (
               <article
