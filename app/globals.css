@@ -26,16 +26,26 @@
   }
 }
 
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+}
+
 html,
 body {
   min-height: 100%;
   background: var(--color-bg);
   color: var(--color-text);
-}
-
-body {
   margin: 0;
 }
+
 
 .site-shell {
   width: 100%;

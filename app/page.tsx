@@ -1,10 +1,15 @@
 import SinglePageLayout from "@/components/SinglePageLayout";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home | Alek Furgal",
+};
 
 export default function Home() {
   return (
     <SinglePageLayout
-      eyebrow="SEO · content strategy · brand clarity"
+      eyebrow="SEO · content systems · brand positioning"
       title="Better websites start with better content."
     >
         <p>

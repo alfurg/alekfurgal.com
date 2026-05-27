@@ -14,9 +14,16 @@ export default function SinglePageLayout({
   return (
     <main className="mx-auto w-full max-w-3xl px-[clamp(1.5rem,4vw,3rem)] py-16 sm:py-20 lg:py-24">
       {eyebrow && (
-        <p className="mb-6 text-[1.1rem] leading-6 text-[var(--color-subtle)] [font-variant-caps:all-small-caps]">
-          {eyebrow}
-        </p>
+        <div className="mb-6 flex items-center gap-3">
+          <p className="text-[1.1rem] leading-6 text-[var(--color-subtle)] [font-variant-caps:all-small-caps]">
+            {eyebrow}
+          </p>
+
+          <span
+            aria-hidden="true"
+            className="mt-[0.15em] h-[1.05em] w-[0.42em] bg-[var(--color-accent)]"
+          />
+        </div>
       )}
 
       <h1 className="mb-8 text-[clamp(2.75rem,7vw,3rem)] font-semibold leading-tight tracking-tight text-[var(--color-text)]">

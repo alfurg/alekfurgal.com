@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog | Alek Furgal",
 };
 
 export default function BlogPage() {
@@ -30,7 +30,7 @@ export default function BlogPage() {
             </h1>
 
             <p className="text-lg leading-8 text-[var(--color-muted)]">
-              How websites, content, and search shape each other and the larger systems they belong to.
+              How content and search shape each other and the larger systems they belong to.
             </p>
           </header>
         </aside>
@@ -39,60 +39,63 @@ export default function BlogPage() {
           <div className="grid gap-5 sm:grid-cols-2">
             {posts.map((post) => (
               <Link
-                key={post.href}
-                href={post.href}
-                className="
-                  group relative block overflow-hidden rounded-2xl border border-[var(--color-border)]
-                  bg-[var(--color-surface)] p-6 transition-colors
-                  hover:border-[#B87333]
-                  sm:aspect-square
-                "
-              >
-                <article className="relative z-10 flex h-full flex-col">
-                  <div className="mb-5 flex items-center justify-between gap-4">
-                    <div className="h-px w-10 bg-[#B87333]" />
+  key={post.href}
+  href={post.href}
+  className="
+    group relative flex overflow-hidden rounded-2xl border border-[var(--color-border)]
+    bg-[var(--color-surface)] p-6 transition-colors
+    hover:border-[#B87333]
+    sm:aspect-square
+  "
+>
+  <article className="relative z-10 flex h-full min-h-0 w-full flex-col">
+    <div className="mb-5 flex shrink-0 items-center justify-between gap-4">
+      <div className="h-px w-10 bg-[#B87333]" />
 
-                    <p className="text-[0.78rem] leading-5 text-[var(--color-subtle)]">
-                      {post.readingTime}
-                    </p>
-                  </div>
+      <p className="text-[0.78rem] leading-5 text-[var(--color-subtle)]">
+        {post.readingTime}
+      </p>
+    </div>
 
-                  <h2
-                    className="
-                      text-[clamp(1.1rem,1.6vw,1.42rem)]
-                      font-semibold leading-[1.14] tracking-[-0.018em]
-                      text-[var(--color-text)] transition-colors
-                      group-hover:text-[#B87333]
-                    "
-                  >
-                    {post.title}
-                  </h2>
+    <div className="min-h-0 flex-1 overflow-hidden">
+      <h2
+        className="
+          line-clamp-4
+          text-[clamp(1.1rem,1.6vw,1.42rem)]
+          font-semibold leading-[1.14] tracking-[-0.018em]
+          text-[var(--color-text)] transition-colors
+          group-hover:text-[#B87333]
+        "
+      >
+        {post.title}
+      </h2>
 
-                  {post.description && (
-                    <p className="mt-4 text-[0.9rem] leading-6 text-[var(--color-muted)]">
-                      {post.description}
-                    </p>
-                  )}
+      {post.description && (
+        <p className="mt-4 line-clamp-5 text-[0.9rem] leading-6 text-[var(--color-muted)]">
+          {post.description}
+        </p>
+      )}
+    </div>
 
-                  <div className="mt-auto pt-6 text-sm text-[var(--color-text)]">
-                    <span className="underline decoration-[#B87333]/50 underline-offset-4 transition-colors group-hover:decoration-[#B87333]">
-                      Read article
-                    </span>
-                  </div>
-                </article>
+    <div className="mt-auto shrink-0 pt-6 text-sm text-[var(--color-text)]">
+      <span className="underline decoration-[#B87333]/50 underline-offset-4 transition-colors group-hover:decoration-[#B87333]">
+        Read article
+      </span>
+    </div>
+  </article>
 
-                <div
-                  aria-hidden="true"
-                  className="
-                    pointer-events-none absolute bottom-4 right-5
-                    text-[5.5rem] font-semibold leading-none tracking-[-0.08em]
-                    text-[#B87333] opacity-[0.08] transition-opacity
-                    group-hover:opacity-[0.13]
-                  "
-                >
-                  {post.articleNumber}
-                </div>
-              </Link>
+  <div
+    aria-hidden="true"
+    className="
+      pointer-events-none absolute bottom-4 right-5
+      text-[5.5rem] font-semibold leading-none tracking-[-0.08em]
+      text-[#B87333] opacity-[0.08] transition-opacity
+      group-hover:opacity-[0.13]
+    "
+  >
+    {post.articleNumber}
+  </div>
+</Link>
             ))}
           </div>
         </section>
