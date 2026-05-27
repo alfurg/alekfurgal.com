@@ -30,7 +30,7 @@ export default function BlogPage() {
             </h1>
 
             <p className="text-lg leading-8 text-[var(--color-muted)]">
-              Thoughts on how websites, content, and search shape each other, and how they work as parts of larger systems.
+              How websites, content, and search shape each other and the larger systems they belong to.
             </p>
           </header>
         </aside>

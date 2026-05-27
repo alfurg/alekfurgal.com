@@ -194,6 +194,8 @@ export default function ArticleLayout({
 
             [&_li]:mb-2
 
+            [&_li::marker]:text-[var(--color-accent)]
+
             [&_a]:text-[var(--color-text)]
             [&_a]:underline
             [&_a]:decoration-[var(--color-link-underline)]

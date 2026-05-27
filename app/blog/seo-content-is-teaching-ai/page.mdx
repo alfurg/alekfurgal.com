@@ -1,0 +1,80 @@
+import ArticleLayout from "@/components/ArticleLayout";
+import { getPostBySlug } from "@/lib/blog";
+
+export const metadata = {
+  title: "Your SEO content is teaching AI what your brand is.",
+  description:
+    "As AI reshapes search, brand clarity is becoming part of SEO.",
+};
+
+export const article = {
+  order: 2,
+};
+
+export const post = getPostBySlug("seo-content-is-teaching-ai");
+
+<ArticleLayout
+  eyebrow="Blog post"
+  title={metadata.title}
+  description={metadata.description}
+  readingTime={post?.readingTime}
+  toc={post?.toc}
+>
+
+Most companies have considered their positioning somewhere— on the homepage, the pricing page, the about section. 
+But in search, your brand’s story is also being told everywhere else on the website.
+
+For many, that was already a quiet source of confusion. Now AI search is making it harder to ignore.
+
+## The story your content tells isn’t always the one you intend
+
+A company can have sharp, considered positioning and a content archive that tells a completely different story at the same time. 
+Top-of-funnel articles disconnected from the brand’s niche. Comparison pages inconsistent with market positioning. 
+Help docs built around outdated product language.
+
+Individually, each of these pages might “work” in the narrow SEO sense — they might even generate a metric. But taken together, they often produce a much blurrier picture of the company than intended.
+
+In traditional search, this mostly showed up as a conversion problem. Someone clicked through and either understood the brand or didn’t. The damage was roughly contained to the session. In AI search, that fragmentation gets amplified: it becomes a source material problem.
+
+## Content is no longer an entry point — it’s evidence
+
+AI Overviews and AI Mode can expand a query into multiple related searches across subtopics and sources. That means two things: first, answers are grounded in pages already indexed in search; and second, AI search doesn’t rely on a single top result. It pulls from fragments across the web to answer questions more layered than a simple search query: “Which tool is better for a small operations team?”, “What are the tradeoffs between X and Y?”, or “Is this brand credible?”
+
+We’re also clicking less. Pew Research found that whenever an AI summary was involved, users were half as likely to follow a traditional result. Only 1% clicked into the AI summary itself.
+
+Your website now shapes what customers learn before they interact with your business, and brands get summarized and compared without earning the click. The value of a page is no longer tied to the visit alone.
+
+SEO is far from dead. But the content has to do more than attract clicks — it has to be good enough to survive being compressed into an answer.
+
+## Positioning is distributed whether you plan for it or not
+
+In search, brand positioning is distributed across not only your website, but also third-party reviews and social media posts. YouTube, Reddit, and Wikipedia are among the most frequently cited sources, for AI and standard search alike.
+
+Your website is not your whole brand record, but it’s the part you control most directly — which makes it that much more important. Rather than reacting to the competition or negative reviews, the better priority is making your own website tell the right story.
+
+## The answer is never “write for AI”
+
+Google frames generative AI search as an extension of its existing ranking and quality systems, not a separate discipline. It says there are no additional technical requirements for getting cited in AI Overviews beyond already appearing in search.
+
+Whether that approach holds long-term or not, the productive response to AI search is shaping up to be the work good content already needed: clear language and a content system that knows what it’s trying to say.
+
+The question to ask of any page isn’t only “Does this rank?” It’s, “Would this still represent the brand well if it were summarized?”
+
+## Before you scale, check what you already have
+
+When SEO performance slows, the first instinct is to publish more. Sometimes that’s right; in a large organization it’s part of the regular flow. But publishing more means scaling the existing signal, whether it’s clear or vague, coherent or contradictory.
+
+Before adding volume, it’s worth checking what your existing pages already imply. A quick audit across the most important pages might involve:
+  
+- Finding pages that no longer match how the company explains itself.
+- Aligning terminology across features, categories, and blog posts.
+- Making comparison pages reflect what customers are actually considering.
+- Connecting high-traffic informational pages to stronger next steps.
+- Removing or consolidating pages that create duplicate or outdated explanations.
+- Identifying pages most likely to be cited or summarized, and making sure they’re in good shape.
+  
+The goal is to curate the website into something intentional, where every important page has a defined purpose and reflects what the company actually does and where it stands. With AI Overviews expanding toward more commercial and transactional queries, the pages sitting close to buying decisions deserve particular attention.
+
+The point isn't to flood the web with more pages or chase whatever AI search tactic is trending. It is to make sure the content you already have still makes the product easier to understand, even when it is read out of order.
+
+</ArticleLayout>
