@@ -11,16 +11,6 @@ export const metadata: Metadata = {
   },
   description:
     "Alek Furgal writes about search, content, and meaningful web experiences.",
-  openGraph: {
-    images: [
-      {
-        url: "/og-image-v2.png",
-        width: 1200,
-        height: 630,
-        alt: "Alek Furgal",
-      },
-    ],
-  },
 };
 
 export default function RootLayout({
