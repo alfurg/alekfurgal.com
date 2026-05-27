@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.alekfurgal.com"),
   title: {
     default: "Alek Furgal",
-    template: "%s — Alek Furgal",
+    template: "%s | Furgal",
   },
   description:
     "Alek Furgal writes about search, content, and meaningful web experiences.",
