@@ -22,7 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SiteHeader />
+        <div className="lg:pt-[var(--header-height)]">
         {children}
+        </div>
       </body>
     </html>
   );

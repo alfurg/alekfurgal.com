@@ -15,7 +15,7 @@ export function SiteHeader() {
   const isHome = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 shrink-0 bg-[var(--color-bg)] lg:h-[var(--header-height)]">
+    <header className="sticky top-0 z-50 shrink-0 bg-[var(--color-bg)] lg:fixed lg:inset-x-0 lg:h-[var(--header-height)]">
       <div className="mx-auto h-full w-full max-w-[1380px] px-[var(--site-gutter)]">
         <div className="grid min-h-28 grid-cols-[auto_1fr] items-center gap-6 lg:h-full lg:min-h-0 xl:grid-cols-[470px_minmax(0,820px)] xl:gap-16 2xl:gap-20">
           <Link
