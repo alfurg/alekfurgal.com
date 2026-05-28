@@ -5,12 +5,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.alekfurgal.com"),
-  title: {
-    default: "Alek Furgal",
-    template: "%s | Furgal",
-  },
+  title: "Alek Furgal | SEO and content strategy",
   description:
-    "Alek Furgal writes about search, content, and meaningful web experiences.",
+    "SEO and content strategy for technical websites, SaaS products, and content-heavy businesses.",
 };
 
 export default function RootLayout({
