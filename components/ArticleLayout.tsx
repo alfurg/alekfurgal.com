@@ -134,11 +134,11 @@ export default function ArticleLayout({
                     <li key={item.href}>
                       <a
                         href={item.href}
-                        className={[
-                          "group flex gap-3 leading-6 text-[var(--color-muted)] transition-colors hover:text-[var(--color-text)]",
-                          item.depth === 3 ? "pl-4 text-[0.9em]" : "",
-                        ].join(" ")}
-                      >
+  className={[
+    "group flex gap-3 leading-6 text-[var(--color-muted)] underline decoration-[var(--color-link-underline)] underline-offset-4 transition-colors hover:text-[var(--color-text)] hover:decoration-[var(--color-link-underline-hover)]",
+    item.depth === 3 ? "pl-4 text-[0.9em]" : "",
+  ].join(" ")}
+>
                         <span
                           aria-hidden="true"
                           className="mt-[0.65em] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-link-underline)] transition-colors group-hover:bg-[var(--color-accent)]"

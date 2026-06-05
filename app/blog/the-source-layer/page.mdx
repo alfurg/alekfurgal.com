@@ -1,0 +1,99 @@
+import ArticleLayout from "@/components/ArticleLayout";
+import { getPostBySlug } from "@/lib/blog";
+
+export const metadata = {
+  title: "The Source Layer",
+  description:
+    "Why originality is the only strategy that wins in AI search.",
+    openGraph: {
+    url: "https://www.alekfurgal.com/blog/the-source-layer",
+    type: "article",
+    images: [
+      {
+        url: "/og-image-v3.png",
+        width: 1200,
+        height: 630,
+        alt: "Alek Furgal",
+      },
+    ],
+  },
+};
+
+export const article = {
+  order: 3,
+};
+
+export const post = getPostBySlug("the-source-layer");
+
+<ArticleLayout
+  eyebrow="Blog post"
+  title={metadata.title}
+  description={metadata.description}
+  readingTime={post?.readingTime}
+  toc={post?.toc}
+>
+
+For years, the content game rewarded the tactic of taking what already existed and making it slightly better. You found the top-ranking articles on a topic, pulled the best ideas, added a few of your own, and said it all more clearly. Rinse, rank, repeat.
+
+For a while it worked, because people were doing the searching. Someone scanning a results page needed another human to do the synthesis for them, so you made yourself useful by organizing what others had already figured out.
+
+That model is functionally over.
+
+Ask Google, Perplexity, or ChatGPT a question today and instead of ten links to click through, you get a synthesized answer — drawn from across the web, collapsed into a few paragraphs, with citations attached. The synthesis that used to be your value-add is now the AI's job. And if your content is derivative, built from the same sources as everyone else's, you don't get cited. You get absorbed.
+
+This is the shift most content strategies haven't reckoned with yet, and it changes what content is actually for.
+
+## The two layers AI search has created
+
+AI search doesn't treat all content equally. In practice, it has split everything into two layers.
+
+The first is *the synthesis layer*: content that's well-written, well-optimized, and completely derivative. It restates existing ideas clearly and covers the bases. In traditional SEO, this stuff could rank. In AI search, it dissolves — pulled apart, paraphrased, and folded into a generated answer with nobody's name on it. The model doesn't need to cite you, because it already knew everything you said.
+
+The second is *the source layer*: content that holds something a model can't get anywhere else. Original research. A framework that didn't exist before you named it. A perspective so specific to your experience that it genuinely can't be found anywhere else.
+
+The source layer gets cited because it has to be. There's no other path to that information.
+
+This isn't a tactical wrinkle but a strategic fork. Derivative content is becoming invisible in AI search — not penalized, completely absorbed — while originality is the only thing a model is forced to attribute.
+
+## What actually lives in the source layer
+
+So what does source layer content look like in practice?
+
+It's not about production quality; you can write beautifully and still be entirely derivative. It's not about length either; a 5,000-word guide that summarizes existing research is still synthesis-layer. And it's not about SEO fundamentals, which still matter but are now table stakes rather than a differentiator.
+
+Source layer content has one defining quality: it puts something into the information ecosystem that wasn't there before. That takes a few forms.
+
+- **Primary research and original data**. Run a survey, build a benchmark, or dig into a proprietary dataset, and you've made something that can only be traced back to you. When an AI search engine hits a statistic, it has to attribute it — and if that number lives only on your site, you're the citation.
+
+- **Named frameworks**. When you give a concept a real name, not just a subheading, you anchor an idea to yourself and turn it into an entry point. The name is the handle people reach for.
+
+- **Documented case studies**. "Here's what worked for us, with the numbers" is not something a model can assemble from other sources. First-person, specific, attributed experience is structurally impossible to absorb without citation.
+
+- **Genuine expert perspective**. This one's hard to define but easy to recognize: someone with deep domain expertise saying something they could only have said from inside that domain. Not a restatement of conventional wisdom, but a specific, earned, sometimes contrarian view. These are the sentences that get pulled as quotes.
+
+The test is simple, and worth running on everything you publish: is there anything here that could only have come from us? If the answer is no — you're in the synthesis layer.
+
+## What this means for founders and content leaders
+
+The implication runs deep — reaching into how organizations think about intellectual production altogether.
+
+Most content programs are built for efficiency: find high-volume keywords, produce coverage at scale, and optimize for ranking signals. But in AI search, a library of derivative content yields returns approaching zero. You can publish ten pieces a week that get absorbed and never cited, or one a month that has to be attributed.
+
+For founders, this reframes what thought leadership is for. The point of publishing isn't coverage, it's origination. Every piece of original research, every named concept, every documented case study becomes an asset that's harder to displace over time. AI search rewards intellectual property in a way traditional SEO never quite did.
+
+For content leaders, it changes the resourcing question. The right investment isn't more output — it's the infrastructure that makes original work possible: access to data, relationships with experts, and the time to develop a real perspective instead of a well-optimized summary.
+
+The brands and the individuals who win in AI search won't be the ones with the biggest content operations, but the ones who've built a body of work the models have no choice but to cite.
+
+## The correction
+
+Rather than a full-on content apocalypse, the shift in AI search is more of a course correction.
+
+For years, the mechanics of search rewarded people who were good at the game — keyword research, SERP structure, internal linking — over people who were good at thinking. Those aren't the same skill, and for a long time the gap between them was easy to exploit. Whole content operations got built on the premise that optimization could stand in for originality.
+
+AI search is closing that gap. Not because the models care about intellectual honesty, but because the way they cite forces attribution back toward the origin. Derivative content doesn't get penalized; it just stops working altogether.
+
+For founders and content leaders willing to do the work, that isn't a problem. It's the most favorable environment for original thinking that search has ever produced. It's only really a problem if you didn't have much to say in the first place.
+
+
+</ArticleLayout>
