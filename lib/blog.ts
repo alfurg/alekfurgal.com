@@ -10,6 +10,8 @@ export type TocItem = {
 };
 
 export type BlogPost = {
+  heading: string;
+  subheading: string;
   title: string;
   description: string;
   href: string;
@@ -125,6 +127,8 @@ function getPostFromSlug(slug: string): BlogPost | null {
   return {
     title: getStringField(source, "metadata", "title") || slugToTitle(slug),
     description: getStringField(source, "metadata", "description"),
+    heading: getStringField(source, "article", "heading") || getStringField(source, "metadata", "title") || slugToTitle(slug),
+    subheading: getStringField(source, "article", "subheading") || getStringField(source, "metadata", "description"),
     href: `/blog/${slug}`,
     readingTime: getReadingTime(source),
     order,

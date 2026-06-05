@@ -2,9 +2,9 @@ import ArticleLayout from "@/components/ArticleLayout";
 import { getPostBySlug } from "@/lib/blog";
 
 export const metadata = {
-  title: "Your SEO content is teaching AI what your brand is",
+  title: "Your SEO content is teaching AI what your brand is | Alek Furgal ",
   description:
-    "As AI reshapes search, brand clarity is becoming part of SEO.",
+    "Your content might be telling a different story than your positioning. How AI search turns scattered pages into brand evidence, and what to audit first.",
     openGraph: {
     url: "https://www.alekfurgal.com/blog/seo-content-is-teaching-ai",
     type: "article",
@@ -21,14 +21,16 @@ export const metadata = {
 
 export const article = {
   order: 2,
+  heading: "Your SEO content is teaching AI what your brand is",
+  subheading:"As AI reshapes search, brand clarity is becoming part of SEO."
 };
 
 export const post = getPostBySlug("seo-content-is-teaching-ai");
 
 <ArticleLayout
   eyebrow="Blog post"
-  title={metadata.title}
-  description={metadata.description}
+  heading={article.heading}
+  subheading={article.subheading}
   readingTime={post?.readingTime}
   toc={post?.toc}
 >

@@ -39,15 +39,15 @@ export default function BlogPage() {
           <div className="grid gap-5 sm:grid-cols-2">
             {posts.map((post) => (
               <Link
-  key={post.href}
-  href={post.href}
-  className="
-    group relative flex overflow-hidden rounded-2xl border border-[var(--color-border)]
-    bg-[var(--color-surface)] p-6 transition-colors
-    hover:border-[#B87333]
-    sm:aspect-square
-  "
->
+                key={post.href}
+                href={post.href}
+                className="
+                  group relative flex overflow-hidden rounded-2xl border border-[var(--color-border)]
+                  bg-[var(--color-surface)] p-6 transition-colors
+                  hover:border-[#B87333]
+                  sm:aspect-square
+                "
+              >
   <article className="relative z-10 flex h-full min-h-0 w-full flex-col">
     <div className="mb-5 flex shrink-0 items-center justify-between gap-4">
       <div className="h-px w-10 bg-[#B87333]" />
@@ -67,12 +67,12 @@ export default function BlogPage() {
           group-hover:text-[#B87333]
         "
       >
-        {post.title}
+        {post.heading}
       </h2>
 
-      {post.description && (
+      {post.subheading && (
         <p className="mt-4 line-clamp-5 text-[0.9rem] leading-6 text-[var(--color-muted)]">
-          {post.description}
+          {post.subheading}
         </p>
       )}
     </div>

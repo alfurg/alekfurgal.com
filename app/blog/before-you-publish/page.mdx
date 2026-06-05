@@ -9,14 +9,16 @@ export const metadata = {
 
 export const article = {
   order: 1,
+  heading: "Before you publish, ask yourself these questions",
+  subheading:"A practical framework for deciding whether a page deserves a place in your content system."
 };
 
 export const post = getPostBySlug("before-you-publish");
 
 <ArticleLayout
   eyebrow="Blog post"
-  title={metadata.title}
-  description={metadata.description}
+  heading={article.heading}
+  subheading={article.subheading}
   readingTime={post?.readingTime}
   toc={post?.toc}
 >

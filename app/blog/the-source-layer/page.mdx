@@ -2,9 +2,9 @@ import ArticleLayout from "@/components/ArticleLayout";
 import { getPostBySlug } from "@/lib/blog";
 
 export const metadata = {
-  title: "The Source Layer",
+  title: "The Source Layer: originality as the strategy to win in AI search",
   description:
-    "Why originality is the only strategy that wins in AI search.",
+    "The source layer is the content AI search can't help but cite. Here's why originality now beats optimization — and how to make work the models can't ignore.",
     openGraph: {
     url: "https://www.alekfurgal.com/blog/the-source-layer",
     type: "article",
@@ -21,14 +21,16 @@ export const metadata = {
 
 export const article = {
   order: 3,
+  heading: "The Source Layer",
+  subheading:"Why originality is the only strategy that wins in AI search."
 };
 
 export const post = getPostBySlug("the-source-layer");
 
 <ArticleLayout
   eyebrow="Blog post"
-  title={metadata.title}
-  description={metadata.description}
+  heading={article.heading}
+  subheading={article.subheading}
   readingTime={post?.readingTime}
   toc={post?.toc}
 >

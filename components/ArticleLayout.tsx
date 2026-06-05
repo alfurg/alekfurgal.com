@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { title } from "process";
 import type { ReactNode } from "react";
 
 type TocItem = {
@@ -14,8 +15,8 @@ type AsideLink = {
 
 type ArticleLayoutProps = {
   eyebrow?: string;
-  title: string;
-  description: string;
+  heading: string;
+  subheading: string;
   readingTime?: string;
   heroImage?: string;
   heroAlt?: string;
@@ -28,8 +29,8 @@ type ArticleLayoutProps = {
 
 export default function ArticleLayout({
   eyebrow,
-  title,
-  description,
+  heading,
+  subheading,
   readingTime,
   heroImage,
   heroAlt = "",
@@ -91,11 +92,11 @@ export default function ArticleLayout({
 
           <header className="mb-8">
             <h1 className="mb-5 text-[clamp(2.25rem,4.5vw,2.65rem)] font-semibold leading-tight tracking-tight text-[var(--color-text)]">
-              {title}
+              {heading}
             </h1>
 
             <p className="text-lg leading-8 text-[var(--color-muted)]">
-              {description}
+              {subheading}
             </p>
           </header>
 
