@@ -3,7 +3,8 @@ import SinglePageLayout from "@/components/SinglePageLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home | Alek Furgal",
+  title: "Better websites start with better content",
+  description: "This is where I share my writing and document what I’m learning as I think through problems, test ideas, and work out how parts of the web fit together."
 };
 
 export default function Home() {
