@@ -3,20 +3,25 @@ type LogoIconProps = {
   backgroundColor?: string;
   emblemColor?: string;
   radius?: number;
+  size?: number;
 };
 
 export function LogoIcon({
-  className = "h-8 w-8",
+  className,
   backgroundColor = "#0f0f0e",
   emblemColor = "#f5f5f0",
   radius = 220,
+  size = 28,
 }: LogoIconProps) {
   return (
     <svg
       viewBox="0 0 1024 1024"
       className={className}
+      width={size}
+      height={size}
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ display: "block" }}
     >
       <rect width="1024" height="1024" rx={radius} fill={backgroundColor} />
 

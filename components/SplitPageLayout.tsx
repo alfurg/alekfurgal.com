@@ -1,20 +1,62 @@
 import type { ReactNode } from "react";
+import { SiteSidebar } from "./SiteSidebar";
 
 type SplitPageLayoutProps = {
-  left: ReactNode;
+  eyebrow?: string;
+  heading: ReactNode;
+  subheading?: string;
+  availability?: string;
   children: ReactNode;
 };
 
 export default function SplitPageLayout({
-  left,
+  eyebrow,
+  heading,
+  subheading,
+  availability,
   children,
 }: SplitPageLayoutProps) {
   return (
-    <main className="mx-auto w-full max-w-[1380px] px-[clamp(1.5rem,4vw,3rem)]">
-      <div className="grid gap-12 py-12 sm:py-16 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] lg:gap-10 lg:py-0 xl:grid-cols-[420px_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
-        <aside className="lg:py-14 xl:py-16">{left}</aside>
+    <main className="split">
+      {/* Mobile sticky nav */}
+      <div className="split__mobile-nav">
+        <SiteSidebar />
+      </div>
 
-        <section className="lg:min-h-0 lg:py-14 xl:py-16">
+      <div className="split__grid">
+        <aside className="split__aside">
+          <div className="split__aside-inner">
+            {/* Nav row */}
+            <SiteSidebar />
+
+            {/* Heading block — immediately below nav */}
+            <div className="split-left">
+              {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
+              <h1 className="split-left__h1">{heading}</h1>
+              {subheading && <p className="split-left__sub">{subheading}</p>}
+            </div>
+            
+
+            {/* Availability pinned to bottom */}
+            {availability && (
+              <div className="split-left__availability">
+                <span className="split-left__dot" aria-hidden="true" />
+                <span>{availability}</span>
+              </div>
+            )}
+          </div>
+          
+      
+        </aside>
+
+        <section className="split__content">
+          {/* Mobile heading */}
+          <div className="split__mobile-heading">
+            {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
+            <h1 className="split-left__h1">{heading}</h1>
+            {subheading && <p className="split-left__sub">{subheading}</p>}
+          </div>
+
           {children}
         </section>
       </div>

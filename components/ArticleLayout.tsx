@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { title } from "process";
 import type { ReactNode } from "react";
+import { SiteSidebar } from "./SiteSidebar";
 
 type TocItem = {
   title: string;
@@ -41,176 +41,98 @@ export default function ArticleLayout({
   children,
 }: ArticleLayoutProps) {
   return (
-    <main className="mx-auto w-full max-w-[1380px] px-[var(--site-gutter)] lg:h-[calc(100dvh-var(--header-height))] lg:overflow-hidden">
-      <div className="grid min-h-0 lg:h-full gap-12 py-12 sm:py-16 lg:h-full lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] lg:items-start lg:gap-10 lg:py-0 xl:grid-cols-[420px_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
-        <aside className="no-scrollbar mb-12 lg:mb-0 lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:py-14 lg:pr-2 xl:py-16 [-webkit-overflow-scrolling:touch]">
-          {(eyebrow || readingTime) && (
-            <div className="mb-6 flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                {eyebrow && (
-                  <p className="text-[1.1rem] leading-6 text-[var(--color-subtle)] [font-variant-caps:all-small-caps]">
-                    {eyebrow}
-                  </p>
-                )}
+    <main className="article">
+      {/* Mobile sticky nav */}
+      <div className="split__mobile-nav">
+        <SiteSidebar />
+      </div>
 
-                {eyebrow && (
-                  <span
-                    aria-hidden="true"
-                    className="mt-[0.15em] h-[1.05em] w-[0.42em] bg-[var(--color-accent)]"
-                  />
-                )}
-              </div>
+      <div className="article__grid">
+        {/* Left — nav row + heading + TOC, scrollable */}
+        <aside className="article__aside">
+          <div className="article__aside-inner no-scrollbar">
+            <SiteSidebar />
 
-              {readingTime && (
-                <p className="shrink-0 text-sm leading-6 text-[var(--color-subtle)]">
-                  {readingTime}
-                </p>
+            <div className="article-left">
+              {(eyebrow || readingTime) && (
+                <div className="article-left__top">
+                  {eyebrow && <p className="article-left__eyebrow">{eyebrow}</p>}
+                  {readingTime && <p className="article-left__time">{readingTime}</p>}
+                </div>
+              )}
+
+              {heroImage && (
+                <figure className="article-left__figure">
+                  <div className="article-left__image">
+                    <Image
+                      src={heroImage}
+                      alt={heroAlt}
+                      fill
+                      priority
+                      style={{ objectFit: "cover", objectPosition: heroPosition }}
+                    />
+                  </div>
+                  {heroCaption && (
+                    <figcaption className="article-left__caption">{heroCaption}</figcaption>
+                  )}
+                </figure>
+              )}
+
+              <h1 className="article-left__h1">{heading}</h1>
+              <p className="article-left__sub">{subheading}</p>
+
+              {asideLinks.length > 0 && (
+                <div className="article-left__block">
+                  <p className="article-left__block-label">You can find me on</p>
+                  <ul className="article-left__list">
+                    {asideLinks.map((link) => (
+                      <li key={link.href}>
+                        <a href={link.href} target="_blank" rel="noreferrer" className="article-left__link">
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {toc.length > 0 && (
+                <nav className="article-left__block">
+                  <p className="article-left__block-label">In this article</p>
+                  <ul className="article-left__list">
+                    {toc.map((item) => (
+                      <li key={item.href}>
+                        <a
+                          href={item.href}
+                          className={`article-left__toc-link${item.depth === 3 ? " article-left__toc-link--nested" : ""}`}
+                        >
+                          <span aria-hidden="true" className="article-left__toc-dot" />
+                          <span>{item.title}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
               )}
             </div>
-          )}
-
-          {heroImage && (
-            <figure className="mb-8">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
-                <Image
-                  src={heroImage}
-                  alt={heroAlt}
-                  fill
-                  priority
-                  className="object-cover"
-                  style={{ objectPosition: heroPosition }}
-                />
-              </div>
-
-              {heroCaption && (
-                <figcaption className="mt-3 border-l border-[var(--color-accent)] pl-3 text-sm leading-6 text-[var(--color-muted)]">
-                  {heroCaption}
-                </figcaption>
-              )}
-            </figure>
-          )}
-
-          <header className="mb-8">
-            <h1 className="mb-5 text-[clamp(2.25rem,4.5vw,2.65rem)] font-semibold leading-tight tracking-tight text-[var(--color-text)]">
-              {heading}
-            </h1>
-
-            <p className="text-lg leading-8 text-[var(--color-muted)]">
-              {subheading}
-            </p>
-          </header>
-
-          {asideLinks.length > 0 && (
-            <div className="mb-8 border-t border-[var(--color-border)] pt-7 text-sm">
-              <p className="mb-3 text-xs uppercase tracking-[0.18em] text-[var(--color-subtle)]">
-                You can find me on
-              </p>
-
-              <ul className="space-y-3">
-                {asideLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="leading-6 text-[var(--color-muted)] underline decoration-[var(--color-link-underline)] underline-offset-4 transition-colors hover:text-[var(--color-text)] hover:decoration-[var(--color-link-underline-hover)]"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {toc.length > 0 && (
-            <div className="border-t border-[var(--color-border)] pt-7 text-sm">
-              <nav>
-                <p className="mb-3 text-xs uppercase tracking-[0.18em] text-[var(--color-subtle)]">
-                  In this article
-                </p>
-
-                <ul className="space-y-3">
-                  {toc.map((item) => (
-                    <li key={item.href}>
-                      <a
-                        href={item.href}
-  className={[
-    "group flex gap-3 leading-6 text-[var(--color-muted)] underline decoration-[var(--color-link-underline)] underline-offset-4 transition-colors hover:text-[var(--color-text)] hover:decoration-[var(--color-link-underline-hover)]",
-    item.depth === 3 ? "pl-4 text-[0.9em]" : "",
-  ].join(" ")}
->
-                        <span
-                          aria-hidden="true"
-                          className="mt-[0.65em] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-link-underline)] transition-colors group-hover:bg-[var(--color-accent)]"
-                        />
-
-                        <span>{item.title}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-          )}
+          </div>
         </aside>
 
-        <article
-          className="
-            no-scrollbar
-            pb-14 pt-0 sm:pb-20
-            lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:py-14 lg:pr-2 xl:py-16
-            [-webkit-overflow-scrolling:touch]
+        {/* Right — article body */}
+        <article className="article__content no-scrollbar">
+          {/* Mobile heading */}
+          <div className="split__mobile-heading">
+            {(eyebrow || readingTime) && (
+              <div className="article-left__top">
+                {eyebrow && <p className="article-left__eyebrow">{eyebrow}</p>}
+                {readingTime && <p className="article-left__time">{readingTime}</p>}
+              </div>
+            )}
+            <h1 className="article-left__h1">{heading}</h1>
+            <p className="article-left__sub" style={{ marginBottom: "2rem" }}>{subheading}</p>
+          </div>
 
-            text-[18px] leading-8 text-[var(--color-article)]
-            [&_p]:mb-6
-
-            [&_h2]:mt-16
-            [&_h2]:mb-5
-            [&_h2]:border-l-4
-            [&_h2]:border-[var(--color-accent)]
-            [&_h2]:pl-4
-            [&_h2]:text-[1.85rem]
-            [&_h2]:font-semibold
-            [&_h2]:leading-tight
-            [&_h2]:tracking-tight
-            [&_h2]:text-[var(--color-text)]
-
-            [&_h3]:mt-10
-            [&_h3]:mb-4
-            [&_h3]:text-[1.35rem]
-            [&_h3]:font-semibold
-            [&_h3]:leading-snug
-            [&_h3]:tracking-tight
-            [&_h3]:text-[var(--color-text)]
-
-            [&_ul]:mb-6
-            [&_ul]:list-disc
-            [&_ul]:pl-6
-
-            [&_ol]:mb-6
-            [&_ol]:list-decimal
-            [&_ol]:pl-6
-
-            [&_li]:mb-2
-
-            [&_li::marker]:text-[var(--color-accent)]
-
-            [&_a]:text-[var(--color-text)]
-            [&_a]:underline
-            [&_a]:decoration-[var(--color-link-underline)]
-            [&_a]:underline-offset-4
-            [&_a]:transition-colors
-            [&_a:hover]:decoration-[var(--color-link-underline-hover)]
-
-            [&_blockquote]:my-8
-            [&_blockquote]:border-l-4
-            [&_blockquote]:border-[var(--color-accent)]
-            [&_blockquote]:pl-5
-            [&_blockquote]:text-[var(--color-muted)]
-          "
-        >
-          {children}
+          <div className="article-body">{children}</div>
         </article>
       </div>
     </main>
