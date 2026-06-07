@@ -65,11 +65,6 @@ export default function SplitPageLayout({
                       <a href={cta.href} className="hp-btn">
                         {cta.label}
                       </a>
-                      {cta.secondaryHref && cta.secondaryLabel ? (
-                        <a href={cta.secondaryHref} className="hp-ghost-link hp-ghost-link--inline">
-                          {cta.secondaryLabel}
-                        </a>
-                      ) : null}
                     </div>
                   </div>
                 )}

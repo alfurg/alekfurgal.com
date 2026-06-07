@@ -80,12 +80,10 @@ export default function Home() {
       subheading="Content is how a website explains itself — what it offers, who it helps, and why it should be trusted."
       availability="Available for projects · Warsaw"
       cta={{
-        heading: "Not sure where to start?",
-        body: "Send me a link to your website and I'll tell you what I'd focus on first — zero commitment.",
+        heading: "Free content audit",
+        body: "Send me a link to your website and I'll give you a prioritized audit of what to fix first.",
         href: "mailto:aleksanderfurgal@gmail.com",
         label: "Get in touch",
-        secondaryHref: "/blog",
-        secondaryLabel: "Read the blog",
       }}
     >
       {/* What I do */}
