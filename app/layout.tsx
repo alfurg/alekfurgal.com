@@ -26,10 +26,6 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.alekfurgal.com"),
-  title: {
-    default: "Alek Furgał — Content Strategist & SEO Writer",
-    template: "%s | Alek Furgał",
-  },
   description:
     "I help founders, marketers, and content leads at SaaS and technical businesses build content that ranks, converts, and makes the product clear.",
 };

@@ -22,7 +22,7 @@ export function SiteSidebar() {
           className={`sidebar__logo${isHome ? " sidebar__logo--active" : ""}`}
         >
           <span className="sidebar__logo-mark">
-            <LogoIcon backgroundColor="transparent" emblemColor="currentColor" size={22} />
+            <LogoIcon backgroundColor="transparent" emblemColor="currentColor" size={24} />
           </span>
           <span className="sidebar__logo-text">Alek Furgal</span>
         </Link>

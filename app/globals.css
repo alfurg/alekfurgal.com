@@ -1,5 +1,5 @@
 /* ============================================================
-   Alek Furgał — global stylesheet
+   Alek Furgal — global stylesheet
    No framework. Design tokens + component styles.
    ============================================================ */
 
@@ -15,7 +15,6 @@
   --color-muted:    #c8c0ae;
   --color-subtle:   #8a8476;
   --color-faint:    #5a5650;
-  --color-article:  #d4cbb8;
 
   --color-accent:       #c9824a;
   --color-accent-soft:  #d99060;
@@ -28,14 +27,31 @@
   --font-sans:  var(--font-sans-dm, system-ui, sans-serif);
 
   --content-max: 1380px;
-  --nav-height: 3rem;
+  --aside-indent: 90%; /* content width; hline + vertical line start here */
+  --page-offset-top: 2vh;
+  --aside-inner-bottom: 3rem; /* gap below the vertical line */
+  /* Layout gaps — control column spacing between aside and content */
+  --layout-gap-sm: 1.25rem;
+  --layout-gap-md: 2rem;
+  --layout-gap-lg: 3rem;
+  /* Spacing scale — use these for consistent vertical rhythm */
+  --space-xxs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1.5rem;
+  --space-md: 2.5rem;
+  --space-lg: 3rem;
 }
 
 /* ---- Reset / base ----------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scrollbar-width: none; }
-html::-webkit-scrollbar { display: none; }
+html, .no-scrollbar, .split__aside-inner, .split__content {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar, .no-scrollbar::-webkit-scrollbar, .split__aside-inner::-webkit-scrollbar, .split__content::-webkit-scrollbar {
+  display: none;
+}
 
 html, body {
   min-height: 100%;
@@ -55,19 +71,16 @@ body {
 a { color: inherit; }
 h1, h2, h3 { font-weight: 400; }
 
-.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
-.no-scrollbar::-webkit-scrollbar { display: none; }
 
 
 /* ============================================================
-   Sidebar nav row (shared, desktop + mobile)
+   Sidebar nav row (shared component)
    ============================================================ */
 .sidebar {
   display: flex;
   flex-direction: column;
 }
 
-/* Logo + links on one row */
 .sidebar__nav-row {
   display: flex;
   align-items: center;
@@ -96,7 +109,7 @@ h1, h2, h3 { font-weight: 400; }
 }
 .sidebar__logo-text {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
@@ -116,25 +129,26 @@ h1, h2, h3 { font-weight: 400; }
   transition: color 0.2s;
   white-space: nowrap;
 }
-.sidebar__link:hover { color: var(--color-text); }
-.sidebar__link--active { color: var(--color-accent); }
-
-/* (identity block removed — availability handled per-layout) */
+.sidebar__link:not(.sidebar__link--active):hover {
+  color: var(--color-accent);
+}
+.sidebar__link--active {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: var(--color-accent-soft);
+  text-underline-offset: 0.25rem;
+}
 
 
 /* ============================================================
-   Mobile nav bar (sticky, small screens only)
+   Article layout — mobile sticky nav (used by ArticleLayout)
    ============================================================ */
 .split__mobile-nav {
   display: none;
 }
 
-/* Mobile heading (shown only on small screens) */
-.split__mobile-heading {
-  display: none;
-}
-
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .split__mobile-nav {
     display: block;
     position: sticky;
@@ -144,17 +158,8 @@ h1, h2, h3 { font-weight: 400; }
     border-bottom: 1px solid var(--color-border);
     padding: 0.75rem var(--site-gutter);
   }
-  /* On mobile the sidebar inside the grid is hidden */
-  .split__aside,
-  .article__aside {
+  .split__aside {
     display: none;
-  }
-  /* Mobile heading visible */
-  .split__mobile-heading {
-    display: block;
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--color-border);
   }
 }
 
@@ -167,50 +172,149 @@ h1, h2, h3 { font-weight: 400; }
   max-width: var(--content-max);
   margin-inline: auto;
   padding-inline: var(--site-gutter);
+  padding-top: var(--page-offset-top);
+}
+
+/* Nav inside aside — hidden on mobile (aside itself is hidden) */
+.split__aside-nav { display: none; }
+.split__aside-hline { display: none; }
+
+/* Mobile heading */
+.split__mobile-heading {
+  display: block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .split__grid {
   display: grid;
-  padding-block: 3rem;
+  padding-block: var(--space-sm) var(--space-md);
 }
 
 .split__content { min-width: 0; }
 
-@media (min-width: 1024px) {
-  .split__grid {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
-    gap: 2.5rem;
-    min-height: 100vh;
-    padding-block: 0;
+/* Desktop: full-height grid, nav inside left column */
+@media (min-width: 1200px) {
+  .split {
+    height: 100dvh;
+    overflow: hidden;
   }
-  .split__aside { min-height: 0; }
+
+  .split__mobile-heading {
+    display: none;
+  }
+
+  .split__grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
+    gap: var(--layout-gap-sm);
+    padding-block: 0;
+    overflow: hidden;
+  }
+
+  /* Vertical line — runs full height of aside at --aside-indent */
+  .split__aside {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  /* One vertical line spanning the full aside height at the 90% mark.
+     It crosses the hline naturally since both are at x = var(--aside-indent). */
   .split__aside-inner {
-    position: sticky;
-    top: 0;
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding-block: 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    position: relative;
   }
-  .split__content { padding-block: 2.5rem; }
+  .split__aside-inner::after {
+    content: '';
+    position: absolute;
+    left: var(--aside-indent);
+    top: 1.5rem;
+    bottom: var(--aside-inner-bottom);
+    width: 1px;
+    background: var(--color-border);
+    pointer-events: none;
+  }
+
+  /* Nav inside aside — 90% wide; right 10% is where the vertical line lives */
+  .split__aside-nav {
+    display: block;
+    flex-shrink: 0;
+    padding: var(--space-sm) var(--space-sm) var(--space-sm) 0;
+    width: var(--aside-indent);
+  }
+
+  /* Hline starts after the logo/monogram (~logo width), extends to the right edge.
+     The vertical line on aside-inner at 90% crosses it. */
+  .split__aside-hline {
+    display: block;
+    height: 1px;
+    background: var(--color-border);
+    margin-left: 1.2rem;
+    flex-shrink: 0;
+  }
+
+
+  /* Body: 90% wide to match nav */
+  .split__aside-body {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding-block: var(--space-md);
+    padding-right: var(--space-sm);
+    overflow: hidden;
+    width: var(--aside-indent);
+  }
+
+  .split--home .split-left__h1 {
+    margin-top: 1.5rem;
+  }
+  .split--home .split-left__sub {
+    margin-top: 0;
+  }
+  .split--home .split-left {
+    padding-top: 0;
+  }
+
+  .blog-page .blog-left__heading-group {
+    margin-top: 1.5rem;
+  }
+
+  .split__content {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-block: 1rem var(--space-md);
+  }
+
+  /* Heading cluster fills aside body height (for availability margin-top: auto) */
+  .split-left {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 1280px) {
   .split__grid {
     grid-template-columns: 420px minmax(0, 1fr);
-    gap: 4rem;
+    gap: var(--layout-gap-md);
   }
-  .split__aside-inner,
-  .split__content { padding-block: 3rem; }
+  .split__aside-inner { padding-bottom: var(--space-lg); }
+  .split__content { padding-block: 4.5rem calc(var(--space-md) * 2); }
 }
 
 @media (min-width: 1536px) {
   .split__grid {
     grid-template-columns: 470px minmax(0, 820px);
-    gap: 5rem;
+    gap: var(--layout-gap-lg);
   }
 }
 
@@ -218,71 +322,50 @@ h1, h2, h3 { font-weight: 400; }
 /* ============================================================
    Article layout (blog posts + about)
    ============================================================ */
-.article {
-  width: 100%;
-  max-width: var(--content-max);
-  margin-inline: auto;
-  padding-inline: var(--site-gutter);
-}
-
-.article__grid {
-  display: grid;
-  padding-block: 3rem;
-}
-
-.article__content { min-width: 0; }
-
-@media (min-width: 1024px) {
-  .article {
-    height: 100dvh;
-    overflow: hidden;
-  }
-  .article__grid {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
-    gap: 2.5rem;
-    height: 100%;
-    padding-block: 0;
-  }
-  .article__aside { min-height: 0; height: 100%; }
-  .article__aside-inner {
-    height: 100%;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    padding-block: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  .article__content {
-    height: 100%;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    padding-block: 2.5rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .article__grid {
-    grid-template-columns: 420px minmax(0, 1fr);
-    gap: 4rem;
-  }
-  .article__aside-inner,
-  .article__content { padding-block: 3rem; }
-}
 
 @media (min-width: 1536px) {
-  .article__grid {
+  .split__grid {
     grid-template-columns: 470px minmax(0, 820px);
-    gap: 5rem;
+    gap: var(--layout-gap-lg);
   }
 }
 
 
 /* ============================================================
-   Left column heading blocks
+   Left column — split layout content block
    ============================================================ */
 
-/* Availability — pinned to bottom of left column */
+/*
+  split-left is the heading cluster (eyebrow → h1 → sub → CTA → availability).
+  All elements are grouped together and centered vertically in the column
+  via margin-block: auto. No float tricks needed.
+
+  Vertical rhythm:
+    [nav]
+    ──── rule
+              ↕ auto space
+    eyebrow
+    h1
+    sub
+    [2rem gap]
+    CTA card
+    [1.25rem gap]
+    availability
+              ↕ auto space
+*/
+.split-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-left {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Availability — pushed to lower third via margin-top: auto */
 .split-left__availability {
   display: flex;
   align-items: center;
@@ -292,7 +375,7 @@ h1, h2, h3 { font-weight: 400; }
   letter-spacing: 0.04em;
   color: var(--color-faint);
   margin-top: auto;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 .split-left__dot {
   width: 6px;
@@ -302,34 +385,32 @@ h1, h2, h3 { font-weight: 400; }
   flex-shrink: 0;
 }
 
-/* Divider below nav row */
-.split-left,
-.article-left {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.split-left__eyebrow,
-.article-left__eyebrow {
+/* Eyebrow */
+.split-left__eyebrow {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-faint);
+  margin: 0 0 0.75rem;
+}
+.article-left__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
   margin: 0 0 1rem;
 }
-/* Override for article — eyebrow is accent colored */
-.article-left__eyebrow { color: var(--color-accent); }
 
-.split-left__h1,
-.article-left__h1 {
+/* h1 */
+.split-left__h1 {
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
   line-height: 1.12;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   color: var(--color-text);
-  margin: 0 0 0.9rem;
+  margin: 0 0 1.25rem;
 }
 .split-left__h1 em {
   font-style: italic;
@@ -340,7 +421,30 @@ h1, h2, h3 { font-weight: 400; }
   font-weight: 400;
 }
 
-.split-left__sub,
+/* Article eyebrow uses accent color */
+.article .split-left__eyebrow {
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.article-left__h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0 0 0.9rem;
+}
+
+/* Subheading */
+.split-left__sub {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-subtle);
+  font-weight: 400;
+  margin: 0;
+}
+
 .article-left__sub {
   font-size: 0.9rem;
   line-height: 1.7;
@@ -349,6 +453,147 @@ h1, h2, h3 { font-weight: 400; }
   margin: 0;
 }
 
+/* CTA card */
+.split-left__cta {
+  margin-top: auto;
+  inline-size: min(100%, 20rem);
+  padding: 1.75rem 1.75rem 1.5rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 0.75rem;
+}
+
+.split-left__cta-heading {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-text);
+  margin: 0 0 0.65rem;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.split-left__cta-body {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--color-muted);
+  font-weight: 300;
+  margin: 0 0 1.25rem;
+}
+
+/* Blog cards */
+.blog-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 720px) {
+  .blog-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.blog-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  padding: 1.5rem 1.5rem 2.5rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 1.5rem;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+.blog-card:hover {
+  border-color: var(--color-accent);
+}
+.blog-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.blog-card__accent {
+  width: 2.5rem;
+  height: 1px;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+.blog-card__meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+  margin: 0;
+}
+.blog-card__body {
+  min-height: 0;
+  flex: 1;
+}
+.blog-card__title {
+  font-size: clamp(1.1rem, 1.6vw, 1.42rem);
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+  margin: 0;
+  color: var(--color-text);
+  transition: color 200ms ease;
+}
+.blog-card:hover .blog-card__title {
+  color: var(--color-accent);
+}
+.blog-card__excerpt {
+  margin: 0.75rem 0 0;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+.blog-card__footer {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+.blog-card__excerpt-wrapper {
+  max-inline-size: 100%;
+}
+.blog-card__cta {
+  display: inline-flex;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 1px;
+  color: var(--color-text);
+  transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+.blog-card:hover .blog-card__cta {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+.blog-card:hover .hp-ghost-link {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.blog-card__index {
+  pointer-events: none;
+  position: absolute;
+  right: 1.4rem;
+  bottom: 1.5rem;
+  transform: none;
+  font-family: var(--font-mono);
+  font-size: 4.8rem;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  color: var(--color-accent);
+  opacity: 0.06;
+}
+.blog-card__excerpt-wrapper {
+  max-inline-size: 100%;
+}
+
+
+/* ============================================================
+   Article left column extras
+   ============================================================ */
 .article-left__top {
   display: flex;
   align-items: baseline;
@@ -385,8 +630,16 @@ h1, h2, h3 { font-weight: 400; }
 .article-left__block {
   margin-top: 1.75rem;
   padding-top: 1.5rem;
+}
+.article-left__block + .article-left__block {
   border-top: 1px solid var(--color-border);
 }
+.article-left__toc-separator {
+  margin: 1.75rem 0 1rem;
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+}
+
 .article-left__block-label {
   font-family: var(--font-mono);
   font-size: 0.65rem;
@@ -412,7 +665,7 @@ h1, h2, h3 { font-weight: 400; }
   transition: color 0.2s, text-decoration-color 0.2s;
 }
 .article-left__link:hover {
-  color: var(--color-text);
+  color: var(--color-accent);
   text-decoration-color: var(--color-accent);
 }
 .article-left__toc-link {
@@ -421,14 +674,16 @@ h1, h2, h3 { font-weight: 400; }
   font-size: 0.85rem;
   line-height: 1.45;
   color: var(--color-muted);
-  text-decoration: none;
-  transition: color 0.2s;
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 4px;
+  transition: color 0.2s, text-decoration-color 0.2s;
 }
 .article-left__toc-link--nested {
   padding-left: 0.9rem;
   font-size: 0.8rem;
 }
-.article-left__toc-link:hover { color: var(--color-text); }
+.article-left__toc-link:hover { color: var(--color-accent); text-decoration-color: var(--color-accent); }
 .article-left__toc-dot {
   margin-top: 0.55em;
   width: 5px;
@@ -445,9 +700,9 @@ h1, h2, h3 { font-weight: 400; }
    Article body (MDX content)
    ============================================================ */
 .article-body {
-  font-size: 1.05rem;
-  line-height: 1.85;
-  color: var(--color-article);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-muted);
   font-weight: 300;
 }
 .article-body p { margin: 0 0 1.5rem; }
@@ -479,7 +734,7 @@ h1, h2, h3 { font-weight: 400; }
   text-underline-offset: 4px;
   transition: text-decoration-color 0.2s;
 }
-.article-body a:hover { text-decoration-color: var(--color-accent); }
+.article-body a:hover { text-decoration-color: var(--color-accent); color: var(--color-accent); }
 .article-body blockquote {
   margin: 2rem 0;
   padding-left: 1.25rem;
@@ -494,6 +749,9 @@ h1, h2, h3 { font-weight: 400; }
   padding: 0.15em 0.4em;
   border-radius: 4px;
 }
+.article-body strong {
+  font-weight: 600;
+}
 
 
 /* ============================================================
@@ -502,12 +760,6 @@ h1, h2, h3 { font-weight: 400; }
 .hp-section {
   margin-bottom: 3.5rem;
   padding-bottom: 3.5rem;
-  border-bottom: 1px solid var(--color-border);
-}
-.hp-section--last {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 
 .hp-label {
@@ -544,7 +796,6 @@ h1, h2, h3 { font-weight: 400; }
   background: var(--color-border);
 }
 .hp-grid-item { background: var(--color-bg); padding: 1.25rem; }
-.hp-grid-item--wide { grid-column: 1 / -1; }
 .hp-grid-num {
   font-family: var(--font-mono);
   font-size: 0.63rem;
@@ -554,7 +805,7 @@ h1, h2, h3 { font-weight: 400; }
 }
 .hp-grid-title {
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   color: var(--color-text);
   margin-bottom: 0.35rem;
 }
@@ -629,25 +880,6 @@ h1, h2, h3 { font-weight: 400; }
 .hp-ghost-link:hover { color: var(--color-accent); border-color: var(--color-accent); }
 .hp-ghost-link--inline { display: inline-block; margin: 0; }
 
-.hp-cta {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  padding: 2rem;
-}
-.hp-cta-heading {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  color: var(--color-text);
-  margin: 0 0 0.5rem;
-  line-height: 1.25;
-}
-.hp-cta-sub {
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  line-height: 1.7;
-  margin: 0 0 1.5rem;
-  font-weight: 300;
-}
 .hp-cta-actions { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
 .hp-btn {
   background: var(--color-accent);
@@ -662,38 +894,3 @@ h1, h2, h3 { font-weight: 400; }
   transition: opacity 0.2s;
 }
 .hp-btn:hover { opacity: 0.88; }
-
-/* ============================================================
-   Simple page classes (services, about via SplitPageLayout)
-   ============================================================ */
-.page-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 1.25rem;
-}
-.page-h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 2.6rem);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  color: var(--color-text);
-  margin: 0 0 1.25rem;
-}
-.page-body {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--color-muted);
-  font-weight: 300;
-}
-.page-body p { margin: 0 0 1.25rem; }
-.page-body a {
-  color: var(--color-text);
-  text-decoration: underline;
-  text-decoration-color: var(--color-link-underline);
-  text-underline-offset: 4px;
-  transition: text-decoration-color 0.2s;
-}
-.page-body a:hover { text-decoration-color: var(--color-accent); }

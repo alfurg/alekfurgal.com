@@ -22,7 +22,11 @@ const whatIDo = [
     num: "03",
     title: "Write SEO-informed content",
     desc: "Research, structure, and write pages that match search intent, explain the product clearly, and earn trust with technical audiences.",
-    wide: true,
+  },
+   {
+    num: "04",
+    title: "Write SEO-informed content",
+    desc: "Research, structure, and write pages that match search intent, explain the product clearly, and earn trust with technical audiences.",
   },
 ];
 
@@ -70,26 +74,32 @@ const services = [
 export default function Home() {
   return (
     <SplitPageLayout
+      home={true}
       eyebrow="SEO · content strategy · brand clarity"
       heading={<>Better websites start with <em>better content</em></>}
       subheading="Content is how a website explains itself — what it offers, who it helps, and why it should be trusted."
       availability="Available for projects · Warsaw"
+      cta={{
+        heading: "Not sure where to start?",
+        body: "Send me a link to your website and I'll tell you what I'd focus on first — zero commitment.",
+        href: "mailto:aleksanderfurgal@gmail.com",
+        label: "Get in touch",
+        secondaryHref: "/blog",
+        secondaryLabel: "Read the blog",
+      }}
     >
       {/* What I do */}
       <section className="hp-section">
         <div className="hp-label">What I do</div>
         <p className="hp-intro">
-          I work with <strong>founders, marketers, and content leads</strong> at
+          I work with <strong>founders, marketers, and content leads </strong> at
           SaaS and technical businesses. The problems tend to look the same:
           pages that should rank but don&apos;t, content that exists but
           doesn&apos;t convert, sites with good ideas buried under vague language.
         </p>
         <div className="hp-grid">
           {whatIDo.map((item) => (
-            <div
-              key={item.num}
-              className={`hp-grid-item${item.wide ? " hp-grid-item--wide" : ""}`}
-            >
+            <div key={item.num} className="hp-grid-item">
               <div className="hp-grid-num">{item.num}</div>
               <div className="hp-grid-title">{item.title}</div>
               <div className="hp-grid-desc">{item.desc}</div>
@@ -154,24 +164,6 @@ export default function Home() {
         </a>
       </section>
 
-      {/* CTA */}
-      <section className="hp-section hp-section--last">
-        <div className="hp-cta">
-          <h2 className="hp-cta-heading">Not sure where to start?</h2>
-          <p className="hp-cta-sub">
-            Send me a link to your website. I&apos;ll take a look and tell you
-            what I&apos;d focus on first — no commitment, no pitch deck.
-          </p>
-          <div className="hp-cta-actions">
-            <a href="mailto:aleksanderfurgal@gmail.com" className="hp-btn">
-              Get in touch
-            </a>
-            <a href="/blog" className="hp-ghost-link hp-ghost-link--inline">
-              Read the blog
-            </a>
-          </div>
-        </div>
-      </section>
     </SplitPageLayout>
   );
 }
