@@ -11,22 +11,22 @@ const whatIDo = [
   {
     num: "01",
     title: "Map your existing content",
-    desc: "I audit your existing pages and traffic performance to surface what's working, what's underperforming, and what's missing — gaps where content doesn't align with search intent or customer need.",
+    desc: "I audit your pages and traffic to find what's working, what's underperforming, and where the gaps are between what you publish and what your audience is looking for.",
   },
   {
     num: "02",
     title: "Clarify positioning and voice",
-    desc: "From the audit, I can see where your content landscape and audience expectations diverge. That gap is your positioning — what you can actually own. I establish the tone and voice that closes it, so the strategy that follows is built on something defensible.",
+    desc: "I identify where your content and your market position diverge — what you're being read as versus what you want to own — and establish the voice to close that gap.",
   },
   {
     num: "03",
     title: "Build your content system",
-    desc: "I map your content strategy by defining what each page should do — the search intent it targets, the funnel stage it serves, how it connects to the rest. This determines what to fix and what to build. Positioning becomes structural, not just tone — every page has a specific function in your system.",
+    desc: "I define what each page needs to do: the intent it targets, the funnel stage it serves, how it connects to the pages around it. That map determines what to fix and what to build.",
   },
    {
     num: "04",
     title: "Execute with substance",
-    desc: "I research and write each page to do its specific job: capturing demand, building authority, moving people forward. Original research, clear structure, and internal connections mean it positions you within search intent. That's content AI search has to cite, not absorb.",
+    desc: "I research and write each page to do its specific job — capturing demand, converting qualified visitors, building authority. Content with something to cite, not just something to absorb.",
   },
 ];
 
@@ -101,10 +101,9 @@ export default function Home() {
 
       {/* What I do */}
       <section className="hp-section">
-        <div className="hp-label">My framework</div>
+        <div className="hp-label">How I work</div>
         <p className="hp-intro">
-          I bring brands into the citation layer — original content strategically positioned so AI search cites it rather than absorbs it. 
-          Here's how I work:
+          Every page on your site is doing a job — or failing at it. Here's how I diagnose and fix the issues:
         </p>
         <div className="hp-grid">
           {whatIDo.map((item) => (
