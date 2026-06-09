@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { SiteSidebar } from "./SiteSidebar";
+import { CtaUrlInput } from "./CtaUrlInput";
 
 type CtaBlock = {
   heading: ReactNode;
@@ -8,6 +9,7 @@ type CtaBlock = {
   label: string;
   secondaryHref?: string;
   secondaryLabel?: string;
+  urlInput?: boolean;
 };
 
 type SplitPageLayoutProps = {
@@ -56,16 +58,21 @@ export default function SplitPageLayout({
                 {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
                 <h1 className="split-left__h1">{heading}</h1>
                 {subheading && <p className="split-left__sub">{subheading}</p>}
-
+                
                 {cta && (
                   <div className="split-left__cta">
                     <h2 className="split-left__cta-heading">{cta.heading}</h2>
                     <p className="split-left__cta-body">{cta.body}</p>
-                    <div className="hp-cta-actions">
-                      <a href={cta.href} className="hp-btn">
-                        {cta.label}
-                      </a>
-                    </div>
+                    {cta.urlInput && (
+                      <CtaUrlInput href={cta.href} label={cta.label} />
+                    )}
+                    {!cta.urlInput && (
+                      <div className="hp-cta-actions">
+                        <a href={cta.href} className="hp-btn">
+                          {cta.label}
+                        </a>
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -81,13 +88,33 @@ export default function SplitPageLayout({
           </div>
         </aside>
 
-        <section className="split__content">
+        <section className="split__content no-scrollbar">
           {/* Mobile: heading shown here since aside is hidden */}
           <div className="split__mobile-heading">
             {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
             <h1 className="split-left__h1">{heading}</h1>
             {subheading && <p className="split-left__sub">{subheading}</p>}
           </div>
+
+          {/* Mobile CTA — shows under heading on small screens */}
+          {cta && (
+            <div className="split__mobile-cta">
+              <div className="split-left__cta">
+                <h2 className="split-left__cta-heading">{cta.heading}</h2>
+                <p className="split-left__cta-body">{cta.body}</p>
+                {cta.urlInput && (
+                  <CtaUrlInput href={cta.href} label={cta.label} />
+                )}
+                {!cta.urlInput && (
+                  <div className="hp-cta-actions">
+                    <a href={cta.href} className="hp-btn">
+                      {cta.label}
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
           {children}
         </section>

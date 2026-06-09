@@ -6,7 +6,7 @@ import { LogoIcon } from "./LogoIcon";
 
 const links = [
   { href: "/services", label: "Services" },
-  { href: "/blog", label: "My writing" },
+  { href: "/blog", label: "My work" },
 ];
 
 export function SiteSidebar() {

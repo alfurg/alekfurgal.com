@@ -87,6 +87,7 @@ h1, h2, h3 { font-weight: 400; }
   justify-content: space-between;
   gap: 1rem;
   flex-shrink: 0;
+  padding-top: 1rem;
 }
 
 .sidebar__logo {
@@ -159,6 +160,17 @@ h1, h2, h3 { font-weight: 400; }
     padding: 0.75rem var(--site-gutter);
   }
   .split__aside {
+    display: none;
+  }
+}
+
+.split__mobile-cta {
+  display: block;
+  padding: 0 var(--site-gutter) 2rem;
+}
+
+@media (min-width: 1200px) {
+  .split__mobile-cta {
     display: none;
   }
 }
@@ -246,8 +258,9 @@ h1, h2, h3 { font-weight: 400; }
   .split__aside-nav {
     display: block;
     flex-shrink: 0;
-    padding: var(--space-sm) var(--space-sm) var(--space-sm) 0;
+    padding: var(--space-sm) var(--space-sm) 0.5rem 0;
     width: var(--aside-indent);
+    
   }
 
   /* Hline starts after the logo/monogram (~logo width), extends to the right edge.
@@ -256,8 +269,9 @@ h1, h2, h3 { font-weight: 400; }
     display: block;
     height: 1px;
     background: var(--color-border);
-    margin-left: 1.2rem;
+    margin-left: 1.9rem;
     flex-shrink: 0;
+    margin-top: 0;
   }
 
 
@@ -374,7 +388,7 @@ h1, h2, h3 { font-weight: 400; }
   font-size: 0.68rem;
   letter-spacing: 0.04em;
   color: var(--color-faint);
-  margin-top: auto;
+  margin-top: 1.5rem;
   padding-top: 3rem;
 }
 .split-left__dot {
@@ -442,7 +456,7 @@ h1, h2, h3 { font-weight: 400; }
   line-height: 1.75;
   color: var(--color-subtle);
   font-weight: 400;
-  margin: 0;
+  margin-bottom: 2rem;
 }
 
 .article-left__sub {
@@ -455,7 +469,7 @@ h1, h2, h3 { font-weight: 400; }
 
 /* CTA card */
 .split-left__cta {
-  margin-top: auto;
+  margin: auto auto;
   inline-size: min(100%, 20rem);
   padding: 1.75rem 1.75rem 1.5rem;
   background: var(--color-surface);
@@ -482,6 +496,37 @@ h1, h2, h3 { font-weight: 400; }
   color: var(--color-muted);
   font-weight: 300;
   margin: 0 0 1.25rem;
+}
+
+.cta-url-input-wrapper {
+  margin-bottom: 0.75rem;
+}
+
+.cta-url-input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  color: var(--color-text);
+  transition: border-color 0.2s, background-color 0.2s;
+  outline: none;
+}
+
+.cta-url-input::placeholder {
+  color: var(--color-faint);
+}
+
+.cta-url-input:focus {
+  border-color: var(--color-accent);
+  background: var(--color-surface);
+}
+
+.hp-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Blog cards */

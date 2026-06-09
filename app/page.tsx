@@ -1,5 +1,7 @@
 import SplitPageLayout from "@/components/SplitPageLayout";
 import type { Metadata } from "next";
+import { AuditCTA } from "@/components/AuditCTA";
+
 
 export const metadata: Metadata = {
   title: "Better websites start with better content",
@@ -81,10 +83,13 @@ export default function Home() {
       availability="Available for projects · Warsaw"
       cta={{
         heading: <>Get a <em>free</em> content audit</>,
-        body: "Send me a link to your website and I'll give you a prioritized audit of what to fix first.",
+        body: "Send me a link to your website and I'll give you a prioritized audit of your content.",
         href: "mailto:aleksanderfurgal@gmail.com",
         label: "Get in touch",
+        urlInput: true,
       }}
+      
+
     >
       {/* What I do */}
       <section className="hp-section">
