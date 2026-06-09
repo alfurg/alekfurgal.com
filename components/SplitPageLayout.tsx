@@ -15,7 +15,7 @@ type CtaBlock = {
 type SplitPageLayoutProps = {
   eyebrow?: string;
   heading: ReactNode;
-  subheading?: string;
+  subheading?: ReactNode;
   availability?: string;
   cta?: CtaBlock;
   home?: boolean;

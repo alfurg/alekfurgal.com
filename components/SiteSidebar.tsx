@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { LogoIcon } from "./LogoIcon";
 
 const links = [
+  { href: "/portfolio", label: "My work" },
   { href: "/services", label: "Services" },
-  { href: "/blog", label: "My work" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function SiteSidebar() {
