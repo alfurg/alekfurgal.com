@@ -32,12 +32,12 @@ const whatIDo = [
 
 const timeline = [
   {
-    place: "Agency",
+    place: "Greyotters",
     role: "SEO & content strategy",
     desc: "Technical audits, site structure, and content planning across multiple clients and industries.",
   },
   {
-    place: "Asper Brothers",
+    place: "A. Brothers",
     role: "SEO copywriter",
     desc: "Content for software development and startup audiences — founders, marketers, technical decision-makers.",
   },
@@ -81,16 +81,16 @@ export default function Home() {
         <>
           I work with <strong>founders, marketers, and content leads</strong> at SaaS and technical businesses. I fix:
           <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem" }}>
-            <li>pages that should rank but don&apos;t</li>
-            <li>content that exists but doesn&apos;t convert</li>
-            <li>sites with good ideas buried under vague language</li>
+            <li>pages that should rank but don&apos;t;</li>
+            <li>content that exists but doesn&apos;t convert;</li>
+            <li>sites with good ideas buried under vague language.</li>
           </ul>
         </>
       }
-      availability="Available for work"
+      availability="2026 * Available for new projects * EEA"
       cta={{
         heading: <>Get a <em>free</em> content audit</>,
-        body: "Send me a link to your website and I'll give you a prioritized audit of your content.",
+        body: "Send me a link to your website and I'll reply with a prioritized content audit.",
         href: "mailto:aleksanderfurgal@gmail.com",
         label: "Get in touch",
         urlInput: true,
@@ -101,10 +101,10 @@ export default function Home() {
 
       {/* What I do */}
       <section className="hp-section">
-        <div className="hp-label">What I do</div>
+        <div className="hp-label">My framework</div>
         <p className="hp-intro">
           I bring brands into the citation layer — original content strategically positioned so AI search cites it rather than absorbs it. 
-          Here's the framework I use to achieve that:
+          Here's how I work:
         </p>
         <div className="hp-grid">
           {whatIDo.map((item) => (
@@ -157,6 +157,9 @@ export default function Home() {
       {/* Services */}
       <section className="hp-section">
         <div className="hp-label">Services</div>
+          <p className="hp-prose">
+           I offer content audits, page refreshes, and strategy sprints. If you
+          </p>
         <div className="hp-services">
           {services.map((s) => (
             <div key={s.name} className="hp-service-row">

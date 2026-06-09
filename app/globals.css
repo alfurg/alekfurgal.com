@@ -385,8 +385,8 @@ h1, h2, h3 { font-weight: 400; }
   font-size: 0.68rem;
   letter-spacing: 0.04em;
   color: var(--color-faint);
-  margin-top: 1.5rem;
-  padding-top: 3rem;
+  margin-top: auto;
+  padding-top: 0;
 }
 .split-left__dot {
   width: 6px;
@@ -494,7 +494,7 @@ h1, h2, h3 { font-weight: 400; }
 
 .split-left__cta-heading {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   color: var(--color-text);
   margin: 0 0 0.65rem;
   line-height: 1.3;

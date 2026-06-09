@@ -78,7 +78,6 @@ export default function SplitPageLayout({
 
                 {availability && (
                   <div className="split-left__availability">
-                    <span className="split-left__dot" aria-hidden="true" />
                     <span>{availability}</span>
                   </div>
                 )}
