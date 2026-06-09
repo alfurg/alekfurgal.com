@@ -472,6 +472,10 @@ h1, h2, h3 { font-weight: 400; }
   font-weight: 400;
 }
 
+.split-left__cta-heading em {
+  color: var(--color-accent-soft);
+}
+
 .split-left__cta-body {
   font-size: 0.85rem;
   line-height: 1.65;

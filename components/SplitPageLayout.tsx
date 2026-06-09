@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { SiteSidebar } from "./SiteSidebar";
 
 type CtaBlock = {
-  heading: string;
+  heading: ReactNode;
   body: string;
   href: string;
   label: string;

@@ -77,10 +77,10 @@ export default function Home() {
       home={true}
       eyebrow="SEO · content strategy · brand clarity"
       heading={<>Better websites start with <em>better content</em></>}
-      subheading="Content is how a website explains itself — what it offers, who it helps, and why it should be trusted."
+      subheading="Content is how a brand explains itself — what it offers, who it helps, and why it should be trusted."
       availability="Available for projects · Warsaw"
       cta={{
-        heading: "Free content audit",
+        heading: <>Get a <em>free</em> content audit</>,
         body: "Send me a link to your website and I'll give you a prioritized audit of what to fix first.",
         href: "mailto:aleksanderfurgal@gmail.com",
         label: "Get in touch",
