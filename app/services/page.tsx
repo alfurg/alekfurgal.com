@@ -12,22 +12,23 @@ const services = [
   {
     title: "Content Visibility Audit",
     price: "From €450",
+    intro: "A structured review of what your content is doing and what it isn't.",
     body: "I review your content across search intent, structure, internal links, technical visibility, and business relevance. You get a prioritized list of what to fix, what to consolidate, and what's earning its place.",
     goodFor:
-      "Underperforming posts, landing pages, product pages, and content clusters.",
+      "underperforming posts, landing pages, product pages, and content clusters.",
   },
   {
     title: "Page Rewrite",
     price: "From €350/page",
     body: "I rewrite your existing pages to match search intent, explain the product or topic more precisely, and connect to the rest of the site. The goal is a page that does its specific job — not a cleaner version of a page with the wrong job.",
-    goodFor: "Thin, outdated, unclear, or disconnected pages.",
+    goodFor: "thin, outdated, unclear, or disconnected pages.",
   },
   {
     title: "Content Strategy Sprint",
     price: "From €900",
     body: "I map content opportunities, page roles, and internal linking so every page has a defined function in your system. You get a clear set of priorities: what to create, what to fix, and what to consolidate — and a rationale for the order.",
     goodFor:
-      "Scattered content, unclear priorities, and websites without an obvious next step.",
+      "scattered content, unclear priorities, and websites without an obvious next step.",
   },
 ];
 
@@ -100,6 +101,25 @@ export default function ServicesPage() {
                 {service.title}
               </h2>
 
+                <p
+                style={{
+                  fontSize: "0.85rem",
+                  fontWeight: 300,
+                  lineHeight: 1.7,
+                  color: "var(--color-subtle)",
+                  margin: "0 0 0.5rem",
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: "0.5rem",
+                }}
+              >
+                <span style={{ color: "var(--color-accent)", flexShrink: 0 }}>•</span>
+                <span>
+                  <span style={{ fontWeight: 500, color: "var(--color-text)" }}>Good for:</span>{" "}
+                  {service.goodFor}
+                </span>
+              </p>
+              
               <p
                 style={{
                   fontSize: "0.95rem",
@@ -121,18 +141,6 @@ export default function ServicesPage() {
                 }}
               >
                 {service.body}
-              </p>
-
-              <p
-                style={{
-                  fontSize: "0.82rem",
-                  lineHeight: 1.6,
-                  color: "var(--color-subtle)",
-                  margin: 0,
-                }}
-              >
-                <span style={{ color: "var(--color-text)" }}>Good for:</span>{" "}
-                {service.goodFor}
               </p>
             </article>
           ))}

@@ -28,8 +28,8 @@ export default function BlogPage() {
           On content, search, and <em>what it takes to be worth citing</em>
         </h1>
 
-        <p className="text-lg leading-8 text-[var(--color-muted)]">
-          How content and search shape each other and the larger systems they belong to.
+        <p className="text-lg leading-8 text-[var(--color-muted)]" style={{ marginBottom: "2rem" }}>
+          I write about the decisions, systems, and craft behind good content.
         </p>
       </div>
 

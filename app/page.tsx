@@ -84,7 +84,7 @@ export default function Home() {
             <li>pages that should rank but don&apos;t;</li>
             <li>content that exists but doesn&apos;t convert;</li>
             <li>sites with good ideas buried under weak copy.</li>
-          </ul><br />
+          </ul>
           An audit is usually where I start.
         </>
       }
@@ -118,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Background */}
-      <section className="hp-section">
+      <section className="hp-section" style={{ paddingBottom: "1rem" }}>
         <div className="hp-label">Background</div>
         <p className="hp-prose">
           I started in agency SEO, working on technical health, site structure, 
