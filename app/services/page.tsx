@@ -12,23 +12,20 @@ const services = [
   {
     title: "Content Visibility Audit",
     price: "From €450",
-    intro: "For existing pages that should be doing more.",
-    body: "I review selected pages across search intent, structure, internal links, technical visibility, and business relevance, then give you a prioritized set of recommendations.",
+    body: "I review your content across search intent, structure, internal links, technical visibility, and business relevance. You get a prioritized list of what to fix, what to consolidate, and what's earning its place.",
     goodFor:
       "Underperforming posts, landing pages, product pages, and content clusters.",
   },
   {
-    title: "SEO-Informed Content Refresh",
+    title: "Page Rewrite",
     price: "From €350/page",
-    intro: "For pages that need clearer structure and stronger substance.",
-    body: "I improve existing content so it better matches search intent, explains the topic or product more clearly, and connects better to the rest of the site.",
+    body: "I rewrite your existing pages to match search intent, explain the product or topic more precisely, and connect to the rest of the site. The goal is a page that does its specific job — not a cleaner version of a page with the wrong job.",
     goodFor: "Thin, outdated, unclear, or disconnected pages.",
   },
   {
     title: "Content Strategy Sprint",
     price: "From €900",
-    intro: "For deciding what to create, improve, or consolidate next.",
-    body: "I map content opportunities, page roles, internal linking, and priorities so your content works as a system rather than a loose list of ideas.",
+    body: "I map content opportunities, page roles, and internal linking so every page has a defined function in your system. You get a clear set of priorities: what to create, what to fix, and what to consolidate — and a rationale for the order.",
     goodFor:
       "Scattered content, unclear priorities, and websites without an obvious next step.",
   },
@@ -38,13 +35,14 @@ export default function ServicesPage() {
   return (
     <SplitPageLayout
       eyebrow="Services"
-      heading={<>Content-first SEO support for <em>your website</em></>}
-      subheading="I help businesses improve existing pages, decide what to create next, and build a clearer content system that bridges search intent with business goals."
+      heading={<>SEO and content support for <em>your website</em></>}
+      subheading="Most underperforming sites don't need more content — they need existing pages doing better jobs. 
+      I audit what you have, fix what isn't working, and plan what to build from there."
       cta={{
-        heading: <>Not sure <em>where to start?</em></>,
-        body: "Send me a link to your website and I'll help you find the best path forward.",
+        heading: <>Ready to get started?</>,
+        body: "Tell me what you're working on and I'll let you know how I can help.",
         href: "mailto:aleksanderfurgal@gmail.com",
-        label: "Get in touch",
+        label: "Send me an email",
       }}
     >
       <div className="hp-section" style={{ paddingBottom: 0 }}>
@@ -111,7 +109,6 @@ export default function ServicesPage() {
                   margin: "0 0 0.5rem",
                 }}
               >
-                {service.intro}
               </p>
 
               <p

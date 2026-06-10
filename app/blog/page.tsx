@@ -25,7 +25,7 @@ export default function BlogPage() {
         </div>
 
         <h1 className="mb-4 text-[clamp(2.25rem,4.5vw,2.65rem)] font-semibold leading-tight tracking-tight text-[var(--color-text)]">
-          Notes on content, SEO, and <em>meaningful web experiences</em>
+          On content, search, and <em>what it takes to be worth citing</em>
         </h1>
 
         <p className="text-lg leading-8 text-[var(--color-muted)]">
@@ -46,11 +46,11 @@ export default function BlogPage() {
 
                 <div className="blog-left__heading-group">
                   <h1 className="split-left__h1">
-                    Notes on content, SEO, and meaningful web experiences
+                    On content, search, and <em>what it takes to be worth citing</em>
                   </h1>
 
                   <p className="split-left__sub">
-                    How content and search shape each other and the larger systems they belong to.
+                    I write about the decisions, systems, and craft behind good content.
                   </p>
                 </div>
               </div>
