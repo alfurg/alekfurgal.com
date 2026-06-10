@@ -57,7 +57,7 @@ export default function SplitPageLayout({
               <div className="split-left">
                 {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
                 <h1 className="split-left__h1">{heading}</h1>
-                {subheading && <p className="split-left__sub">{subheading}</p>}
+                {subheading && <div className="split-left__sub">{subheading}</div>}
                 
                 {cta && (
                   <div className="split-left__cta">
@@ -92,7 +92,7 @@ export default function SplitPageLayout({
           <div className="split__mobile-heading">
             {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
             <h1 className="split-left__h1">{heading}</h1>
-            {subheading && <p className="split-left__sub">{subheading}</p>}
+            {subheading && <div className="article-left__sub" style={{ marginBottom: "2rem" }}>{subheading}</div>}
           </div>
 
           {/* Mobile CTA — shows under heading on small screens */}

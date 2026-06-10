@@ -2,7 +2,7 @@ import SplitPageLayout from "@/components/SplitPageLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Better websites start with better content",
+  title: "Your content, working as a system",
   description:
     "I help founders, marketers, and content leads at SaaS and technical businesses build content that ranks, converts, and makes the product clear.",
 };
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const whatIDo = [
   {
     num: "01",
-    title: "Map your existing content",
+    title: "Map your content library",
     desc: "I audit your pages and traffic to find what's working, what's underperforming, and where the gaps are between what you publish and what your audience is looking for.",
   },
   {
@@ -75,22 +75,23 @@ export default function Home() {
   return (
     <SplitPageLayout
       home={true}
-      eyebrow="SEO · content strategy · brand clarity"
-      heading={<>Better websites start with <em>better content</em></>}
+      eyebrow="editorial · AI Search strategy · positioning"
+      heading={<>Your <em>content</em>, working as a <em>system</em></>}
       subheading={
         <>
           I work with <strong>founders, marketers, and content leads</strong> at SaaS and technical businesses. I fix:
           <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem" }}>
             <li>pages that should rank but don&apos;t;</li>
             <li>content that exists but doesn&apos;t convert;</li>
-            <li>sites with good ideas buried under vague language.</li>
-          </ul>
+            <li>sites with good ideas buried under weak copy.</li>
+          </ul><br />
+          An audit is usually where I start.
         </>
       }
-      availability="2026 * Available for new projects * EEA"
+      availability="Available for new projects * EEA * 2026"
       cta={{
         heading: <>Get a <em>free</em> content audit</>,
-        body: "Send me a link to your website and I'll reply with a prioritized content audit.",
+        body: "Send me a link to your website and I'll reply with a prioritized audit of your content library.",
         href: "mailto:aleksanderfurgal@gmail.com",
         label: "Get in touch",
         urlInput: true,
@@ -103,7 +104,7 @@ export default function Home() {
       <section className="hp-section">
         <div className="hp-label">How I work</div>
         <p className="hp-intro">
-          Every page on your site is doing a job — or failing at it. Here's how I diagnose and fix the issues:
+          Every page on your site is doing a job — or failing at it. Here's how I diagnose and fix content system issues:
         </p>
         <div className="hp-grid">
           {whatIDo.map((item) => (
@@ -120,25 +121,18 @@ export default function Home() {
       <section className="hp-section">
         <div className="hp-label">Background</div>
         <p className="hp-prose">
-          I started in agency SEO — technical health, site structure, content
-          strategy across different clients and industries. That gave me a
+          I started in agency SEO, working on technical health, site structure, 
+          and content strategy across different clients and industries. That gave me a
           working understanding of how search visibility is actually built: not
-          through individual pages, but through coherence, authority, and
+          with individual pages, but through coherence, authority, and
           structure.
         </p>
         <p className="hp-prose">
-          From there I moved into software house copywriting at Asper Brothers,
-          writing for founders, marketers, and decision-makers building digital
-          products. Then to Surfshark, where I created and improved content
-          across cybersecurity, networking, and privacy — a competitive SaaS
-          space where vague explanations don&apos;t hold up and trust depends on
-          accuracy and real product understanding.
-        </p>
-        <p className="hp-prose">
-          That background shapes how I work. Once someone lands on a page,
-          visibility has done its first job. What matters next is whether the
-          page makes a clear argument, earns trust, and supports the larger
-          system it belongs to.
+          From there I moved into SEO copywriting at a software house,
+          writing for founders and programmers building digital
+          products and platforms. Then to Surfshark, where I helped build the tone of voice
+          across cybersecurity, networking, and privacy in a competitive SaaS
+          space where trust depends on accuracy and real product understanding.
         </p>
         <div className="hp-timeline">
           {timeline.map((item) => (
@@ -151,6 +145,12 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <p className="hp-prose">
+          That background shapes how I work. Content has to be substantive enough to be useful, 
+          building the kind of trust that moves the reader toward a decision. 
+          In AI search, that's also the difference between a citation and what got absorbed into the answer.
+        </p>
+        
       </section>
 
       {/* Services */}

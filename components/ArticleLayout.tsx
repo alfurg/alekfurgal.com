@@ -82,7 +82,7 @@ export default function ArticleLayout({
                 )}
 
                 <h1 className="split-left__h1">{heading}</h1>
-                {subheading && <p className="split-left__sub">{subheading}</p>}
+                {subheading && <div className="split-left__sub">{subheading}</div>}
 
                 {toc.length > 0 && (
                   <nav className="article-left__block">
@@ -132,7 +132,7 @@ export default function ArticleLayout({
               </div>
             )}
             <h1 className="article-left__h1">{heading}</h1>
-            {subheading && <p className="article-left__sub" style={{ marginBottom: "2rem" }}>{subheading}</p>}
+            {subheading && <div className="article-left__sub" style={{ marginBottom: "2rem" }}>{subheading}</div>}
           </div>
 
           <div className="article-body">{children}</div>
