@@ -104,7 +104,7 @@ export default function Home() {
       <section className="hp-section">
         <div className="hp-label">How I work</div>
         <p className="hp-intro">
-          Every page on your site is doing a job — or failing at it. Here's how I diagnose and fix content system issues:
+          Every page on your site is either doing its  job or failing at it. Here's how I diagnose and fix content system issues:
         </p>
         <div className="hp-grid">
           {whatIDo.map((item) => (
@@ -150,29 +150,12 @@ export default function Home() {
           building the kind of trust that moves the reader toward a decision. 
           In AI search, that's also the difference between a citation and what got absorbed into the answer.
         </p>
-        
-      </section>
-
-      {/* Services */}
-      <section className="hp-section">
-        <div className="hp-label">Services</div>
-          <p className="hp-prose">
+        <p className="hp-prose" style={{ marginTop: "3rem" }}>
            Most of the opportunity is already on your site. I audit what you have, 
            fix what's underperforming, and build from there.
-          </p>
-        <div className="hp-services">
-          {services.map((s) => (
-            <div key={s.name} className="hp-service-row">
-              <div>
-                <div className="hp-service-name">{s.name}</div>
-                <div className="hp-service-desc">{s.desc}</div>
-              </div>
-              <div className="hp-service-price">{s.price}</div>
-            </div>
-          ))}
-        </div>
+        </p>
         <a href="/services" className="hp-ghost-link">
-          Full services page →
+          Go to services page →
         </a>
       </section>
 
