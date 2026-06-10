@@ -11,7 +11,7 @@ const whatIDo = [
   {
     num: "01",
     title: "Map your content library",
-    desc: "I audit your pages and traffic to find what's working, what's underperforming, and where the gaps are between what you publish and what your audience is looking for.",
+    desc: "I review your pages across search intent, structure, originality, and business relevance to build a clear picture of what's earnsing its place and what isn't.",
   },
   {
     num: "02",
@@ -33,23 +33,23 @@ const whatIDo = [
 const timeline = [
   {
     place: "Greyotters",
-    role: "SEO & content strategy",
+    role: "SEO specialist",
     desc: "Technical audits, site structure, and content planning across multiple clients and industries.",
   },
   {
     place: "A. Brothers",
-    role: "SEO copywriter",
+    role: "SEO content specialist",
     desc: "Content for software development and startup audiences — founders, marketers, technical decision-makers.",
   },
   {
     place: "Surfshark",
-    role: "Content strategist & writer",
+    role: "Cybersecurity writer",
     desc: "Cybersecurity, networking, and digital privacy content in a competitive SaaS space where accuracy and substance are non-negotiable.",
   },
   {
     place: "Now",
-    role: "Freelance — open to projects",
-    desc: "Working with SaaS and technical businesses on content audits, strategy, and writing.",
+    role: "Freelance",
+    desc: "Working with SaaS and technical businesses on search and content strategy.",
   },
 ];
 
@@ -137,7 +137,7 @@ export default function Home() {
         <div className="hp-timeline">
           {timeline.map((item) => (
             <div key={item.place} className="hp-tl-row">
-              <div className="hp-tl-place">{item.place}</div>
+              <div className="hp-tl-place" style={{ color: item.place === "Now" ? "var(--color-accent)" : "var(--color-subtle)" }}>{item.place}</div>
               <div>
                 <div className="hp-tl-role">{item.role}</div>
                 <div className="hp-tl-desc">{item.desc}</div>
@@ -157,7 +157,8 @@ export default function Home() {
       <section className="hp-section">
         <div className="hp-label">Services</div>
           <p className="hp-prose">
-           I offer content audits, page refreshes, and strategy sprints. If you
+           Most of the opportunity is already on your site. I audit what you have, 
+           fix what's underperforming, and build from there.
           </p>
         <div className="hp-services">
           {services.map((s) => (
