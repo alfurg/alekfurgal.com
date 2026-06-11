@@ -417,11 +417,11 @@ h1, h2, h3 { font-weight: 400; }
 /* h1 */
 .split-left__h1 {
   font-family: var(--font-serif);
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.75rem);
   line-height: 1.12;
   letter-spacing: -0.015em;
   color: var(--color-text);
-  margin: 0 0 1.25rem;
+  margin: 0 -1rem 1.1rem 0;
 }
 .split-left__h1 em {
   font-style: italic;
@@ -484,8 +484,7 @@ h1, h2, h3 { font-weight: 400; }
 
 /* CTA card */
 .split-left__cta {
-  margin-top: 1.75rem;
-  margin: 0 auto;
+  margin: 0.25rem 0;
   inline-size: min(100%, 100%);
   padding: 1.75rem 1.75rem 1.5rem;
   background: var(--color-surface);
@@ -511,7 +510,7 @@ h1, h2, h3 { font-weight: 400; }
   line-height: 1.65;
   color: var(--color-muted);
   font-weight: 300;
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
 }
 
 .cta-url-input-wrapper {
@@ -727,7 +726,7 @@ h1, h2, h3 { font-weight: 400; }
   border-top: 1px solid var(--color-border);
 }
 .article-left__toc-separator {
-   margin: 1.75rem 0 1.5rem;
+  margin: 1.75rem 0 1.5rem;
   border-top: 1px solid var(--color-border);
   width: 100%;
 }
@@ -792,10 +791,10 @@ h1, h2, h3 { font-weight: 400; }
    Article body (MDX content)
    ============================================================ */
 .article-body {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--color-muted);
-  font-weight: 300;
+  font-weight: 400;
 }
 .article-body p { margin: 0 0 1.5rem; }
 .article-body h2 {

@@ -36,7 +36,7 @@ export default function ServicesPage() {
   return (
     <SplitPageLayout
       eyebrow="Services"
-      heading={<>SEO and content support for <em>your website</em></>}
+      heading={<>Content support for <em>your website</em></>}
       subheading="Most underperforming sites don't need more content — they need existing pages doing better jobs. 
       I audit what you have, fix what isn't working, and plan what to build from there."
       cta={{

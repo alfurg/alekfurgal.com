@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { SiteSidebar } from "./SiteSidebar";
 import { CtaUrlInput } from "./CtaUrlInput";
+import { ScrollCapture } from "./ScrollCapture";
 
 type CtaBlock = {
   heading: ReactNode;
@@ -33,6 +34,7 @@ export default function SplitPageLayout({
 }: SplitPageLayoutProps) {
   return (
     <main className={`split${home ? " split--home" : ""}`}>
+        <ScrollCapture />
       {/* Mobile only: sticky nav */}
       <div className="split__mobile-nav">
         <SiteSidebar />

@@ -2,7 +2,7 @@ import SplitPageLayout from "@/components/SplitPageLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Your content, working as a system",
+  title: "Your content, cited",
   description:
     "I help founders, marketers, and content leads at SaaS and technical businesses build content that ranks, converts, and makes the product clear.",
 };
@@ -75,20 +75,20 @@ export default function Home() {
   return (
     <SplitPageLayout
       home={true}
-      eyebrow="editorial · AI Search strategy · positioning"
-      heading={<>Your <em>content</em>, working as a <em>system</em></>}
+      eyebrow="editorial · AI Search · positioning"
+      heading={<>Your content, <em>cited</em></>}
       subheading={
         <>
-          I work with <strong>founders, marketers, and content leads</strong> at SaaS and technical businesses. I fix:
+          I work with <strong>founders, marketers, and content leads</strong> at SaaS and technical businesses on:
           <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem" }}>
             <li>pages that should rank but don&apos;t;</li>
             <li>content that exists but doesn&apos;t convert;</li>
-            <li>sites with good ideas buried under weak copy.</li>
+            <li>ideas worth citing buried under weak copy.</li>
           </ul>
-          An audit is usually where I start.
+    <p style={{ margin: "3rem 0 0" }}>An audit is usually where I start.</p>
         </>
       }
-      availability="Available for new projects * EEA * 2026"
+      availability="Available for new projects · EEA · 2026"
       cta={{
         heading: <>Get a <em>free</em> content audit</>,
         body: "Send me a link to your website and I'll reply with a prioritized audit of your content library.",
@@ -104,7 +104,7 @@ export default function Home() {
       <section className="hp-section">
         <div className="hp-label">How I work</div>
         <p className="hp-intro">
-          Every page on your site is either doing its  job or failing at it. Here's how I diagnose and fix content system issues:
+          Every page on your site has a job to do. Here's how I diagnose and fix content system issues:
         </p>
         <div className="hp-grid">
           {whatIDo.map((item) => (

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { SiteSidebar } from "./SiteSidebar";
+import { ScrollCapture } from "./ScrollCapture";
 
 type TocItem = {
   title: string;
@@ -42,6 +43,7 @@ export default function ArticleLayout({
 }: ArticleLayoutProps) {
   return (
     <main className="article split">
+      <ScrollCapture />
       <div className="split__mobile-nav">
         <SiteSidebar />
       </div>
