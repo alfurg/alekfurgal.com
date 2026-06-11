@@ -64,7 +64,7 @@ export default function Home() {
           I work with <strong>founders, marketers, and content leads</strong> at SaaS and technical businesses on:
           <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem", listStyle: "none"}}>
             <li>pages that should rank but don&apos;t;</li>
-            <li>content that exists but doesn&apos;t convert;</li>
+            <li>content that doesn&apos;t convert;</li>
             <li>ideas worth citing buried under weak copy.</li>
           </ul>
     <p style={{ margin: "3rem 0 0" }}>An audit is usually where I start.</p>
