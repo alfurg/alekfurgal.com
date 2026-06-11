@@ -32,7 +32,7 @@ const whatIDo = [
 
 const timeline = [
   {
-    place: "Greyotters",
+    place: "greyotters",
     role: "SEO specialist",
     desc: "Technical audits, site structure, and content planning across multiple clients and industries.",
   },
