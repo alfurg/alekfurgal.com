@@ -86,7 +86,8 @@ export default function Home() {
       <section className="hp-section">
         <div className="hp-label">How I work</div>
         <p className="hp-intro">
-          Conversion comes from clarity. Here's how I build it into content systems:
+          Underperforming content is usually as much a systems problem 
+          as a writing one. So I work in sequence — each step sets up the next:
         </p>
         <div className="hp-grid">
           {whatIDo.map((item) => (
