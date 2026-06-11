@@ -29,7 +29,7 @@ export default function BlogPage() {
 
                 <div className="blog-left__heading-group">
                   <h1 className="split-left__h1">
-                    Notes on <em>content design</em>
+                    Notes on <em>content</em> and search
                   </h1>
 
                   <p className="split-left__sub">
@@ -45,7 +45,7 @@ export default function BlogPage() {
           <div className="split__mobile-heading">
             <p className="split-left__eyebrow">Blog</p>
             <h1 className="split-left__h1">
-              Notes on <em>content design</em>
+              Notes on <em>content</em> and search
             </h1>
             <p className="split-left__sub" style={{ marginBottom: "2rem" }}>
               I write about decisions, systems, and the craft behind good content.

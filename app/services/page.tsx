@@ -36,15 +36,15 @@ export default function ServicesPage() {
   return (
     <SplitPageLayout
       eyebrow="Services"
-      heading={<>Content support for <em>your website</em></>}
-      subheading="Audit, fix, and build. Making content that earns its place."
+      heading={<>Audit, <em>fix</em>, and build</>}
+      subheading="Three ways to make your content earn its place — starting with what you already have."
       cta={{
-        heading:<>You can <em>contact me</em> here</>,  
+        heading:<>You can <em>contact me</em> via:</>,  
         body:"",
         href: "mailto:aleksanderfurgal@gmail.com",
-        label: "Send me an email",
+        label: "email",
         secondaryHref: "https://www.linkedin.com/in/alek-furgal/",
-        secondaryLabel: "Connect on LinkedIn",
+        secondaryLabel: "LinkedIn",
       }}
     >
       <div className="hp-section" style={{ paddingBottom: 0 }}>
