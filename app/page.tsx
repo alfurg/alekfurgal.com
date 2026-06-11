@@ -130,7 +130,7 @@ export default function Home() {
         <p className="hp-prose">
           That background shapes how I work. Content has to be substantive enough to be useful, 
           building the kind of trust that moves the reader toward a decision. 
-          In AI search, that's also the difference between a citation and what got absorbed into the answer.
+          In AI search, that's also what differentiates a citation from what got absorbed into the answer.
         </p>
            <div style={{ height: "1px", background: "var(--color-border)", margin: "4rem 0 1.5rem" }} />
         <p className="hp-prose" style={{ marginTop: "0" }}>
