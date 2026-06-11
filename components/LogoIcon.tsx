@@ -8,64 +8,39 @@ type LogoIconProps = {
 
 export function LogoIcon({
   className,
-  backgroundColor = "#0f0f0e",
-  emblemColor = "#f5f5f0",
-  radius = 220,
-  size = 28,
+  backgroundColor = "--color-accent",
+  emblemColor = "--color-bg",
+  radius = 100,
+  size = 256,
 }: LogoIconProps) {
   return (
     <svg
-      viewBox="0 0 1024 1024"
-      className={className}
       width={size}
       height={size}
-      aria-hidden="true"
+      viewBox="0 0 1024 1024"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ display: "block" }}
+      className={className}
     >
-      <rect width="1024" height="1024" rx={radius} fill={backgroundColor} />
-
-      <g transform="matrix(1.1 0 0 1.02 -62 -118)">
+      <g clipPath="url(#clip0_logoicon)">
         <path
-          d="
-            M 130 970
-            V 575
-
-            C 130 330, 318 215, 520 215
-            C 722 215, 910 330, 910 575
-
-            V 860
-            C 910 886, 890 903, 866 903
-            H 742
-            C 720 903, 700 886, 700 862
-
-            V 798
-            C 700 778, 685 762, 665 762
-
-            H 528
-            C 514 762, 506 754, 506 740
-            V 650
-            C 506 636, 514 628, 528 628
-
-            H 686
-            C 706 628, 717 617, 717 597
-
-            V 500
-            C 717 475, 695 445, 668 445
-
-            H 348
-            C 335 445, 325 465, 325 492
-            V 575
-
-            V 970
-            C 325 996, 305 1010, 282 1010
-            H 174
-            C 150 1010, 130 996, 130 970
-            Z
-          "
+          d="M924 -6H100C44.7715 -6 0 38.7715 0 94V918C0 973.228 44.7715 1018 100 1018H924C979.228 1018 1024 973.228 1024 918V94C1024 38.7715 979.228 -6 924 -6Z"
+          fill={backgroundColor}
+        />
+        <path
+          d="M512 90C748 90 958 208 958 460V750C958 778 958 776 905 776H735C685 776 685 776 685 732V668C685 625 684 625 660 625H518C490 625 490 625 490 603V535C490 515 490 515 518 515H705C745 515 745 515 745 480V390C745 340 745 340 705 340H305C270 340 270 340 270 390V880C270 920 270 920 215 920H105C55 920 55 920 55 880V460C55 208 265 90 512 90Z"
+          fill={emblemColor}
+        />
+        <path
+          d="M735 668V732C735 776 735 776 685 776H740C795 776 795 776 795 732V668C795 625 794 625 770 625H720C745 625 745 625 740 668Z"
           fill={emblemColor}
         />
       </g>
+      <defs>
+        <clipPath id="clip0_logoicon">
+          <rect width="1024" height="1024" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }

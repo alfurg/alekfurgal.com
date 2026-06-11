@@ -33,17 +33,17 @@ const whatIDo = [
 const timeline = [
   {
     place: "greyotters",
-    role: "SEO specialist",
+    role: "Account management & SEO analysis",
     desc: "Technical audits, site structure, and content planning across multiple clients and industries.",
   },
   {
     place: "A. Brothers",
-    role: "SEO content specialist",
-    desc: "Content for software development and startup audiences — founders, marketers, technical decision-makers.",
+    role: "SEO content management",
+    desc: "Creating and publishing content for software development and startup audiences — founders, marketers, technical decision-makers.",
   },
   {
     place: "Surfshark",
-    role: "Cybersecurity writer",
+    role: "Content & editorial strategy",
     desc: "Cybersecurity, networking, and digital privacy content in a competitive SaaS space where accuracy and substance are non-negotiable.",
   },
   {
