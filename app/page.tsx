@@ -11,7 +11,7 @@ const whatIDo = [
   {
     num: "01",
     title: "Map your content library",
-    desc: "I review your pages across search intent, structure, originality, and business relevance to build a clear picture of what's earnsing its place and what isn't.",
+    desc: "I review your pages across search intent, structure, originality, and business relevance to build a clear picture of what's earning its place and what isn't.",
   },
   {
     num: "02",
