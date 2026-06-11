@@ -46,7 +46,7 @@ export default function BlogPage() {
 
                 <div className="blog-left__heading-group">
                   <h1 className="split-left__h1">
-                    On content, search, and <em>what it takes to be worth citing</em>
+                    Notes on <em>content design</em>
                   </h1>
 
                   <p className="split-left__sub">

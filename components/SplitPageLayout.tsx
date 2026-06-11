@@ -35,59 +35,70 @@ export default function SplitPageLayout({
   return (
     <main className={`split${home ? " split--home" : ""}`}>
         <ScrollCapture />
-      {/* Mobile only: sticky nav */}
-      <div className="split__mobile-nav">
-        <SiteSidebar />
-      </div>
+        {/* Mobile only: sticky nav */}
+        <div className="split__mobile-nav">
+          <SiteSidebar />
+        </div>
 
-      <div className="split__grid">
+        <div className="split__grid">
         <aside className="split__aside">
           <div className="split__aside-inner">
 
-            {/* Nav — top of left column on desktop */}
-            <div className="split__aside-nav">
-              <SiteSidebar />
-            </div>
+        {/* Nav — top of left column on desktop */}
+        <div className="split__aside-nav">
+          <SiteSidebar />
+        </div>
 
-            {/* Horizontal rule + vertical line cross.
-                Rule starts at --aside-indent via margin-left.
-                ::after drops the vertical line from that same point. */}
-            <div className="split__aside-hline" aria-hidden="true" />
+        {/* Horizontal rule + vertical line cross.
+            Rule starts at --aside-indent via margin-left.
+            ::after drops the vertical line from that same point. */}
+        <div className="split__aside-hline" aria-hidden="true" />
 
-            {/* Body: flex:1, centers split-left vertically */}
-            <div className="split__aside-body">
-              <div className="split-left">
-                {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
-                <h1 className="split-left__h1">{heading}</h1>
-                {subheading && <div className="split-left__sub">{subheading}</div>}
-                
-                {cta && (
-                  <div className="split-left__cta">
-                    <h2 className="split-left__cta-heading">{cta.heading}</h2>
-                    <p className="split-left__cta-body">{cta.body}</p>
+        {/* Body: flex:1, centers split-left vertically */}
+        <div className="split__aside-body">
+          <div className="split-left">
+            {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
+            <h1 className="split-left__h1">{heading}</h1>
+            {subheading && <div className="split-left__sub">{subheading}</div>}
+            
+            {cta && (
+                  <>
                     {cta.urlInput && (
-                      <CtaUrlInput href={cta.href} label={cta.label} />
-                    )}
-                    {!cta.urlInput && (
-                      <div className="hp-cta-actions">
-                        <a href={cta.href} className="hp-btn">
-                          {cta.label}
-                        </a>
+                      <div className="split-left__cta">
+                        <h2 className="split-left__cta-heading">{cta.heading}</h2>
+                        <p className="split-left__cta-body">{cta.body}</p>
+                        <CtaUrlInput href={cta.href} label={cta.label} />
                       </div>
                     )}
-                  </div>
+                    {!cta.urlInput && (
+                      <div className="split-left__cta-service">
+                        <h3 className="split-left__cta-service-heading">{cta.heading}</h3>
+                        <p className="split-left__cta-service-body">{cta.body}</p>
+                        <div className="split-left__cta-service-actions">
+                          <a href={cta.href} className="split-left__cta-service-btn split-left__cta-service-btn--primary">
+                            {cta.label}
+                          </a>
+                          {cta.secondaryHref && (
+                            <a href={cta.secondaryHref} className="split-left__cta-service-btn split-left__cta-service-btn--secondary">
+                              {cta.secondaryLabel}
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </>
                 )}
 
-                {availability && (
-                  <div className="split-left__availability">
-                    <span>{availability}</span>
-                  </div>
-                )}
+            {availability && (
+              <div className="split-left__availability">
+                <span>{availability}</span>
               </div>
-            </div>
-
+            )}
           </div>
-        </aside>
+        </div>
+
+      </div>
+    </aside>
 
         <section className="split__content no-scrollbar">
           {/* Mobile: heading shown here since aside is hidden */}
@@ -100,20 +111,29 @@ export default function SplitPageLayout({
           {/* Mobile CTA — shows under heading on small screens */}
           {cta && (
             <div className="split__mobile-cta">
-              <div className="split-left__cta">
-                <h2 className="split-left__cta-heading">{cta.heading}</h2>
-                <p className="split-left__cta-body">{cta.body}</p>
-                {cta.urlInput && (
+              {cta.urlInput && (
+                <div className="split-left__cta">
+                  <h2 className="split-left__cta-heading">{cta.heading}</h2>
+                  <p className="split-left__cta-body">{cta.body}</p>
                   <CtaUrlInput href={cta.href} label={cta.label} />
-                )}
-                {!cta.urlInput && (
-                  <div className="hp-cta-actions">
-                    <a href={cta.href} className="hp-btn">
+                </div>
+              )}
+              {!cta.urlInput && (
+                <div className="split-left__cta-service">
+                  <h3 className="split-left__cta-service-heading">{cta.heading}</h3>
+                  <p className="split-left__cta-service-body">{cta.body}</p>
+                  <div className="split-left__cta-service-actions">
+                    <a href={cta.href} className="split-left__cta-service-btn split-left__cta-service-btn--primary">
                       {cta.label}
                     </a>
+                    {cta.secondaryHref && (
+                      <a href={cta.secondaryHref} className="split-left__cta-service-btn split-left__cta-service-btn--secondary">
+                        {cta.secondaryLabel}
+                      </a>
+                    )}
                   </div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           )}
 

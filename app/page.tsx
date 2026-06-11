@@ -62,7 +62,7 @@ export default function Home() {
       subheading={
         <>
           I work with <strong>founders, marketers, and content leads</strong> at SaaS and technical businesses on:
-          <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem" }}>
+          <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem", listStyle: "none"}}>
             <li>pages that should rank but don&apos;t;</li>
             <li>content that exists but doesn&apos;t convert;</li>
             <li>ideas worth citing buried under weak copy.</li>
@@ -132,7 +132,8 @@ export default function Home() {
           building the kind of trust that moves the reader toward a decision. 
           In AI search, that's also the difference between a citation and what got absorbed into the answer.
         </p>
-        <p className="hp-prose" style={{ marginTop: "3rem" }}>
+           <div style={{ height: "1px", background: "var(--color-border)", margin: "4rem 0 1.5rem" }} />
+        <p className="hp-prose" style={{ marginTop: "0" }}>
            Most of the opportunity is already on your site. I audit what you have, 
            fix what's underperforming, and build from there.
         </p>
