@@ -14,7 +14,7 @@ export default function BlogPage() {
     <main className="split article blog-page">
       <div className="split__mobile-heading">
         <div className="mb-6 flex items-center gap-3">
-          <p className="text-[1.1rem] leading-6 text-[var(--color-subtle)] [font-variant-caps:all-small-caps]">
+          <p className="split-left__eyebrow" >
             Blog
           </p>
 

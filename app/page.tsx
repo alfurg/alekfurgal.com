@@ -53,24 +53,6 @@ const timeline = [
   },
 ];
 
-const services = [
-  {
-    name: "Content Visibility Audit",
-    desc: "Search intent, structure, internal links, technical visibility, and business relevance — reviewed and prioritized.",
-    price: "from €450",
-  },
-  {
-    name: "SEO-Informed Content Refresh",
-    desc: "Existing pages rewritten to match search intent, explain the product more clearly, and connect to the rest of the site.",
-    price: "from €350/page",
-  },
-  {
-    name: "Content Strategy Sprint",
-    desc: "Content opportunities, page roles, internal linking, and priorities mapped so your content works as a system.",
-    price: "from €900",
-  },
-];
-
 export default function Home() {
   return (
     <SplitPageLayout
