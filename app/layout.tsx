@@ -1,13 +1,33 @@
 import "./globals.css";
-import { SiteHeader } from "@/components/SiteHeader";
-
+import { DM_Serif_Display, DM_Mono, DM_Sans } from "next/font/google";
 import type { Metadata } from "next";
+
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-serif-dm",
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono-dm",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  variable: "--font-sans-dm",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.alekfurgal.com"),
-  title: "Alek Furgal | SEO and content strategy",
   description:
-    "SEO and content strategy for technical websites, SaaS products, and content-heavy businesses.",
+    "I help founders, marketers, and content leads at SaaS and technical businesses build content that ranks, converts, and makes the product clear.",
 };
 
 export default function RootLayout({
@@ -16,13 +36,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <SiteHeader />
-        <div className="lg:pt-[var(--header-height)]">
-        {children}
-        </div>
-      </body>
+    <html
+      lang="en"
+      className={`${dmSerif.variable} ${dmMono.variable} ${dmSans.variable}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }

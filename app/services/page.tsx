@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import SplitPageLayout from "@/components/SplitPageLayout";
 
 export const metadata: Metadata = {
   title: "Services | Alek Furgal",
@@ -11,123 +12,69 @@ const services = [
   {
     title: "Content Visibility Audit",
     price: "From €450",
-    intro: "For existing pages that should be doing more.",
-    body: "I review selected pages across search intent, structure, internal links, technical visibility, and business relevance, then give you a prioritized set of recommendations.",
+    intro: "A structured review of what your content is doing and what it isn't.",
+    body: "I review your content across search intent, structure, internal links, technical visibility, and business relevance. You get a prioritized list of what to fix, what to consolidate, and what's earning its place.",
     goodFor:
       "Underperforming posts, landing pages, product pages, and content clusters.",
   },
   {
-    title: "SEO-Informed Content Refresh",
+    title: "Page Rewrite",
     price: "From €350/page",
-    intro: "For pages that need clearer structure and stronger substance.",
-    body: "I improve existing content so it better matches search intent, explains the topic or product more clearly, and connects better to the rest of the site.",
+    body: "I rewrite your existing pages to match search intent, explain the product or topic more precisely, and connect to the rest of the site. The goal is a page that does its specific job — not a cleaner version of a page with the wrong job.",
     goodFor: "Thin, outdated, unclear, or disconnected pages.",
   },
   {
     title: "Content Strategy Sprint",
     price: "From €900",
-    intro: "For deciding what to create, improve, or consolidate next.",
-    body: "I map content opportunities, page roles, internal linking, and priorities so your content works as a system rather than a loose list of ideas.",
-    goodFor: "Scattered content, unclear priorities, and websites without an obvious next step.",
+    body: "I map content opportunities, page roles, and internal linking so every page has a defined function in your system. You get a clear set of priorities: what to create, what to fix, and what to consolidate — and a rationale for the order.",
+    goodFor:
+      "Scattered content, unclear priorities, and websites without an obvious next step.",
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="mx-auto w-full max-w-[1380px] px-[var(--site-gutter)] lg:h-[calc(100dvh-var(--header-height))] lg:overflow-hidden">
-      <div className="grid min-h-0 gap-12 py-12 sm:py-16 lg:h-full lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] lg:items-start lg:gap-10 lg:py-0 xl:grid-cols-[420px_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
-        <aside className="no-scrollbar mb-12 lg:mb-0 lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:py-14 lg:pr-2 xl:py-16 [-webkit-overflow-scrolling:touch]">
-          <header className="max-w-xl">
-            <div className="mb-6 flex items-center gap-3">
-              <p className="text-[1.1rem] leading-6 text-[var(--color-subtle)] [font-variant-caps:all-small-caps]">
-                Services
-              </p>
-
-              <span
-                aria-hidden="true"
-                className="mt-[0.15em] h-[1.05em] w-[0.42em] bg-[var(--color-accent)]"
-              />
-            </div>
-
-            <h1 className="mb-8 text-[clamp(2.25rem,4.5vw,2.65rem)] font-semibold leading-tight tracking-tight text-[var(--color-text)]">
-              Content-first SEO support for your website
-            </h1>
-
-            <p className="text-lg leading-8 text-[var(--color-muted)]">
-            I help businesses improve existing pages, decide what to create next, 
-            and build a clearer content system that bridges search intent with business goals.
-            </p>
-          </header>
-
-          <div className="mt-8 max-w-xl rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
-            <h2 className="text-lg font-semibold leading-7 text-[var(--color-text)]">
-              Need help figuring out where to start?
-            </h2>
-
-            <p className="mt-3 text-base leading-7 text-[var(--color-muted)]">
-              Send me a link to your website, and I’ll help you find the best path forward.
-            </p>
-
-            <Link
-              href="mailto:aleksanderfurgal@gmail.com"
-              className="mt-6 inline-flex text-sm text-[var(--color-text)] underline decoration-[var(--color-link-underline)] underline-offset-4 transition-colors hover:decoration-[var(--color-link-underline-hover)]"
-            >
-              Get in touch
-            </Link>
-          </div>
-
-          <p className="mt-6 max-w-xl text-sm leading-6 text-[var(--color-subtle)]">
-            Final pricing depends on scope, research
-            depth, page count, and implementation needs.
-          </p>
-        </aside>
-
-        <section className="no-scrollbar lg:h-full lg:min-h-0 lg:overflow-y-auto lg:overscroll-contain lg:py-14 lg:pr-2 xl:py-16 [-webkit-overflow-scrolling:touch]">
-          <div className="grid gap-5">
-            {services.map((service) => (
-              <article
-  key={service.title}
-  className="
-    relative overflow-hidden rounded-2xl border border-[var(--color-border)]
-    bg-[var(--color-surface)] p-6
-  "
->
-  <div className="mb-6 flex items-start justify-between gap-6">
-    <div className="h-px w-10 bg-[#B87333]" />
-
-    <p className="shrink-0 text-right text-sm font-medium leading-5 text-[#B87333]">
-      {service.price}
-    </p>
-  </div>
-
-  <div className="max-w-2xl">
-    <h2
-      className="
-        text-[clamp(1.25rem,2vw,1.55rem)] font-semibold
-        leading-tight tracking-[-0.018em] text-[var(--color-text)]
-      "
+    <SplitPageLayout
+      eyebrow="Services"
+      heading={<>Content support for <em>your website</em></>}
+      subheading="Most underperforming sites don't need more content — they need existing pages doing better jobs. 
+      I audit what you have, fix what isn't working, and plan what to build from there."
+      cta={{
+        heading:<>You can <em>contact me</em> here</>,  
+        body:"",
+        href: "mailto:aleksanderfurgal@gmail.com",
+        label: "Send me an email",
+        secondaryHref: "https://www.linkedin.com/in/alek-furgal/",
+        secondaryLabel: "Connect on LinkedIn",
+      }}
     >
-      {service.title}
-    </h2>
+      <div className="hp-section" style={{ paddingBottom: 0 }}>
+        <p className="hp-intro" style={{ marginBottom: "var(--space-md)" }}>
+          Final pricing depends on scope, research depth, page count, and implementation needs.
+        </p>
 
-    <p className="mt-4 text-base font-medium leading-7 text-[var(--color-text)]">
-      {service.intro}
-    </p>
-
-    <p className="mt-3 text-base leading-7 text-[var(--color-muted)]">
-      {service.body}
-    </p>
-
-    <p className="mt-5 text-sm leading-6 text-[var(--color-subtle)]">
-      <span className="text-[var(--color-text)]">Good for:</span>{" "}
-      {service.goodFor}
-    </p>
-  </div>
-</article>
-            ))}
-          </div>
-        </section>
+        <div className="grid gap-5" style={{ display: "grid", gap: "1.25rem" }}>
+  {services.map((service) => (
+    <article key={service.title} className="service-card">
+      <div className="service-card__header">
+        <div className="service-card__accent" />
+        <p className="service-card__price">{service.price}</p>
       </div>
-    </main>
+
+      <h2 className="service-card__title">{service.title}</h2>
+
+      <p className="service-card__meta">
+        <span className="service-card__meta-dot">•</span>
+        <span>
+          <span className="service-card__meta-label">Good for:</span> {service.goodFor}
+        </span>
+      </p>
+
+      <p className="service-card__body">{service.body}</p>
+    </article>
+  ))}
+</div>
+      </div>
+    </SplitPageLayout>
   );
 }

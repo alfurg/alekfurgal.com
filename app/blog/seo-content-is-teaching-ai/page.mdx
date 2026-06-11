@@ -2,7 +2,7 @@ import ArticleLayout from "@/components/ArticleLayout";
 import { getPostBySlug } from "@/lib/blog";
 
 export const metadata = {
-  title: "Your SEO content is teaching AI what your brand is | Alek Furgal ",
+  title: "Your SEO content is teaching AI what your brand is",
   description:
     "Your content might be telling a different story than your positioning. How AI search turns scattered pages into brand evidence, and what to audit first.",
     openGraph: {
@@ -22,7 +22,12 @@ export const metadata = {
 export const article = {
   order: 2,
   heading: "Your SEO content is teaching AI what your brand is",
-  subheading:"As AI reshapes search, brand clarity is becoming part of SEO."
+  subheading:"As AI reshapes search, brand clarity is becoming part of SEO.",
+  categories: ["AI Search", "Content Strategy"],
+  featured: false,
+  publishedAt: "2026-05-15",
+  updatedAt: "2026-05-15",
+  status: "published",
 };
 
 export const post = getPostBySlug("seo-content-is-teaching-ai");

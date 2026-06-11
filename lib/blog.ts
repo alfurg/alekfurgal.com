@@ -19,6 +19,11 @@ export type BlogPost = {
   order: number;
   articleNumber: string;
   toc: TocItem[];
+  status: "published" | "draft" | "archived";
+  categories: string[];
+  featured: boolean;
+  publishedAt: string;
+  updatedAt: string;
 };
 
 const BLOG_DIR = path.join(process.cwd(), "app", "blog");
@@ -49,6 +54,34 @@ function getNumberField(source: string, exportName: string, fieldName: string) {
   const match = objectBody.match(new RegExp(`${fieldName}\\s*:\\s*(\\d+)`));
 
   return match?.[1] ? Number(match[1]) : 999;
+}
+
+function getBooleanField(source: string, exportName: string, fieldName: string): boolean {
+  const objectBody = getExportedObject(source, exportName);
+  const match = objectBody.match(
+    new RegExp(`${fieldName}\\s*:\\s*(true|false)`)
+  );
+  return match?.[1] === "true";
+}
+
+function getCategoriesField(source: string, exportName: string): string[] {
+  const objectBody = getExportedObject(source, exportName);
+  const match = objectBody.match(
+    new RegExp(`categories\\s*:\\s*\\[([\\s\\S]*?)\\]`)
+  );
+
+  if (!match?.[1]) return [];
+
+  return match[1]
+    .split(",")
+    .map((item) => item.trim().replace(/["'`]/g, ""))
+    .filter(Boolean);
+}
+
+function getStatusField(source: string, exportName: string): "published" | "draft" | "archived" {
+  const value = getStringField(source, exportName, "status");
+  if (value === "draft" || value === "archived") return value;
+  return "published"; // default
 }
 
 function slugToTitle(slug: string) {
@@ -134,20 +167,52 @@ function getPostFromSlug(slug: string): BlogPost | null {
     order,
     articleNumber: String(order).padStart(2, "0"),
     toc: getToc(source),
+    status: getStatusField(source, "article"),
+    categories: getCategoriesField(source, "article"),
+    featured: getBooleanField(source, "article", "featured"),
+    publishedAt: getStringField(source, "article", "publishedAt"),
+    updatedAt: getStringField(source, "article", "updatedAt"),
   };
 }
 
-export function getAllPosts(): BlogPost[] {
+export function getAllPosts(filters?: { categories?: string[]; status?: string }): BlogPost[] {
   if (!fs.existsSync(BLOG_DIR)) {
     return [];
   }
 
-  return fs
+  const posts = fs
     .readdirSync(BLOG_DIR, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => getPostFromSlug(entry.name))
-    .filter((post): post is BlogPost => post !== null)
-    .sort((a, b) => b.order - a.order);
+    .filter((post): post is BlogPost => post !== null);
+
+  // Apply filters
+  const filtered = posts.filter((post) => {
+    // Filter by status
+    if (filters?.status && post.status !== filters.status) {
+      return false;
+    }
+
+    // Default: only show published posts (unless explicitly filtering for drafts/archived)
+    if (!filters?.status && post.status !== "published") {
+      return false;
+    }
+
+    // Filter by categories
+    if (filters?.categories?.length) {
+      return filters.categories.some((cat) => post.categories.includes(cat));
+    }
+
+    return true;
+  });
+
+  // Sort: featured first, then by publish date (newest)
+  return filtered.sort((a, b) => {
+    if (a.featured !== b.featured) {
+      return a.featured ? -1 : 1;
+    }
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  });
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {

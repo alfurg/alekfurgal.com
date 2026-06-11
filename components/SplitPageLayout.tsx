@@ -1,20 +1,142 @@
 import type { ReactNode } from "react";
+import { SiteSidebar } from "./SiteSidebar";
+import { CtaUrlInput } from "./CtaUrlInput";
+import { ScrollCapture } from "./ScrollCapture";
+
+type CtaBlock = {
+  heading: ReactNode;
+  body: string;
+  href: string;
+  label: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  urlInput?: boolean;
+};
 
 type SplitPageLayoutProps = {
-  left: ReactNode;
+  eyebrow?: string;
+  heading: ReactNode;
+  subheading?: ReactNode;
+  availability?: string;
+  cta?: CtaBlock;
+  home?: boolean;
   children: ReactNode;
 };
 
 export default function SplitPageLayout({
-  left,
+  eyebrow,
+  heading,
+  subheading,
+  availability,
+  cta,
+  home = false,
   children,
 }: SplitPageLayoutProps) {
   return (
-    <main className="mx-auto w-full max-w-[1380px] px-[clamp(1.5rem,4vw,3rem)]">
-      <div className="grid gap-12 py-12 sm:py-16 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] lg:gap-10 lg:py-0 xl:grid-cols-[420px_minmax(0,1fr)] xl:gap-16 2xl:grid-cols-[470px_minmax(0,820px)] 2xl:gap-20">
-        <aside className="lg:py-14 xl:py-16">{left}</aside>
+    <main className={`split${home ? " split--home" : ""}`}>
+        <ScrollCapture />
+        {/* Mobile only: sticky nav */}
+        <div className="split__mobile-nav">
+          <SiteSidebar />
+        </div>
 
-        <section className="lg:min-h-0 lg:py-14 xl:py-16">
+        <div className="split__grid">
+        <aside className="split__aside">
+          <div className="split__aside-inner">
+
+        {/* Nav — top of left column on desktop */}
+        <div className="split__aside-nav">
+          <SiteSidebar />
+        </div>
+
+        {/* Horizontal rule + vertical line cross.
+            Rule starts at --aside-indent via margin-left.
+            ::after drops the vertical line from that same point. */}
+        <div className="split__aside-hline" aria-hidden="true" />
+
+        {/* Body: flex:1, centers split-left vertically */}
+        <div className="split__aside-body">
+          <div className="split-left">
+            {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
+            <h1 className="split-left__h1">{heading}</h1>
+            {subheading && <div className="split-left__sub">{subheading}</div>}
+            
+            {cta && (
+                  <>
+                    {cta.urlInput && (
+                      <div className="split-left__cta">
+                        <h2 className="split-left__cta-heading">{cta.heading}</h2>
+                        <p className="split-left__cta-body">{cta.body}</p>
+                        <CtaUrlInput href={cta.href} label={cta.label} />
+                      </div>
+                    )}
+                    {!cta.urlInput && (
+                      <div className="split-left__cta-service">
+                        <h3 className="split-left__cta-service-heading">{cta.heading}</h3>
+                        <p className="split-left__cta-service-body">{cta.body}</p>
+                        <div className="split-left__cta-service-actions">
+                          <a href={cta.href} className="split-left__cta-service-btn split-left__cta-service-btn--primary">
+                            {cta.label}
+                          </a>
+                          {cta.secondaryHref && (
+                            <a href={cta.secondaryHref} className="split-left__cta-service-btn split-left__cta-service-btn--secondary">
+                              {cta.secondaryLabel}
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </>
+                )}
+
+            {availability && (
+              <div className="split-left__availability">
+                <span>{availability}</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+        <section className="split__content no-scrollbar">
+          {/* Mobile: heading shown here since aside is hidden */}
+          <div className="split__mobile-heading">
+            {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
+            <h1 className="split-left__h1">{heading}</h1>
+            {subheading && <div className="article-left__sub" style={{ marginBottom: "2rem" }}>{subheading}</div>}
+          </div>
+
+          {/* Mobile CTA — shows under heading on small screens */}
+          {cta && (
+            <div className="split__mobile-cta">
+              {cta.urlInput && (
+                <div className="split-left__cta">
+                  <h2 className="split-left__cta-heading">{cta.heading}</h2>
+                  <p className="split-left__cta-body">{cta.body}</p>
+                  <CtaUrlInput href={cta.href} label={cta.label} />
+                </div>
+              )}
+              {!cta.urlInput && (
+                <div className="split-left__cta-service">
+                  <h3 className="split-left__cta-service-heading">{cta.heading}</h3>
+                  <p className="split-left__cta-service-body">{cta.body}</p>
+                  <div className="split-left__cta-service-actions">
+                    <a href={cta.href} className="split-left__cta-service-btn split-left__cta-service-btn--primary">
+                      {cta.label}
+                    </a>
+                    {cta.secondaryHref && (
+                      <a href={cta.secondaryHref} className="split-left__cta-service-btn split-left__cta-service-btn--secondary">
+                        {cta.secondaryLabel}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {children}
         </section>
       </div>
