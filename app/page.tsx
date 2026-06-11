@@ -105,16 +105,15 @@ export default function Home() {
         <p className="hp-prose">
           I started in agency SEO, working on site structure, technical health,
           and content strategy across different clients and industries. That gave me a
-          working understanding of how search visibility is actually built: not
+          working understanding of how search visibility is built: not
           with individual pages, but through coherence, authority, and
           structure.
         </p>
         <p className="hp-prose">
-          From there I moved into SEO copywriting at a software house,
-          writing for founders and programmers building digital
-          products and platforms. Then to Surfshark, where I helped build the tone of voice
-          across cybersecurity, networking, and privacy in a competitive SaaS
-          space where trust depends on accuracy and real product understanding.
+          From there I moved into SEO copywriting,
+          writing for founders and programmers at a software house. Then to Surfshark, where I helped build the tone of voice
+          across cybersecurity, networking, and privacy writing. In this competitive SaaS
+          space, trust depended on accuracy and real product understanding.
         </p>
         <div className="hp-timeline">
           {timeline.map((item) => (
