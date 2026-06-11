@@ -12,25 +12,8 @@ export default function BlogPage() {
 
   return (
     <main className="split article blog-page">
-      <div className="split__mobile-heading">
-        <div className="mb-6 flex items-center gap-3">
-          <p className="split-left__eyebrow" >
-            Blog
-          </p>
-
-          <span
-            aria-hidden="true"
-            className="mt-[0.15em] h-[1.05em] w-[0.42em] bg-[var(--color-accent)]"
-          />
-        </div>
-
-        <h1 className="mb-4 text-[clamp(2.25rem,4.5vw,2.65rem)] font-semibold leading-tight tracking-tight text-[var(--color-text)]">
-          On content, search, and <em>what it takes to be worth citing</em>
-        </h1>
-
-        <p className="text-lg leading-8 text-[var(--color-muted)]" style={{ marginBottom: "2rem" }}>
-          I write about the decisions, systems, and craft behind good content.
-        </p>
+      <div className="split__mobile-nav">
+        <SiteSidebar />
       </div>
 
       <div className="split__grid">
@@ -50,7 +33,7 @@ export default function BlogPage() {
                   </h1>
 
                   <p className="split-left__sub">
-                    I write about the decisions, systems, and craft behind good content.
+                    I write about decisions, systems, and the craft behind good content.
                   </p>
                 </div>
               </div>
@@ -58,7 +41,18 @@ export default function BlogPage() {
           </div>
         </aside>
 
-        <BlogCardGrid posts={posts} />
+        <section className="split__content no-scrollbar">
+          <div className="split__mobile-heading">
+            <p className="split-left__eyebrow">Blog</p>
+            <h1 className="split-left__h1">
+              Notes on <em>content design</em>
+            </h1>
+            <p className="split-left__sub" style={{ marginBottom: "2rem" }}>
+              I write about decisions, systems, and the craft behind good content.
+            </p>
+          </div>
+          <BlogCardGrid posts={posts} />
+        </section>
       </div>
     </main>
   );
