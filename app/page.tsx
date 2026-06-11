@@ -110,10 +110,10 @@ export default function Home() {
           structure.
         </p>
         <p className="hp-prose">
-          From there I moved into SEO copywriting,
-          writing for founders and programmers at a software house. Then to Surfshark, where I helped build the tone of voice
-          across cybersecurity, networking, and privacy writing. In this competitive SaaS
-          space, trust depended on accuracy and real product understanding.
+          From there I moved into SEO content management at a software house,
+          writing and publishing content for founders and developers. That led to Surfshark,
+          where I helped shape the tone of voice across cybersecurity, networking, and privacy
+          writing — a space where trust depends on technical accuracy and real product understanding.
         </p>
         <div className="hp-timeline">
           {timeline.map((item) => (
