@@ -103,7 +103,7 @@ export default function Home() {
       <section className="hp-section" style={{ paddingBottom: "1rem" }}>
         <div className="hp-label">Background</div>
         <p className="hp-prose">
-          I started in agency SEO, working on technical health, site structure, 
+          I started in agency SEO, working on site structure, technical health,
           and content strategy across different clients and industries. That gave me a
           working understanding of how search visibility is actually built: not
           with individual pages, but through coherence, authority, and
