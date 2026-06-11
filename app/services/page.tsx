@@ -36,7 +36,7 @@ export default function ServicesPage() {
   return (
     <SplitPageLayout
       eyebrow="Services"
-      heading={<>Audit, <em>fix</em>, and build</>}
+      heading={<>Audit, <em>fix</em>, build</>}
       subheading="Three ways to make your content earn its place — starting with what you already have."
       cta={{
         heading:<>You can <em>contact me</em> via:</>,  
