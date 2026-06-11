@@ -20,7 +20,7 @@ const whatIDo = [
   },
   {
     num: "03",
-    title: "Build your content system",
+    title: "Plan your content system",
     desc: "I define what each page needs to do: the intent it targets, the funnel stage it serves, how it connects to the pages around it. That map determines what to fix and what to build.",
   },
    {
@@ -86,7 +86,7 @@ export default function Home() {
       <section className="hp-section">
         <div className="hp-label">How I work</div>
         <p className="hp-intro">
-          Every page on your site has a job to do. Here's how I diagnose and fix content system issues:
+          Conversion comes from clarity. Here's how I build it into content systems:
         </p>
         <div className="hp-grid">
           {whatIDo.map((item) => (
