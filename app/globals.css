@@ -224,22 +224,17 @@ h1, h2, h3 { font-weight: 400; }
     overflow: hidden;
   }
 
-  /* Vertical line — runs full height of aside at --aside-indent */
-  .split__aside {
-    min-height: 0;
-    overflow: hidden;
-  }
-
   /* One vertical line spanning the full aside height at the 90% mark.
      It crosses the hline naturally since both are at x = var(--aside-indent). */
   .split__aside-inner {
-    height: 100%;
+    min-height: 100%;
     overflow-y: auto;
     overscroll-behavior: contain;
     display: flex;
     flex-direction: column;
     position: relative;
   }
+  
   .split__aside-inner::after {
     content: '';
     position: absolute;
@@ -249,6 +244,7 @@ h1, h2, h3 { font-weight: 400; }
     width: 1px;
     background: var(--color-border);
     pointer-events: none;
+    max-height: 1500px;
   }
 
   /* Nav inside aside — 90% wide; right 10% is where the vertical line lives */
@@ -275,7 +271,7 @@ h1, h2, h3 { font-weight: 400; }
   /* Body: 90% wide to match nav */
   .split__aside-body {
     flex: 1;
-    min-height: 0;
+    max-height: 1440px;
     display: flex;
     flex-direction: column;
     padding-block: var(--space-md);
