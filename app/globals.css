@@ -1188,12 +1188,13 @@ h1, h2, h3 { font-weight: 400; }
 .article-toc-button {
   display: none;
   position: fixed;
-  bottom: 2rem;
+  bottom: 50%;
   right: 1.5rem;
+  transform: translateY(50%);
   z-index: 40;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-accent);
   background: var(--color-surface);
   border-radius: 0.5rem;
   cursor: pointer;
