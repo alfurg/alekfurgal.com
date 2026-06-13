@@ -609,8 +609,9 @@ h1, h2, h3 { font-weight: 400; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--space-xs);
 }
+
 .blog-card__accent {
   width: 2.5rem;
   height: 1px;
@@ -625,18 +626,30 @@ h1, h2, h3 { font-weight: 400; }
   color: var(--color-faint);
   margin: 0;
 }
+
 .blog-card__body {
   min-height: 0;
   flex: 1;
 }
+
 .blog-card__title {
-  font-size: clamp(1.1rem, 1.6vw, 1.42rem);
-  line-height: 1.14;
-  letter-spacing: -0.018em;
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
   margin: 0;
   color: var(--color-text);
   transition: color 200ms ease;
 }
+
+.blog-card__subtitle {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  font-weight: 300;
+  margin: var(--space-xs) 0 0;
+}
+
 .blog-card:hover .blog-card__title {
   color: var(--color-accent);
 }
@@ -1183,174 +1196,6 @@ h1, h2, h3 { font-weight: 400; }
 }
 
 /* ============================================================
-   Article floating TOC button
-   ============================================================ */
-.article-toc-button {
-  display: none;
-  position: fixed;
-  top: 9.5rem;
-  right: 1.5rem;
-  transform: translateY(50%);
-  z-index: 40;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid var(--color-accent);
-  background: var(--color-surface);
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: var(--color-text);
-}
-.article-toc-button:hover {
-  border-color: var(--color-accent);
-  background: var(--color-bg);
-}
-
-@media (max-width: 1199px) {
-  .article-toc-button {
-    display: flex;
-  }
-}
-
-.article-toc-button__icon {
-  display: block;
-  line-height: 1;
-}
-
-/* Modal overlay + panel */
-.article-toc-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 71;
-  display: flex;
-  align-items: flex-end;
-}
-
-.article-toc-modal__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
-}
-
-.article-toc-modal__panel {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  background: var(--color-bg);
-  border-top: 1px solid var(--color-border);
-  padding: 1.5rem;
-  max-height: 85vh;
-  overflow-y: auto;
-  animation: slideUp 0.25s ease;
-}
-
-@keyframes slideUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
-}
-
-.article-toc-modal__close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  color: var(--color-subtle);
-  font-size: 1.25rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  transition: color 0.2s;
-  z-index: 1;
-}
-.article-toc-modal__close:hover {
-  color: var(--color-text);
-}
-
-.article-toc-modal__header {
-  margin-bottom: 2rem;
-  padding-right: 2rem;
-}
-
-.article-toc-modal__eyebrow {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 0.5rem;
-}
-
-.article-toc-modal__heading {
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 4vw, 1.9rem);
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-  color: var(--color-text);
-  margin: 0 0 0.75rem;
-  font-weight: 400;
-}
-
-.article-toc-modal__subheading {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--color-subtle);
-  font-weight: 300;
-}
-
-.article-toc-modal__toc {
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.article-toc-modal__toc-label {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-subtle);
-  margin: 0 0 0.9rem;
-}
-
-.article-toc-modal__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.article-toc-modal__link {
-  font-size: 0.85rem;
-  line-height: 1.45;
-  color: var(--color-muted);
-  text-decoration: underline;
-  text-decoration-color: var(--color-link-underline);
-  text-underline-offset: 4px;
-  transition: color 0.2s, text-decoration-color 0.2s;
-  display: flex; 
-  gap: 0.6rem;
-}
-
-.article-toc-modal__link--nested {
-  padding-left: 0.9rem;
-  font-size: 0.8rem;
-}
-
-.article-toc-modal__link:active {
-  color: var(--color-accent);
-  text-decoration-color: var(--color-accent);
-}
-
-.article-toc-modal__link:active .article-left__toc-dot {
-  background: var(--color-accent);
-}
-
-/* ============================================================
    Portfolio items
    ============================================================ */
 .portfolio-list {
@@ -1371,7 +1216,7 @@ h1, h2, h3 { font-weight: 400; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin: 0 0 0.6rem;
+  margin: 0 0 var(--space-sm);
 }
 
 .portfolio-item__tag-sep {
@@ -1386,7 +1231,7 @@ h1, h2, h3 { font-weight: 400; }
   color: var(--color-text);
   border-left: 3px solid var(--color-accent);
   padding-left: 0.75rem;
-  margin: 0 0 0.85rem;
+  margin: 0 0 var(--space-xs);
   font-weight: 400;
 }
 
@@ -1395,5 +1240,186 @@ h1, h2, h3 { font-weight: 400; }
   line-height: 1.78;
   color: var(--color-muted);
   font-weight: 300;
-  margin: 0 0 1.25rem;
+  margin: 0 0 var(--space-xxs);
+}
+
+/* ============================================================
+   Article floating TOC drawer (right side)
+   ============================================================ */
+.article-toc-button {
+  display: none;
+  position: fixed;
+  opacity: .5;
+  top: 15rem;
+  transform: translateY(-50%);
+  right: -0.1rem;
+  z-index: 40;
+  width: 1.5rem;
+  height: 2.5rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-right: 0px;
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  padding: 0;
+  font-size: 1rem;
+}
+.article-toc-button:hover {
+  background: var(--color-bg);
+  box-shadow: 0 0 12px rgba(201, 130, 74, 0.2);
+}
+
+@media (min-width: 1200px) {
+  .article-toc-button {
+    display: none;
+  }
+}
+
+.article-toc-button__icon {
+  display: block;
+  line-height: 1;
+}
+
+/* Modal drawer — slides in from right */
+.article-toc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 71;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  pointer-events: none;
+  padding-top: 12rem;
+}
+
+.article-toc-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  pointer-events: auto;
+}
+
+.article-toc-modal__panel {
+  position: relative;
+  width: 80%;
+  max-width: 380px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-accent);
+  border-right: none;
+  border-radius: 0.75rem 0 0 0.75rem;
+  padding: 1.5rem;
+  overflow-y: auto;
+  animation: slideInRight 0.25s ease;
+  pointer-events: auto;
+  margin-top: 0;
+  max-height: none;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.article-toc-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-subtle);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s;
+  z-index: 1;
+}
+.article-toc-modal__close:hover {
+  color: var(--color-text);
+}
+
+.article-toc-modal__header {
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+.article-toc-modal__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 0.5rem;
+}
+
+.article-toc-modal__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+}
+
+.article-toc-modal__subheading {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-subtle);
+  font-weight: 300;
+}
+
+.article-toc-modal__toc {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.article-toc-modal__toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-subtle);
+  margin: 0.75rem 0 0.75rem;
+}
+
+.article-toc-modal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.article-toc-modal__link {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex; 
+  gap: 0.6rem;
+}
+
+.article-toc-modal__link--nested {
+  padding-left: 0.9rem;
+  font-size: 0.75rem;
+}
+
+.article-toc-modal__link:hover {
+  color: var(--color-accent);
+}
+
+.article-toc-modal__link:active {
+  color: var(--color-accent);
+}
+
+.article-toc-modal__link:active .article-left__toc-dot {
+  background: var(--color-accent);
 }

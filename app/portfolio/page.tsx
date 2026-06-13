@@ -11,33 +11,41 @@ const pieces = [
   {
     title: "Will AI take over the world? Here's what the data shows",
     tags: ["AI", "automation", "risk"],
-    description:
-      "The topic invites two easy failures: fearmongering or hand-waving. The piece works through roughly fifty academic and industry sources and reconciles them into something a non-specialist can actually hold onto — without flattening the disagreements between them. The editorial decision that mattered was where to let the uncertainty stand instead of resolving it for effect. Synthesis at this depth is also the kind of work AI search has to cite rather than absorb: the value is in the filtering, and the filtering can only be traced back to the source.",
+    description: [
+      "The topic invites two common pitfalls: fearmongering and oversimplification. This piece synthesizes roughly fifty academic and industry sources into information that a non-specialist can understand without oversimplifying the central argument.",
+      "The most important editorial decision involved letting the uncertainty stand instead of resolving it for effect. This type of synthesis is the kind of work that AI search has to cite rather than absorb; the value lies in information filtering, which can only be traced back to the source."
+    ],
     href: "https://surfshark.com/blog/will-ai-take-over-the-world",
     linkLabel: "Read on Surfshark",
   },
   {
     title: "What is P2P VPN, and how does it work?",
     tags: ["VPNs", "peer-to-peer networking", "privacy"],
-    description:
-      "The problem here wasn't the technology — it was that the people searching for this term don't share a baseline. Some arrive knowing what a VPN is and wanting the P2P distinction; others are starting from zero. The piece sequences the explanation so it stays correct for the first group and navigable for the second, which meant deciding what could be assumed and what had to be built up. Technical accuracy and beginner-readability usually trade off against each other; the structure is what keeps both.",
-    href: "https://surfshark.com/blog/p2p-vpn",
+    description: [
+      "The problem with pieces like this one is that the people searching for them usually don't share a baseline.",
+      "This article sequences the explanation to stay accurate and navigable. This meant deciding what could be assumed and what had to be fully broken down. Technical accuracy and beginner-readability usually trade off against each other, but good structure tends to preserve both."
+    ],
+      href: "https://surfshark.com/blog/p2p-vpn",
     linkLabel: "Read on Surfshark",
   },
   {
     title: "Post-quantum encryption: what it is and why it matters",
     tags: ["Encryption", "privacy", "quantum computing"],
-    description:
-      'Published around Surfshark\'s rollout of post-quantum encryption, so it had to do two jobs at once: introduce a product feature and explain the genuinely difficult cryptography behind it well enough that the feature made sense. The hard part was scope — how much quantum computing a reader needs before "post-quantum" means anything, and where to stop. The technical claims were checked against the engineers building the feature, because in this category a plausible-sounding explanation that\'s subtly wrong is worse than none.',
-    href: "https://surfshark.com/blog/post-quantum-encryption",
+    description: [
+      "Published around the time of Surfshark\'s rollout of post-quantum encryption, this post had two jobs: to introduce a new product feature and to explain the concept behind it in a way that makes the need for it clear to the reader.", 
+      "The challenge was striking the right tone — balancing the enthusiasm of a product announcement with a deeper technological explanation — while ensuring the piece conveys a sense of urgency that doesn't cross into alarmism."
+    ],
+      href: "https://surfshark.com/blog/post-quantum-encryption",
     linkLabel: "Read on Surfshark",
   },
   {
     title: "How to set up a VPN on a TP-Link router",
     tags: ["Routers", "VPN setup", "networking"],
-    description:
-      "A how-to is only as good as its weakest step, and router configuration is where readers give up. The work was in the sequencing: anticipating where someone gets stuck, what they're looking at on screen, and which assumed step is the one that actually loses people. Clear instructions look simple, which is the point — the difficulty is invisible when it's done right.",
-    href: "https://surfshark.com/blog/setup-vpn-router",
+    description: [
+      "A tutorial is only as good as its weakest step, and router configuration is where users tend to give up easily.",
+      "The challenge was in the sequencing: anticipating where someone would get stuck, what they would see on the screen, and which step could confuse them. Clear instructions appear simple, and that is the point. The craft is invisible when done right."
+      ],
+      href: "https://surfshark.com/blog/setup-vpn-router",
     linkLabel: "Read on Surfshark",
   },
 ];
@@ -83,8 +91,14 @@ export default function PortfolioPage() {
                 ))}
               </p>
               <h2 className="portfolio-item__title">{piece.title}</h2>
-              <p className="portfolio-item__desc">{piece.description}</p>
-              <a
+              {Array.isArray(piece.description)
+                ? piece.description.map((para, i) => (
+                    <p key={i} className="portfolio-item__desc">
+                      {para}
+                    </p>
+                  ))
+                : <p className="portfolio-item__desc">{piece.description}</p>}
+                            <a
                 href={piece.href}
                 target="_blank"
                 rel="noreferrer"

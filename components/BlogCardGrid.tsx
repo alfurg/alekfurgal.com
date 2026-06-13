@@ -51,11 +51,11 @@ export default function BlogCardGrid({ posts }: BlogCardGridProps) {
               </div>
 
               <div className="blog-card__body">
-                <h2 className="hp-grid-title">{post.heading}</h2>
+                <h2 className="blog-card__title">{post.heading}</h2>
 
                 {post.subheading && (
                   <div className="blog-card__excerpt-wrapper">
-                    <p className="hp-grid-desc">{post.subheading}</p>
+                    <p className="blog-card__subtitle">{post.subheading}</p>
                   </div>
                 )}
               </div>
