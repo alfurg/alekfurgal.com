@@ -1188,7 +1188,7 @@ h1, h2, h3 { font-weight: 400; }
 .article-toc-button {
   display: none;
   position: fixed;
-  top: 9.2rem;
+  top: 9.5rem;
   right: 1.5rem;
   transform: translateY(50%);
   z-index: 40;
