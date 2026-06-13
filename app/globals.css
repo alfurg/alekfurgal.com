@@ -762,10 +762,7 @@ h1, h2, h3 { font-weight: 400; }
 .article-left__link {
   font-size: 0.88rem;
   color: var(--color-muted);
-  text-decoration: underline;
-  text-decoration-color: var(--color-link-underline);
-  text-underline-offset: 4px;
-  transition: color 0.2s, text-decoration-color 0.2s;
+
 }
 .article-left__link:hover {
   color: var(--color-accent);
@@ -777,7 +774,7 @@ h1, h2, h3 { font-weight: 400; }
   font-size: 0.85rem;
   line-height: 1.45;
   color: var(--color-muted);
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration-color: var(--color-link-underline);
   text-underline-offset: 4px;
   transition: color 0.2s, text-decoration-color 0.2s;
@@ -786,7 +783,7 @@ h1, h2, h3 { font-weight: 400; }
   padding-left: 0.9rem;
   font-size: 0.8rem;
 }
-.article-left__toc-link:hover { color: var(--color-accent); text-decoration-color: var(--color-accent); }
+.article-left__toc-link:hover { color: var(--color-text); text-decoration-color: var(--color-accent); }
 .article-left__toc-dot {
   margin-top: 0.55em;
   width: 5px;
@@ -1140,4 +1137,171 @@ h1, h2, h3 { font-weight: 400; }
 .split-left__cta-service-btn--secondary:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+/* ============================================================
+   Article floating TOC button
+   ============================================================ */
+.article-toc-button {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 40;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+.article-toc-button:hover {
+  border-color: var(--color-accent);
+  background: var(--color-bg);
+}
+
+@media (max-width: 1199px) {
+  .article-toc-button {
+    display: flex;
+  }
+}
+
+.article-toc-button__icon {
+  display: block;
+  line-height: 1;
+}
+
+/* Modal overlay + panel */
+.article-toc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 71;
+  display: flex;
+  align-items: flex-end;
+}
+
+.article-toc-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.article-toc-modal__panel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.article-toc-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-subtle);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s;
+  z-index: 1;
+}
+.article-toc-modal__close:hover {
+  color: var(--color-text);
+}
+
+.article-toc-modal__header {
+  margin-bottom: 2rem;
+  padding-right: 2rem;
+}
+
+.article-toc-modal__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 0.5rem;
+}
+
+.article-toc-modal__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+  margin: 0 0 0.75rem;
+  font-weight: 400;
+}
+
+.article-toc-modal__subheading {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-subtle);
+  font-weight: 300;
+}
+
+.article-toc-modal__toc {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.article-toc-modal__toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-subtle);
+  margin: 0 0 0.9rem;
+}
+
+.article-toc-modal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.article-toc-modal__link {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 4px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+  display: flex; 
+  gap: 0.6rem;
+}
+
+.article-toc-modal__link--nested {
+  padding-left: 0.9rem;
+  font-size: 0.8rem;
+}
+
+.article-toc-modal__link:active {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.article-toc-modal__link:active .article-left__toc-dot {
+  background: var(--color-accent);
 }
