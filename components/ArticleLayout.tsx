@@ -26,6 +26,7 @@ type ArticleLayoutProps = {
   heroPosition?: string;
   toc?: TocItem[];
   asideLinks?: AsideLink[];
+  availability?: string;
   children: ReactNode;
 };
 
@@ -40,6 +41,7 @@ export default function ArticleLayout({
   heroPosition = "center center",
   toc = [],
   asideLinks = [],
+  availability,
   children,
 }: ArticleLayoutProps) {
   return (
@@ -124,9 +126,15 @@ export default function ArticleLayout({
                           </a>
                         </li>
                       ))}
+                      
                     </ul>
                   </div>
                 )}
+                      {availability && (
+                        <div className="split-left__availability">
+                          <span>{availability}</span>
+                        </div>
+                       )}
               </div>
             </div>
           </div>

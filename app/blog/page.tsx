@@ -32,10 +32,14 @@ export default function BlogPage() {
                     Notes on <em>content</em> and search
                   </h1>
 
-                  <p className="split-left__sub">
+                  <p className="article-left__sub">
                     I write about decisions, systems, and the craft behind good content.
                   </p>
+                  
                 </div>
+                   <div className="split-left__availability">
+    <span>Available for new projects · EEA · 2026</span>
+  </div>
               </div>
             </div>
           </div>
@@ -47,9 +51,10 @@ export default function BlogPage() {
             <h1 className="split-left__h1">
               Notes on <em>content</em> and search
             </h1>
-            <p className="split-left__sub" style={{ marginBottom: "2rem" }}>
+            <p className="article-left__sub" style={{ marginBottom: "2rem" }}>
               I write about decisions, systems, and the craft behind good content.
             </p>
+            
           </div>
           <BlogCardGrid posts={posts} />
         </section>

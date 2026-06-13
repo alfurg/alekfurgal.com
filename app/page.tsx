@@ -67,7 +67,7 @@ export default function Home() {
             <li>high-traffic content that doesn&apos;t convert;</li>
             <li>ideas worth citing buried under weak copy.</li>
           </ul>
-    <p style={{ margin: "3rem 0 0" }}>An audit is usually where I start.</p>
+    <p style={{ margin: "2.5rem 0 0" }}>An audit is usually where I start.</p>
         </>
       }
       availability="Available for new projects · EEA · 2026"

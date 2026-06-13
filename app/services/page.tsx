@@ -35,7 +35,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <SplitPageLayout
-      eyebrow="Services"
+      eyebrow="Offer"
       heading={<>Audit, <em>fix</em>, build</>}
       subheading="Three ways to make your content earn its place — starting with what you already have."
       cta={{
@@ -52,7 +52,7 @@ export default function ServicesPage() {
           Final pricing depends on scope, research depth, page count, and implementation needs.
         </p>
 
-        <div className="grid gap-5" style={{ display: "grid", gap: "1.25rem" }}>
+        <div className="services-list">
   {services.map((service) => (
     <article key={service.title} className="service-card">
       <div className="service-card__header">

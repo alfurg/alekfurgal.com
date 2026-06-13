@@ -450,7 +450,7 @@ h1, h2, h3 { font-weight: 400; }
   line-height: 1.75;
   color: var(--color-subtle);
   font-weight: 400;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-xxs);
   margin-top: 0;
 }
 
@@ -985,34 +985,54 @@ h1, h2, h3 { font-weight: 400; }
 /* ============================================================
    Services cards (services page)
    ============================================================ */
-.service-card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  border-radius: 0.75rem;
-  padding: var(--space-md);
-  gap: var(--space-sm);
-  transition: border-color 0.2s;
+.services-list {
+  counter-reset: service-counter;
+  border-bottom: 1px solid var(--color-border);
 }
+
+.service-card {
+  counter-increment: service-counter;
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  grid-template-areas:
+    "left title"
+    "left meta"
+    "left body";
+  column-gap: 2rem;
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-border);
+  background: transparent;
+  border-radius: 0;
+  transition: border-top-color 0.2s;
+}
+
 .service-card:hover {
-  border-color: var(--color-accent);
+  border-top-color: var(--color-accent);
 }
 
 .service-card__header {
+  grid-area: left;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 0.5rem;
+  flex-direction: column;
+  padding-top: 0.15rem;
+}
+
+.service-card__header::before {
+  content: counter(service-counter, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--color-faint);
+  margin-bottom: 0.75rem;
+  transition: color 0.2s;
+}
+
+.service-card:hover .service-card__header::before {
+  color: var(--color-accent);
 }
 
 .service-card__accent {
-  width: 2rem;
-  height: 1px;
-  background: var(--color-accent);
-  margin-top: 0.65rem;
-  flex-shrink: 0;
+  display: none;
 }
 
 .service-card__price {
@@ -1021,26 +1041,29 @@ h1, h2, h3 { font-weight: 400; }
   letter-spacing: 0.06em;
   color: var(--color-accent);
   white-space: nowrap;
-  flex-shrink: 0;
   margin: 0;
 }
 
 .service-card__title {
+  grid-area: title;
   font-family: var(--font-serif);
   font-size: clamp(1.35rem, 2.2vw, 1.65rem);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.018em;
   color: var(--color-text);
-  margin: 0 0 0;
+  margin: 0;
+  transition: color 0.2s;
 }
 
+
 .service-card__meta {
+  grid-area: meta;
   font-size: 0.85rem;
   font-weight: 300;
   line-height: 1.65;
   color: var(--color-subtle);
-  margin: 0 0 0.5rem;
+  margin: 0.75rem 0 0;
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
@@ -1058,21 +1081,41 @@ h1, h2, h3 { font-weight: 400; }
 }
 
 .service-card__body {
+  grid-area: body;
   font-size: 0.95rem;
   line-height: 1.75;
   color: var(--color-muted);
   font-weight: 300;
-  margin: 0;
-  flex: 1;
+  margin: 0.75rem 0 0;
+}
+
+@media (max-width: 719px) {
+  .service-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left"
+      "title"
+      "meta"
+      "body";
+  }
+
+  .service-card__header {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .service-card__header::before {
+    margin-bottom: 0;
+  }
 }
 
 /* ============================================================
    Service CTA (lean sidebar version)
    ============================================================ */
 .split-left__cta-service {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-md);
 }
 
 .split-left__cta-service-heading {
@@ -1304,4 +1347,52 @@ h1, h2, h3 { font-weight: 400; }
 
 .article-toc-modal__link:active .article-left__toc-dot {
   background: var(--color-accent);
+}
+
+/* ============================================================
+   Portfolio items
+   ============================================================ */
+.portfolio-list {
+  margin-top: var(--space-md);
+}
+
+.portfolio-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: var(--space-sm);
+}
+
+.portfolio-item__tags {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 0.6rem;
+}
+
+.portfolio-item__tag-sep {
+  color: var(--color-border);
+}
+
+.portfolio-item__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.9vw, 1.45rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0.75rem;
+  margin: 0 0 0.85rem;
+  font-weight: 400;
+}
+
+.portfolio-item__desc {
+  font-size: 0.88rem;
+  line-height: 1.78;
+  color: var(--color-muted);
+  font-weight: 300;
+  margin: 0 0 1.25rem;
 }
