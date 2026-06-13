@@ -1254,8 +1254,8 @@ h1, h2, h3 { font-weight: 400; }
   transform: translateY(-50%);
   right: -0.1rem;
   z-index: 40;
-  width: 1.5rem;
-  height: 2.5rem;
+  width: 2.3rem;
+  height: 3.5rem;
   border: 2px solid var(--color-accent);
   border-radius: 0.5rem 0 0 0.5rem;
   border-right: 0px;
