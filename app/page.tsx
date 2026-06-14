@@ -1,4 +1,5 @@
 import SplitPageLayout from "@/components/SplitPageLayout";
+import { CtaAuditDrawer } from "@/components/CtaAuditDrawer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -55,32 +56,35 @@ const timeline = [
 
 export default function Home() {
   return (
-    <SplitPageLayout
-      home={true}
-      eyebrow="editorial · AI Search · positioning"
-      heading={<>Your content, <em>cited</em></>}
-      subheading={
-        <>
-          I work with <strong>founders, marketers, and content leads</strong> at SaaS and technical businesses on:
-          <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem", listStyle: "none"}}>
-            <li>pages that should rank but don&apos;t;</li>
-            <li>high-traffic content that doesn&apos;t convert;</li>
-            <li>ideas worth citing buried under weak copy.</li>
-          </ul>
-    <p style={{ margin: "2.5rem 0 0" }}>An audit is usually where I start.</p>
-        </>
-      }
-      availability="Available for new projects · EEA · 2026"
-      cta={{
-        heading: <>Get a <em>free</em> content audit</>,
-        body: "Send me a link to your website and I'll reply with a prioritized audit of your content library.",
-        href: "mailto:aleksanderfurgal@gmail.com",
-        label: "Get in touch",
-        urlInput: true,
-      }}
-      
+    <>
+      <CtaAuditDrawer />
+      <SplitPageLayout
+        home={true}
+        eyebrow="editorial · AI Search · positioning"
+        heading={<>Your content, <em>cited</em></>}
+        subheading={
+          <>
+            I work with <strong>founders, marketers, and content leads</strong> at SaaS and technical businesses on:
+            <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem", listStyle: "none"}}>
+              <li>pages that should rank but don&apos;t;</li>
+              <li>high-traffic content that doesn&apos;t convert;</li>
+              <li>ideas worth citing buried under weak copy.</li>
+            </ul>
+      <p style={{ margin: "2.5rem 0 0" }}>An audit is usually where I start.</p>
+          </>
+        }
+        availability="Available for new projects · EEA · 2026"
+        hideMobileCta={true}
+        cta={{
+          heading: <>Get a <em>free</em> content audit</>,
+          body: "Send me a link to your website and I'll reply with a prioritized audit of your content library.",
+          href: "mailto:aleksanderfurgal@gmail.com",
+          label: "Get in touch",
+          urlInput: true,
+        }}
 
-    >
+
+      >
 
       {/* What I do */}
       <section className="hp-section">
@@ -142,6 +146,7 @@ export default function Home() {
         </a>
       </section>
 
-    </SplitPageLayout>
+      </SplitPageLayout>
+    </>
   );
 }
