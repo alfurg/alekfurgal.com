@@ -56,17 +56,6 @@ const pieces = [
       href: "https://surfshark.com/blog/post-quantum-encryption",
     linkLabel: "Read on Surfshark",
   },
-  {
-    image: "/portfolio5.jpg",
-    title: "How to set up a VPN on a TP-Link router",
-    tags: ["instruction design", "clarity in process", "error anticipation"],
-    description: [
-      "A tutorial is only as good as its weakest step, and router configuration is where users tend to give up easily.",
-      "The challenge was in the sequencing: anticipating where someone would get stuck, what they would see on the screen, and which step could confuse them. Clear instructions appear simple, and that is the point. The craft is invisible when done right."
-      ],
-      href: "https://surfshark.com/blog/setup-vpn-router",
-    linkLabel: "Read on Surfshark",
-  },
 ];
 
 export default function PortfolioPage() {
