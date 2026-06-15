@@ -12,22 +12,22 @@ const whatIDo = [
   {
     num: "01",
     title: "Map your content library",
-    desc: "I review your pages across search intent, structure, originality, and business relevance to build a clear picture of what's earning its place and what isn't.",
+    desc: "I review your pages across search intent, structure, writing quality, and business relevance, so you know what's earning its place and what isn't."
   },
   {
     num: "02",
-    title: "Clarify positioning and voice",
-    desc: "I identify where your content and your market position diverge — what you're being read as versus what you want to own — and establish the voice to close that gap.",
+    title: "Close the gap",
+    desc: "I identify where your brand and your content diverge — what you're read as versus what you want to own — and set the voice that closes the gap.",
   },
   {
     num: "03",
     title: "Plan your content system",
-    desc: "I define what each page needs to do: the intent it targets, the funnel stage it serves, how it connects to the pages around it. That map determines what to fix and what to build.",
+    desc: "I define what each page should do: the intent it targets, the funnel stage it serves, how it connects to the pages around it. That map informs what to fix first.",
   },
    {
     num: "04",
     title: "Execute with substance",
-    desc: "I research and write each page to do its specific job — capturing demand, converting qualified visitors, building authority. Content with something to cite, not just something to absorb.",
+    desc: "I research and write each page to do its job: capture demand, convert it, and build your authority. All to make content that will get cited instead of absorbed.",
   },
 ];
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SplitPageLayout from "@/components/SplitPageLayout";
+import { ContactDrawer } from "@/components/ContactDrawer";
 
 export const metadata: Metadata = {
   title: "My work | Alek Furgal",
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
 
 const pieces = [
   {
+    image: "/headshot.jpg",
     title: "Will AI take over the world? Here's what the data shows",
     tags: ["AI", "automation", "risk"],
     description: [
@@ -18,7 +21,21 @@ const pieces = [
     href: "https://surfshark.com/blog/will-ai-take-over-the-world",
     linkLabel: "Read on Surfshark",
   },
+ 
+{
+    image: "/headshot.jpg",
+    title: "15 questions for startup validation success",
+    tags: ["AI", "automation", "risk"],
+    description: [
+      "Long-form lead-generation ebook for a software development and startup consultancy. Developed a structured validation framework covering customer demand, market opportunity, pricing, business models, competitive positioning, and operational risk.",
+      "Combined startup methodology, research, and real-world examples into a practical guide designed to help founders assess whether an idea is commercially viable before investing in product development.",
+    ],
+    href: "/ebook_Startup_Validation.pdf",
+    linkLabel: "Open the .pdf",
+  },
+ 
   {
+    image: "/headshot.jpg",
     title: "What is P2P VPN, and how does it work?",
     tags: ["VPNs", "peer-to-peer networking", "privacy"],
     description: [
@@ -29,6 +46,7 @@ const pieces = [
     linkLabel: "Read on Surfshark",
   },
   {
+    image: "/headshot.jpg",
     title: "Post-quantum encryption: what it is and why it matters",
     tags: ["Encryption", "privacy", "quantum computing"],
     description: [
@@ -39,6 +57,7 @@ const pieces = [
     linkLabel: "Read on Surfshark",
   },
   {
+    image: "/headshot.jpg",
     title: "How to set up a VPN on a TP-Link router",
     tags: ["Routers", "VPN setup", "networking"],
     description: [
@@ -52,15 +71,19 @@ const pieces = [
 
 export default function PortfolioPage() {
   return (
+    <>
+    <ContactDrawer />
     <SplitPageLayout
       eyebrow="My work"
       heading="Portfolio"
-      subheading="Most of these were published at Surfshark, a VPN 
-      company where I helped develop the tone of voice for content on 
-      cybersecurity, networking, and privacy. The work was as much 
-      editorial as it was writing - deciding what each page needed, 
-      what mattered in the research, and how to make a competitive 
+      subheading="Most of these were published at Surfshark, a VPN
+      company where I helped develop the tone of voice for content on
+      cybersecurity, networking, and privacy. The work was as much
+      editorial as it was writing - deciding what each page needed,
+      what mattered in the research, and how to make a competitive
       technical subject palatable to a general audience."
+      availability="Available for new projects · EEA · 2026"
+      hideMobileCta={true}
       cta={{
         heading: (
           <>
@@ -78,6 +101,16 @@ export default function PortfolioPage() {
         <div className="portfolio-list">
           {pieces.map((piece) => (
             <article key={piece.href} className="portfolio-item">
+              {piece.image && (
+                <div className="portfolio-item__image-wrap">
+                  <Image
+                    src={piece.image}
+                    alt=""
+                    fill
+                    className="portfolio-item__image"
+                  />
+                </div>
+              )}
               <p className="portfolio-item__tags">
                 {piece.tags.map((tag, i) => (
                   <span key={tag} className="portfolio-item__tag">
@@ -111,5 +144,6 @@ export default function PortfolioPage() {
         </div>
       </div>
     </SplitPageLayout>
+    </>
   );
 }

@@ -35,7 +35,7 @@ const QuestionMarkIcon = () => (
       x="12"
       y="19"
       fontSize="26"
-      fontWeight="400"
+      fontWeight="350"
       textAnchor="middle"
       fontFamily="inherit"
       fill="currentColor"

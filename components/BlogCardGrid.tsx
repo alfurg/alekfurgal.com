@@ -32,7 +32,7 @@ export default function BlogCardGrid({ posts }: BlogCardGridProps) {
           return (
             <article
               key={post.href}
-              className="hp-grid-item blog-card group cursor-pointer"
+              className="blog-grid-item blog-card group cursor-pointer"
               role="link"
               tabIndex={0}
               onClick={(event) => {
@@ -62,7 +62,7 @@ export default function BlogCardGrid({ posts }: BlogCardGridProps) {
 
               <div className="blog-card__footer">
                 <Link href={post.href} className="hp-ghost-link">
-                  Read article
+                  Read article&nbsp;→
                 </Link>
               </div>
 

@@ -14,7 +14,7 @@ export function CtaAuditDrawer() {
         aria-label="Get a free audit"
       >
         <span className="cta-audit-drawer-btn__text">
-          Get a <em>free</em> audit
+          Get a <em>free</em> content audit
         </span>
       </button>
 

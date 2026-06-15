@@ -1,6 +1,7 @@
 import { getAllPosts } from "@/lib/blog";
 import { SiteSidebar } from "@/components/SiteSidebar";
 import BlogCardGrid from "@/components/BlogCardGrid";
+import { CtaAuditDrawer } from "@/components/CtaAuditDrawer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,6 +16,8 @@ export default function BlogPage() {
       <div className="split__mobile-nav">
         <SiteSidebar />
       </div>
+
+      <CtaAuditDrawer />
 
       <div className="split__grid">
         <aside className="split__aside">
@@ -38,8 +41,8 @@ export default function BlogPage() {
                   
                 </div>
                    <div className="split-left__availability">
-    <span>Available for new projects · EEA · 2026</span>
-  </div>
+                    <span>Available for new projects · EEA · 2026</span>
+                  </div>
               </div>
             </div>
           </div>

@@ -949,6 +949,7 @@ h1, h2, h3 { font-weight: 400; }
   color: var(--color-subtle);
   line-height: 1.65;
   font-weight: 300;
+  text-align: justify;
 }
 
 .hp-prose {
@@ -1209,6 +1210,19 @@ h1, h2, h3 { font-weight: 400; }
   border-radius: 0 0.5rem 0.5rem 0;
   padding: 1.5rem 1.75rem;
   margin-bottom: var(--space-sm);
+  overflow: hidden;
+}
+
+.portfolio-item__image-wrap {
+  position: relative;
+  width: calc(100% + 3.5rem);
+  margin: -1.5rem -1.75rem 1.25rem;
+  height: 200px;
+}
+
+.portfolio-item__image {
+  object-fit: cover;
+  object-position: center top;
 }
 
 .portfolio-item__tags {
@@ -1248,29 +1262,33 @@ h1, h2, h3 { font-weight: 400; }
    Article floating TOC drawer (right side)
    ============================================================ */
 .article-toc-button {
-  display: none;
   position: fixed;
-  top: 50%;
-  right: -0.1rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 40;
-  width: 2.3rem;
-  height: 3.5rem;
-  border: 2px solid var(--color-link-underline);
-  border-radius: 0.5rem 0 0 0.5rem;
-  border-right: 0px;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
   background: var(--color-surface);
+  padding: 1rem 1.5rem;
   cursor: pointer;
-  transition: all 0.2s;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  width: 100%;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent);
-  padding: 0;
-  font-size: 1rem;
 }
-.article-toc-button:hover {
+.article-toc-button:hover,
+.article-toc-button:active {
   background: var(--color-bg);
-  box-shadow: 0 0 12px rgba(201, 130, 74, 0.2);
+  border-color: var(--color-accent);
 }
 
 @media (min-width: 1200px) {
@@ -1284,16 +1302,15 @@ h1, h2, h3 { font-weight: 400; }
   line-height: 1;
 }
 
-/* Modal drawer — slides in from right */
+/* Modal drawer — slides up from bottom */
 .article-toc-modal {
   position: fixed;
   inset: 0;
   z-index: 71;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: stretch;
   pointer-events: none;
-  padding-top: 40%;
 }
 
 .article-toc-modal__overlay {
@@ -1306,18 +1323,16 @@ h1, h2, h3 { font-weight: 400; }
 
 .article-toc-modal__panel {
   position: relative;
-  width: 80%;
-  max-width: 380px;
+  width: 100%;
+  max-width: 100%;
   background: var(--color-surface);
-  border: 2px solid var(--color-link-underline);
-  border-right: none;
-  border-radius: 0.75rem 0 0 0.75rem;
-  padding: 1.5rem;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-radius: 1rem 1rem 0 0;
+  padding: 2rem 1.5rem 2.5rem;
   overflow-y: auto;
-  animation: slideInRight 0.25s ease;
+  animation: slideUpSheet 0.28s ease-out;
   pointer-events: auto;
-  margin-top: 0;
-  max-height: none;
 }
 
 @keyframes slideInRight {
@@ -1432,30 +1447,36 @@ h1, h2, h3 { font-weight: 400; }
 
 .contact-drawer-btn {
   position: fixed;
-  top: 50%;
+  bottom: 0;
+  left: 0;
   right: 0;
-  transform: translateY(-50%);
   z-index: 40;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
   background: var(--color-surface);
-  border: 1px solid var(--color-link-underline);
-  border-right: none;
-  border-radius: 0.5rem 0 0 0.5rem;
-  padding: 1rem 0.65rem;
+  padding: 1rem 1.5rem;
   cursor: pointer;
-  color: var(--color-accent);
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
+  color: var(--color-muted);
+  width: 100%;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.contact-drawer-btn:hover {
+.contact-drawer-btn:hover,
+.contact-drawer-btn:active {
   background: var(--color-bg);
   border-color: var(--color-accent);
-  box-shadow: 0 0 12px rgba(201, 130, 74, 0.18);
+}
+
+@media (min-width: 1200px) {
+  .contact-drawer-btn {
+    display: none;
+  }
 }
 
 .contact-drawer {
@@ -1463,8 +1484,8 @@ h1, h2, h3 { font-weight: 400; }
   inset: 0;
   z-index: 71;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: stretch;
   pointer-events: none;
 }
 
@@ -1478,14 +1499,15 @@ h1, h2, h3 { font-weight: 400; }
 
 .contact-drawer__panel {
   position: relative;
-  width: 85%;
-  max-width: 360px;
-  height: 100dvh;
+  width: 100%;
+  max-width: 100%;
   background: var(--color-surface);
-  border-left: 2px solid var(--color-link-underline);
-  padding: 2.5rem 1.75rem;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-radius: 1rem 1rem 0 0;
+  padding: 2rem 1.5rem 2.5rem;
   overflow-y: auto;
-  animation: slideInRight 0.25s ease;
+  animation: slideUpSheet 0.28s ease-out;
   pointer-events: auto;
   display: flex;
   flex-direction: column;
@@ -1585,38 +1607,45 @@ h1, h2, h3 { font-weight: 400; }
    ============================================================ */
 
 .cta-audit-drawer-btn {
-  display: block;
   position: fixed;
-  top: 50%;
+  bottom: 0;
+  left: 0;
   right: 0;
-  transform: translateY(-50%);
   z-index: 40;
-  border: 1.5px solid var(--color-border);
-  border-right: none;
-  border-radius: 0.5rem 0 0 0.5rem;
-  background: var(--color-bg);
-  padding: 1rem 1.25rem;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-surface);
+  padding: 1rem 1.5rem;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-muted);
-  writing-mode: vertical-rl;
+  writing-mode: horizontal-tb;
   text-orientation: mixed;
   white-space: nowrap;
-  transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
+  width: 100%;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.cta-audit-drawer-btn:hover {
-  background: var(--color-surface);
+.cta-audit-drawer-btn:hover,
+.cta-audit-drawer-btn:active {
+  background: var(--color-bg);
   border-color: var(--color-accent);
-  box-shadow: 0 0 12px rgba(201, 130, 74, 0.18);
 }
 
 .cta-audit-drawer-btn__text em {
   font-style: italic;
   color: var(--color-accent);
+}
+
+@media (min-width: 1200px) {
+  .cta-audit-drawer-btn {
+    display: none;
+  }
 }
 
 .cta-audit-drawer {
@@ -1625,9 +1654,8 @@ h1, h2, h3 { font-weight: 400; }
   z-index: 71;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: stretch;
   pointer-events: none;
-  padding-bottom: 40%;
 }
 
 .cta-audit-drawer__overlay {
@@ -1640,17 +1668,21 @@ h1, h2, h3 { font-weight: 400; }
 
 .cta-audit-drawer__panel {
   position: relative;
-  width: 85%;
-  max-width: 360px;
+  width: 100%;
+  max-width: 100%;
   background: var(--color-surface);
-  border-radius: 0.75rem;
-  padding: 2rem 2rem 1.75rem;
-  margin-right: 1.5rem;
-  margin-bottom: 2rem;
+  border-radius: 1rem 1rem 0 0;
+  border-top: 1px solid var(--color-border);
+  padding: 2rem 1.5rem 2.5rem;
   display: flex;
   flex-direction: column;
-  animation: slideInRight 0.3s ease-out;
+  animation: slideUpSheet 0.28s ease-out;
   pointer-events: auto;
+}
+
+@keyframes slideUpSheet {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
 }
 
 .cta-audit-drawer__close {
@@ -1673,7 +1705,7 @@ h1, h2, h3 { font-weight: 400; }
   font-size: clamp(1.4rem, 4vw, 2rem);
   line-height: 1.15;
   color: var(--color-text);
-  margin: 0 2rem 1rem 0;
+  margin: 0 2rem 0.75rem 0;
   font-weight: 400;
 }
 

@@ -20,6 +20,7 @@ type SplitPageLayoutProps = {
   availability?: string;
   cta?: CtaBlock;
   home?: boolean;
+  hideMobileCta?: boolean;
   children: ReactNode;
 };
 
@@ -30,6 +31,7 @@ export default function SplitPageLayout({
   availability,
   cta,
   home = false,
+  hideMobileCta = false,
   children,
 }: SplitPageLayoutProps) {
   return (
@@ -109,7 +111,7 @@ export default function SplitPageLayout({
           </div>
 
           {/* Mobile CTA — shows under heading on small screens */}
-          {cta && (
+          {cta && !hideMobileCta && (
             <div className="split__mobile-cta">
               {cta.urlInput && (
                 <div className="split-left__cta">
