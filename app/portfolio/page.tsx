@@ -76,12 +76,7 @@ export default function PortfolioPage() {
     <SplitPageLayout
       eyebrow="My work"
       heading="Portfolio"
-      subheading="Most of these were published at Surfshark, a VPN
-      company where I helped develop the tone of voice for content on
-      cybersecurity, networking, and privacy. The work was as much
-      editorial as it was writing - deciding what each page needed,
-      what mattered in the research, and how to make a competitive
-      technical subject palatable to a general audience."
+      subheading="Selected pieces and the editorial decisions behind them."
       availability="Available for new projects · EEA · 2026"
       hideMobileCta={true}
       cta={{

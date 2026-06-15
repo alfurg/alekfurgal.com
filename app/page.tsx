@@ -74,7 +74,7 @@ export default function Home() {
           </>
         }
         availability="Available for new projects · EEA · 2026"
-        hideMobileCta={true}
+        hideMobileCta={false}
         cta={{
           heading: <>Get a <em>free</em> content audit</>,
           body: "Send me a link to your website and I'll reply with a prioritized audit of your content library.",
