@@ -107,7 +107,7 @@ export default function SplitPageLayout({
           <div className="split__mobile-heading">
             {eyebrow && <p className="split-left__eyebrow">{eyebrow}</p>}
             <h1 className="split-left__h1">{heading}</h1>
-            {subheading && <div className="article-left__sub" style={{ marginBottom: "2rem" }}>{subheading}</div>}
+            {subheading && <div className="article-left__sub" style={{ marginBottom: "0.5rem" }}>{subheading}</div>}
           </div>
 
           {/* Mobile CTA — shows under heading on small screens */}

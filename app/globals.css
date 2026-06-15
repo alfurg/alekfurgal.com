@@ -1130,7 +1130,7 @@ h1, h2, h3 { font-weight: 400; }
    Service CTA (lean sidebar version)
    ============================================================ */
 .split-left__cta-service {
-  padding-top: var(--space-md);
+  padding-top: var(--space-sm);
 }
 
 .split-left__cta-service-heading {
