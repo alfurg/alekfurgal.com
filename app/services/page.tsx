@@ -30,10 +30,16 @@ const StrategyIcon = () => (
 );
 
 const QuestionMarkIcon = () => (
-  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-    <circle cx="12" cy="19" r=".5" fill="currentColor"/>
+  <svg width="56" height="56" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <text
+      x="12"
+      y="19"
+      fontSize="26"
+      fontWeight="400"
+      textAnchor="middle"
+      fontFamily="inherit"
+      fill="currentColor"
+    >?</text>
   </svg>
 );
 
