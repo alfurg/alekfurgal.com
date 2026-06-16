@@ -21,8 +21,7 @@ export default function BlogCardGrid({ posts }: BlogCardGridProps) {
   const router = useRouter();
 
   return (
-    <section className="split__content no-scrollbar">
-      <div className="blog-card-grid">
+    <div className="blog-card-grid">
         {posts.map((post) => {
           const displayDate =
             post.updatedAt && post.updatedAt !== post.publishedAt
@@ -72,7 +71,6 @@ export default function BlogCardGrid({ posts }: BlogCardGridProps) {
             </article>
           );
         })}
-      </div>
-    </section>
+    </div>
   );
 }
