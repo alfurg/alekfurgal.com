@@ -1279,9 +1279,6 @@ h1, h2, h3 { font-weight: 400; }
     color: var(--color-accent);
     border-color: var(--color-accent);
   }
-  .portfolio-item:hover .portfolio-item__tags {
-    color: var(--color-faint);
-  }  
 }
 
 .portfolio-item__content-with-image {
