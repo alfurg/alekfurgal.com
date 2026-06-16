@@ -108,7 +108,7 @@ export default function Home() {
       {/* Background */}
       <section className="hp-section" style={{ paddingBottom: "1rem" }}>
         <div className="hp-label">Background</div>
-        <p className="hp-prose">a
+        <p className="hp-prose">
           I started in agency SEO, working on site structure, technical health,
           and content strategy across different clients and industries. That gave me a
           working understanding of how search visibility gets built: but through
