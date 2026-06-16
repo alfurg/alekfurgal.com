@@ -154,6 +154,17 @@ h1, h2, h3 { font-weight: 400; }
 }
 
 @media (max-width: 1199px) {
+  html, body {
+    overflow: hidden;
+  }
+  .split {
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .split__grid {
+    padding-bottom: 4rem;
+  }
   .split__mobile-nav {
     display: block;
     position: sticky;
@@ -188,7 +199,6 @@ h1, h2, h3 { font-weight: 400; }
   max-width: var(--content-max);
   margin-inline: auto;
   padding-inline: var(--site-gutter);
-  padding-top: var(--page-offset-top);
 }
 
 /* Nav inside aside — hidden on mobile (aside itself is hidden) */
@@ -213,6 +223,7 @@ h1, h2, h3 { font-weight: 400; }
   .split {
     height: 100dvh;
     overflow: hidden;
+    padding-top: var(--page-offset-top);
   }
 
   .split__mobile-heading {
