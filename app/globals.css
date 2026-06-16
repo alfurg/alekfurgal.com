@@ -1467,7 +1467,8 @@ h1, h2, h3 { font-weight: 400; }
   border: none;
   border-top: 1px solid var(--color-border);
   border-radius: 1rem 1rem 0 0;
-  padding: 2rem 1.5rem 2.5rem;
+  padding: 2rem 1.5rem calc(2.5rem + 200px);
+  margin-bottom: -200px;
   overflow-y: auto;
   animation: slideUpSheet 0.28s ease-out;
   pointer-events: auto;
@@ -1597,7 +1598,8 @@ h1, h2, h3 { font-weight: 400; }
   border-top: 1px solid var(--color-link-underline);
   border-radius: 0;
   background: var(--color-surface);
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem calc(1rem + 200px);
+  margin-bottom: -200px;
   cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -1652,7 +1654,8 @@ h1, h2, h3 { font-weight: 400; }
   border: none;
   border-top: 1px solid var(--color-border);
   border-radius: 1rem 1rem 0 0;
-  padding: 2rem 1.5rem 2.5rem;
+  padding: 2rem 1.5rem calc(2.5rem + 200px);
+  margin-bottom: -200px;
   overflow-y: auto;
   animation: slideUpSheet 0.28s ease-out;
   pointer-events: auto;
@@ -1767,7 +1770,8 @@ h1, h2, h3 { font-weight: 400; }
   border-top: 1px solid var(--color-link-underline);
   border-radius: 0;
   background: var(--color-surface);
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem calc(1rem + 200px);
+  margin-bottom: -200px;
   cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -1831,7 +1835,8 @@ h1, h2, h3 { font-weight: 400; }
   background: var(--color-surface);
   border-radius: 1rem 1rem 0 0;
   border-top: 1px solid var(--color-border);
-  padding: 2rem 1.5rem 2.5rem;
+  padding: 2rem 1.5rem calc(2.5rem + 200px);
+  margin-bottom: -200px;
   display: flex;
   flex-direction: column;
   animation: slideUpSheet 0.28s ease-out;

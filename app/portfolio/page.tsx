@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import SplitPageLayout from "@/components/SplitPageLayout";
 import { ContactDrawer } from "@/components/ContactDrawer";
-import { HighlightText } from "@/components/HighlightText";
 
 export const metadata: Metadata = {
   title: "My work | Alek Furgal",
