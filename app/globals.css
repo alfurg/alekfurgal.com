@@ -156,14 +156,6 @@ h1, h2, h3 { font-weight: 400; }
 }
 
 @media (max-width: 1199px) {
-  html, body {
-    overflow: hidden;
-  }
-  .split {
-    height: 100dvh;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
   .split__grid {
     padding-bottom: 4rem;
   }
@@ -223,8 +215,6 @@ h1, h2, h3 { font-weight: 400; }
 /* Desktop: full-height grid, nav inside left column */
 @media (min-width: 1200px) {
   .split {
-    height: 100dvh;
-    overflow: hidden;
     padding-top: var(--page-offset-top);
   }
 
@@ -233,20 +223,25 @@ h1, h2, h3 { font-weight: 400; }
   }
 
   .split__grid {
-    height: 100%;
     display: grid;
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
     gap: var(--layout-gap-sm);
     padding-block: 0;
+    align-items: start;
+  }
+
+  .split__aside {
+    position: sticky;
+    top: var(--page-offset-top);
+    height: calc(100dvh - var(--page-offset-top));
     overflow: hidden;
   }
 
   /* One vertical line spanning the full aside height at the 90% mark.
      It crosses the hline naturally since both are at x = var(--aside-indent). */
   .split__aside-inner {
-    min-height: 100%;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    height: 100%;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -310,8 +305,6 @@ h1, h2, h3 { font-weight: 400; }
   }
 
   .split__content {
-    overflow-y: auto;
-    overscroll-behavior: contain;
     padding-block: 1rem var(--space-md);
   }
 
@@ -1290,7 +1283,7 @@ h1, h2, h3 { font-weight: 400; }
 .portfolio-item__content-with-image {
   display: flex;
   gap: 1.5rem;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 1rem;
 }
 
@@ -1303,6 +1296,7 @@ h1, h2, h3 { font-weight: 400; }
   flex-shrink: 0;
   width: 224px;
   height: 280px;
+  margin-top: 0.5rem;
   border-radius: var(--border-radius-md);
   overflow: hidden;
   background: var(--color-background-secondary);
@@ -1317,7 +1311,7 @@ h1, h2, h3 { font-weight: 400; }
   display: block;
 }
 
-.portfolio-item__image-wrap {
+.portfolio-item__image-wrap:not(.portfolio-item__image-wrap--sidebar) {
   position: relative;
   aspect-ratio: 4 / 3;
   max-height: 16rem;
@@ -1886,4 +1880,342 @@ h1, h2, h3 { font-weight: 400; }
   color: var(--color-subtle);
   margin: 0 0 1.75rem;
   font-weight: 300;
+}
+
+/* ============================================================
+   CV Page — add to app/globals.css at the end of the file
+   ============================================================ */
+
+.cv-page {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
+  padding-top: var(--page-offset-top);
+}
+
+.cv-mobile-nav {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .cv-mobile-nav {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.75rem 0.2rem 0.75rem 0.2rem;
+    margin-bottom: var(--space-sm);
+  }
+}
+
+.cv-container {
+  max-width: 850px;
+  margin-inline: auto;
+}
+
+.cv-header {
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-lg);
+}
+
+.cv-name {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+}
+
+.cv-title {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  margin: 0 0 1.25rem;
+  font-weight: 400;
+}
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-subtle);
+}
+
+.cv-contact a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.cv-contact a:hover {
+  text-decoration-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.cv-contact-sep {
+  color: var(--color-border);
+  margin: 0 0.25rem;
+}
+
+.cv-section {
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-lg);
+}
+
+.cv-section:last-child {
+  border-bottom: none;
+}
+
+.cv-section-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.cv-prose {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-muted);
+  margin: 0;
+  font-weight: 300;
+}
+
+.cv-experience {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.cv-job {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cv-job-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cv-job-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.cv-job-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-subtle);
+  margin: 0;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.cv-job-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cv-job-list li {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+  font-weight: 300;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.cv-job-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.cv-work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cv-work-list li {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+  font-weight: 300;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.cv-work-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.cv-work-link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s, color 0.2s;
+}
+
+.cv-work-link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.cv-skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.cv-skills-list li {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+  font-weight: 300;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.cv-skills-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.1rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.cv-edu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cv-edu-school {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-text);
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.cv-edu-degree {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin: 0;
+  font-weight: 300;
+}
+
+.cv-edu-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-subtle);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.cv-earlier-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cv-earlier-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .cv-earlier-list li {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+.cv-earlier-role {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.cv-earlier-title {
+  font-size: 0.85rem;
+  color: var(--color-subtle);
+  font-weight: 300;
+}
+
+.cv-lang-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cv-lang-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+.cv-lang-name {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  font-weight: 300;
+}
+
+.cv-lang-level {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-subtle);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
 }
