@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const pieces = [
   {
-    image: "/portfolio1.jpg",
+    image: "/portfolio1.png",
     title: "Will AI take over the world? Here's what the data shows",
     tags: ["research synthesis", "risk reasoning", "uncertainty management"],
     description: [
@@ -36,7 +36,7 @@ const pieces = [
   },
 
  {
-    image: "/portfolio4.jpg",
+    image: "/portfolio4.png",
     title: "Post-quantum encryption: what it is and why it matters",
     tags: ["tech translation", "cryptography explanation", "systems communication"],
     description: [
@@ -48,7 +48,7 @@ const pieces = [
   },
 
   {
-    image: "/portfolio3.jpg",
+    image: "/portfolio3.png",
     title: "What is P2P VPN, and how does it work?",
     tags: ["technical explanation", "systems understanding", "privacy literacy"],
     description: [
@@ -86,48 +86,56 @@ export default function PortfolioPage() {
     >
       <div className="hp-section">
         <div className="portfolio-list">
-          {pieces.map((piece) => (
-            <article key={piece.href} className="portfolio-item">
-              {piece.image && (
-                <div className="portfolio-item__image-wrap">
-                  <Image
-                    src={piece.image}
-                    alt=""
-                    fill
-                    className="portfolio-item__image"
-                  />
-                </div>
-              )}
-              <p className="portfolio-item__tags">
-                {piece.tags.map((tag, i) => (
-                  <span key={tag} className="portfolio-item__tag">
-                    {i > 0 && (
-                      <span className="portfolio-item__tag-sep" aria-hidden="true">
-                        {" "}·{" "}
-                      </span>
-                    )}
-                    {tag}
-                  </span>
-                ))}
+
+{pieces.map((piece) => (
+  <article key={piece.href} className="portfolio-item">
+    <p className="portfolio-item__tags">
+      {piece.tags.map((tag, i) => (
+        <span key={tag} className="portfolio-item__tag">
+          {i > 0 && (
+            <span className="portfolio-item__tag-sep" aria-hidden="true">
+              {" "}·{" "}
+            </span>
+          )}
+          {tag}
+        </span>
+      ))}
+    </p>
+    <h2 className="portfolio-item__title">{piece.title}</h2>
+    
+    <div className="portfolio-item__content-with-image">
+      <div className="portfolio-item__text-wrap">
+        {Array.isArray(piece.description)
+          ? piece.description.map((para, i) => (
+              <p key={i} className="portfolio-item__desc">
+                {para}
               </p>
-              <h2 className="portfolio-item__title">{piece.title}</h2>
-              {Array.isArray(piece.description)
-                ? piece.description.map((para, i) => (
-                    <p key={i} className="portfolio-item__desc">
-                      {para}
-                    </p>
-                  ))
-                : <p className="portfolio-item__desc">{piece.description}</p>}
-                            <a
-                href={piece.href}
-                target="_blank"
-                rel="noreferrer"
-                className="hp-ghost-link hp-ghost-link--inline"
-              >
-                {piece.linkLabel} →
-              </a>
-            </article>
-          ))}
+            ))
+          : <p className="portfolio-item__desc">{piece.description}</p>}
+      </div>
+      {piece.image && (
+        <div className="portfolio-item__image-wrap portfolio-item__image-wrap--sidebar">
+        <Image
+          src={piece.image}
+          alt=""
+          width={224}
+          height={280}
+          className="portfolio-item__image"
+        />
+        </div>
+      )}
+    </div>
+    
+    <a
+      href={piece.href}
+      target="_blank"
+      rel="noreferrer"
+      className="hp-ghost-link hp-ghost-link--inline"
+    >
+      {piece.linkLabel} →
+    </a>
+  </article>
+))}
         </div>
       </div>
     </SplitPageLayout>
