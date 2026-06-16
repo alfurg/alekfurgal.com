@@ -1,7 +1,6 @@
 import { getAllPosts } from "@/lib/blog";
 import { SiteSidebar } from "@/components/SiteSidebar";
 import BlogCardGrid from "@/components/BlogCardGrid";
-import { CtaAuditDrawer } from "@/components/CtaAuditDrawer";
 import { HighlightText } from "@/components/HighlightText";
 import type { Metadata } from "next";
 
@@ -17,8 +16,6 @@ export default function BlogPage() {
       <div className="split__mobile-nav">
         <SiteSidebar />
       </div>
-
-      <CtaAuditDrawer />
 
       <div className="split__grid">
         <aside className="split__aside">

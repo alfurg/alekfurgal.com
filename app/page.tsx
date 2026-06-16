@@ -1,5 +1,4 @@
 import SplitPageLayout from "@/components/SplitPageLayout";
-import { CtaAuditDrawer } from "@/components/CtaAuditDrawer";
 import { HighlightText } from "@/components/HighlightText";
 import type { Metadata } from "next";
 
@@ -58,7 +57,6 @@ const timeline = [
 export default function Home() {
   return (
     <>
-      <CtaAuditDrawer />
       <SplitPageLayout
         home={true}
         eyebrow="editorial · AI Search · positioning"
