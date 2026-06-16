@@ -35,7 +35,7 @@ export function ArticleTableOfContentsButton({
         aria-controls={modalId}
         onPointerDown={() => setIsOpen(true)}
       >
-        <span className="article-toc-button__icon">Table of <em>contents</em></span>
+        <span className="article-toc-button__icon">Table of contents</span>
       </button>
 
       {isOpen && (

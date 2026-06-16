@@ -651,8 +651,11 @@ h1, h2, h3 { font-weight: 400; }
 .blog-card:active {
   transform: scale(0.98);
   transition-duration: 60ms;
-  border: 1px solid var(--color-accent);
 }
+.blog-card:active .hp-ghost-link {
+  color: var(--color-accent);
+}
+
 .blog-card__top {
   display: flex;
   align-items: center;
@@ -1267,7 +1270,10 @@ h1, h2, h3 { font-weight: 400; }
 .portfolio-item:active {
   transform: scale(0.98);
   transition-duration: 60ms;
-  border: 1px solid var(--color-accent);
+}
+
+.portfolio-item:active .hp-ghost-link--inline {
+  color: var(--color-accent);
 }
 .portfolio-item .hp-ghost-link--inline::after {
   content: '';

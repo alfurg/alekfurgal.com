@@ -13,7 +13,7 @@ export function ContactDrawer() {
         onClick={() => setIsOpen(true)}
         aria-label="Open contact drawer"
       >
-        <span className="contact-drawer-btn__text"><em>Contact</em> me</span>
+        <span className="contact-drawer-btn__text">Contact</span>
       </button>
 
       {isOpen && (
