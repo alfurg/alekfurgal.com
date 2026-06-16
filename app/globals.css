@@ -22,11 +22,11 @@
   --color-link-underline:       #6a5238;
   --color-link-underline-hover: var(--color-accent);
 
-  --color-alt: #6b8a9e; 
+  --color-alt: #5a7a8f; 
 
   --font-serif: var(--font-serif-dm, Georgia, "Times New Roman", serif);
   --font-mono:  var(--font-mono-dm, "Courier New", monospace);
-  --font-sans:  var(--font-sans-dm, system-ui, sans-serif);
+  --font-sans:  var(--font-sans-poppins, sans-serif);
 
   --content-max: 1380px;
   --aside-indent: 90%; /* content width; hline + vertical line start here */
@@ -410,7 +410,7 @@ h1, h2, h3 { font-weight: 400; }
 /* Eyebrow */
 .split-left__eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-faint);
@@ -1094,7 +1094,7 @@ h1, h2, h3 { font-weight: 400; }
   height: 160px;
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
-  color: var(--color-alt);
+  color: var(--color-text);
   flex-shrink: 0;
 }
 

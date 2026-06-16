@@ -1,5 +1,5 @@
 import "./globals.css";
-import { DM_Serif_Display, DM_Mono, DM_Sans } from "next/font/google";
+import { DM_Serif_Display, DM_Mono, Poppins } from "next/font/google";
 import type { Metadata } from "next";
 
 const dmSerif = DM_Serif_Display({
@@ -17,7 +17,7 @@ const dmMono = DM_Mono({
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
   variable: "--font-sans-dm",
@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSerif.variable} ${dmMono.variable} ${dmSans.variable}`}
+      className={`${dmSerif.variable} ${dmMono.variable} ${poppins.variable}`}
     >
       <body>{children}</body>
     </html>
