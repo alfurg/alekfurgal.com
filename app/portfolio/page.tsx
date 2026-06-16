@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import SplitPageLayout from "@/components/SplitPageLayout";
 import { ContactDrawer } from "@/components/ContactDrawer";
+import { HighlightText } from "@/components/HighlightText";
 
 export const metadata: Metadata = {
   title: "My work | Alek Furgal",
@@ -33,7 +34,19 @@ const pieces = [
     href: "/ebook_Startup_Validation.pdf",
     linkLabel: "Open the .pdf",
   },
- 
+
+ {
+    image: "/portfolio4.jpg",
+    title: "Post-quantum encryption: what it is and why it matters",
+    tags: ["tech translation", "cryptography explanation", "systems communication"],
+    description: [
+      "Published around the time of Surfshark\'s rollout of post-quantum encryption, this post had two jobs: to introduce a new product feature and to explain the concept behind it in a way that makes the need for it clear to the reader.", 
+      "The challenge was striking the right tone — balancing the enthusiasm of a product announcement with a deeper technological explanation — while ensuring the piece conveys a sense of urgency that doesn't cross into alarmism."
+    ],
+      href: "https://surfshark.com/blog/post-quantum-encryption",
+    linkLabel: "Read on Surfshark",
+  },
+
   {
     image: "/portfolio3.jpg",
     title: "What is P2P VPN, and how does it work?",
@@ -45,17 +58,7 @@ const pieces = [
       href: "https://surfshark.com/blog/p2p-vpn",
     linkLabel: "Read on Surfshark",
   },
-  {
-    image: "/portfolio4.jpg",
-    title: "Post-quantum encryption: what it is and why it matters",
-    tags: ["tech translation", "cryptography explanation", "systems communication"],
-    description: [
-      "Published around the time of Surfshark\'s rollout of post-quantum encryption, this post had two jobs: to introduce a new product feature and to explain the concept behind it in a way that makes the need for it clear to the reader.", 
-      "The challenge was striking the right tone — balancing the enthusiasm of a product announcement with a deeper technological explanation — while ensuring the piece conveys a sense of urgency that doesn't cross into alarmism."
-    ],
-      href: "https://surfshark.com/blog/post-quantum-encryption",
-    linkLabel: "Read on Surfshark",
-  },
+  
 ];
 
 export default function PortfolioPage() {

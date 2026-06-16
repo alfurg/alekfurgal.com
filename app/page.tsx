@@ -1,5 +1,6 @@
 import SplitPageLayout from "@/components/SplitPageLayout";
 import { CtaAuditDrawer } from "@/components/CtaAuditDrawer";
+import { HighlightText } from "@/components/HighlightText";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,17 +13,17 @@ const whatIDo = [
   {
     num: "01",
     title: "Map your content library",
-    desc: "I review your pages across search intent, structure, writing quality, and business relevance, so you know what's earning its place and what isn't."
+    desc: "I review your pages across search intent, structure, writing quality, and business relevance, then flag what isn't earning its place.."
   },
   {
     num: "02",
-    title: "Close the gap",
-    desc: "I identify where your brand and your content diverge — what you're read as versus what you want to own — and set the voice that closes the gap.",
+    title: "Close the brand gap",
+    desc: "I find where your content and your message pull apart — what you're read as versus what you want to own — then set the voice to match.",
   },
   {
     num: "03",
     title: "Plan your content system",
-    desc: "I define what each page should do: the intent it targets, the funnel stage it serves, how it connects to the pages around it. That map informs what to fix first.",
+    desc: "I define what each page should do: the intent it targets, the funnel stage it serves, and the pages it connects to. That plan informs what to focus on first.",
   },
    {
     num: "04",
@@ -35,17 +36,17 @@ const timeline = [
   {
     place: "greyotters",
     role: "Account management & SEO analysis",
-    desc: "Technical audits, site structure, and content planning across multiple clients and industries.",
+    desc: "Technical audits, site structure, and content planning across a range of clients and industries.",
   },
   {
     place: "A. Brothers",
     role: "SEO content management",
-    desc: "Creating and publishing content for software development and startup audiences — founders, marketers, technical decision-makers.",
+    desc: "Content for software and startup audiences — founders, marketers, and technical decision-makers.",
   },
   {
     place: "Surfshark",
     role: "Content & editorial strategy",
-    desc: "Cybersecurity, networking, and digital privacy content in a competitive SaaS space where accuracy and substance are non-negotiable.",
+    desc: "Cybersecurity, networking, and digital privacy in a competitive SaaS category.",
   },
   {
     place: "Now",
@@ -64,11 +65,11 @@ export default function Home() {
         heading={<>Your content, <em>cited</em></>}
         subheading={
           <>
-            I work with <strong>founders, marketers, and content leads</strong> at SaaS and technical businesses on:
+            I work with <HighlightText>founders, marketers, and content leads</HighlightText> at SaaS and technical businesses on:
             <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem", listStyle: "none"}}>
               <li>pages that should rank but don&apos;t;</li>
               <li>high-traffic content that doesn&apos;t convert;</li>
-              <li>ideas worth citing buried under weak copy.</li>
+              <li>ideas worth citing, buried under weak copy.</li>
             </ul>
       <p style={{ margin: "2.5rem 0 0" }}>An audit is usually where I start.</p>
           </>
@@ -107,16 +108,15 @@ export default function Home() {
       {/* Background */}
       <section className="hp-section" style={{ paddingBottom: "1rem" }}>
         <div className="hp-label">Background</div>
-        <p className="hp-prose">
+        <p className="hp-prose">a
           I started in agency SEO, working on site structure, technical health,
           and content strategy across different clients and industries. That gave me a
-          working understanding of how search visibility is built: not
-          with individual pages, but through coherence, authority, and
-          structure.
+          working understanding of how search visibility gets built: but through
+          the authority and coherence of the system.
         </p>
         <p className="hp-prose">
           From there I moved into SEO content management at a software house,
-          writing and publishing content for founders and developers. That led to Surfshark,
+          writing and publishing for founders and developers. That led to Surfshark,
           where I helped shape the tone of voice across cybersecurity, networking, and privacy
           writing — a space where trust depends on technical accuracy and real product understanding.
         </p>
@@ -132,9 +132,8 @@ export default function Home() {
           ))}
         </div>
         <p className="hp-prose">
-          That background shapes how I work. Content has to be substantive enough to be useful, 
-          building the kind of trust that moves the reader toward a decision. 
-          In AI search, that's also what differentiates a citation from what got absorbed into the answer.
+          That background shapes how I work. Content has to be substantive enough to earn trust — the kind that moves the reader toward a decision. 
+          In AI search, that's also what separates a citation from what gets absorbed into the answer.
         </p>
            <div style={{ height: "1px", background: "var(--color-border)", margin: "4rem 0 1.5rem" }} />
         <p className="hp-prose" style={{ marginTop: "0" }}>
@@ -142,7 +141,7 @@ export default function Home() {
            fix what's underperforming, and build from there.
         </p>
         <a href="/services" className="hp-ghost-link">
-          See all services →
+          See my offer →
         </a>
       </section>
 

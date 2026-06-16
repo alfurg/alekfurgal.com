@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { HighlightText } from './HighlightText';
 
 export function ContactDrawer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ export function ContactDrawer() {
         onClick={() => setIsOpen(true)}
         aria-label="Open contact drawer"
       >
-        Get in touch
+        <span className="contact-drawer-btn__text"><em>Contact</em> me</span>
       </button>
 
       {isOpen && (
@@ -30,7 +31,7 @@ export function ContactDrawer() {
             <div className="contact-drawer__eyebrow">Contact</div>
             <h2 className="contact-drawer__heading">Let's work together</h2>
             <p className="contact-drawer__sub">
-              Reach out to discuss your content and strategy goals.
+              Tell me about your content and strategy goals.
             </p>
 
             <div className="contact-drawer__links">

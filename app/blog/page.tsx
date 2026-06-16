@@ -2,6 +2,7 @@ import { getAllPosts } from "@/lib/blog";
 import { SiteSidebar } from "@/components/SiteSidebar";
 import BlogCardGrid from "@/components/BlogCardGrid";
 import { CtaAuditDrawer } from "@/components/CtaAuditDrawer";
+import { HighlightText } from "@/components/HighlightText";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -36,7 +37,8 @@ export default function BlogPage() {
                   </h1>
 
                   <p className="article-left__sub">
-                    I write about decisions, systems, and the craft behind good content.
+                   <> I write about <HighlightText>decisions, systems, and the craft </HighlightText> 
+                   behind good content. </>
                   </p>
                   
                 </div>
@@ -55,7 +57,8 @@ export default function BlogPage() {
               Notes on <em>content</em> and search
             </h1>
             <p className="article-left__sub" style={{ marginBottom: "2rem" }}>
-              I write about decisions, systems, and the craft behind good content.
+              <> I write about <HighlightText>decisions, systems, and the craft </HighlightText> 
+                   behind good content. </>
             </p>
             
           </div>
