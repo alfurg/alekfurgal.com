@@ -16,7 +16,7 @@ const pieces = [
     tags: ["AI & emerging tech"],
     description: [
       "The challenge with this piece was volume. The titular question has a significant research literature behind it, and most of the existing coverage tends to lean into sensationalism. The job was to synthesize the sources into an accurate picture of current evidence — not averaging positions, but distinguishing established findings from open questions and areas of genuine uncertainty.",
-      "This page continues to rank well for a competitive query — evidence that synthesis-layer content grounded in primary research holds up in AI search.",
+      "This post continues to rank well for a competitive query — evidence that synthesis-layer content grounded in primary research holds up in AI search.",
     ],
     href: "https://surfshark.com/blog/will-ai-take-over-the-world",
     linkLabel: "Read on Surfshark",
