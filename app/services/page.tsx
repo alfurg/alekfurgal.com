@@ -95,9 +95,6 @@ export default function ServicesPage() {
         }}
       >
         <div className="hp-section" style={{ paddingBottom: 0 }}>
-          <p className="hp-intro" style={{ marginBottom: "var(--space-md)" }}>
-            Final pricing depends on scope, research depth, page count, and implementation needs.
-          </p>
 
           <div className="services-list">
             {services.map((service, index) => (

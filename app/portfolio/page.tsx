@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 const pieces = [
   {
     image: "/port1.png",
-    title: "Will AI take over the world? Here's what the data shows",
-    tags: ["research synthesis", "risk reasoning", "uncertainty management"],
+    title: "AI risk synthesis — what ~50 academic sources say",
+    tags: ["AI & emerging tech"],
     description: [
-      "The topic invites two common pitfalls: fearmongering and oversimplification. This piece synthesizes roughly fifty academic and industry sources into information that a non-specialist can understand without oversimplifying the central argument.",
-      "The most important editorial decision involved letting the uncertainty stand instead of resolving it for effect. This type of synthesis is the kind of work that AI search has to cite rather than absorb; the value lies in information filtering, which can only be traced back to the source.",
+      "The topic invites two failure modes: fearmongering and oversimplification. The piece works through roughly fifty academic and industry sources and sorts them into what's actually settled, what's still contested, and what no one can answer yet.",
+      "The harder editorial call was leaving the open questions open. Resolving them would have made for a cleaner read and a less accurate one — and on a subject this contested, the accuracy is the whole reason to publish.",
     ],
     href: "https://surfshark.com/blog/will-ai-take-over-the-world",
     linkLabel: "Read on Surfshark",
@@ -24,11 +24,11 @@ const pieces = [
 
   {
     image: "/port2.png",
-    title: "15 questions for startup validation",
-    tags: ["structured thinking", "framework design", "founder evaluation"],
+    title: "Lead-gen ebook — a startup validation framework",
+    tags: ["Startup strategy"],
     description: [
-      "Long-form lead-generation ebook for a software development and startup consultancy. Developed a structured validation framework covering customer demand, market opportunity, pricing, business models, competitive positioning, and operational risk.",
-      "Combined startup methodology, research, and real-world examples into a practical guide designed to help founders assess whether an idea is commercially viable before investing in product development.",
+      "Long-form lead-generation ebook for a software development and startup consultancy. The framework had to hold up across very different kinds of businesses — physical products, software, services — so a founder in any of them could work from the same set of questions.",
+      "That meant building a clear progression — customer demand, market opportunity, pricing, business model, competitive position, operational risk — rather than a glossary of validation concepts. It's written for founders at the idea stage who need something to apply, not a survey of what validation means.",
     ],
     href: "/ebook_Startup_Validation.pdf",
     linkLabel: "Open the .pdf",
@@ -36,11 +36,11 @@ const pieces = [
 
   {
     image: "/port3.png",
-    title: "Post-quantum encryption: what it is and why it matters",
-    tags: ["tech translation", "cryptography explanation", "systems communication"],
+    title: "Product-launch explainer — post-quantum encryption",
+    tags: ["Cybersecurity"],
     description: [
-      "Published around the time of Surfshark's rollout of post-quantum encryption, this post had two jobs: to introduce a new product feature and to explain the concept behind it in a way that makes the need for it clear to the reader.",
-      "The challenge was striking the right tone — balancing the enthusiasm of a product announcement with a deeper technological explanation — while ensuring the piece conveys a sense of urgency that doesn't cross into alarmism.",
+      "Published alongside Surfshark's rollout of post-quantum encryption. The piece had two jobs at once: announce a product feature and explain the cryptography well enough that a reader who's never heard of quantum computing understands why it matters.",
+      "The challenge was tone. A launch piece carries some product enthusiasm, but the subject also needed real technical weight and a clear sense of why it matters now — without sliding into the alarmism that security marketing falls into so easily.",
     ],
     href: "https://surfshark.com/blog/post-quantum-encryption",
     linkLabel: "Read on Surfshark",
@@ -48,11 +48,11 @@ const pieces = [
 
   {
     image: "/port4.png",
-    title: "What is P2P VPN, and how does it work?",
-    tags: ["technical explanation", "systems understanding", "privacy literacy"],
+    title: "Mixed-audience guide — how P2P VPNs work",
+    tags: ["Networking & privacy"],
     description: [
-      "The problem with pieces like this one is that the people searching for them usually don't share a baseline.",
-      "This article sequences the explanation to stay accurate and navigable. This meant deciding what could be assumed and what had to be fully broken down. Technical accuracy and beginner-readability usually trade off against each other, but good structure tends to preserve both.",
+      "The people searching for this don't share a starting point. Some know what a VPN is, some have never seen the term P2P, and the explanation has to land for both.",
+      "The editorial work was ordering a single explanation so it stays accurate the whole way down while never assuming knowledge the reader hasn't been given yet. Writing one piece that holds a mixed audience is harder than writing for one level and letting everyone else sort themselves out.",
     ],
     href: "https://surfshark.com/blog/p2p-vpn",
     linkLabel: "Read on Surfshark",
@@ -103,8 +103,9 @@ export default function PortfolioPage() {
 
                 <p className="portfolio-item__desc">{piece.description[0]}</p>
 
-                {piece.image && (
-                  <div className="portfolio-item__image-wrap">
+              {piece.image && (
+                <div className="portfolio-item__image-wrap">
+                  <div className="portfolio-item__image-wrap-inner">
                     <Image
                       src={piece.image}
                       alt=""
@@ -113,7 +114,8 @@ export default function PortfolioPage() {
                       className="portfolio-item__image"
                     />
                   </div>
-                )}
+                </div>
+              )}
 
                 <p className="portfolio-item__desc">{piece.description[1]}</p>
 
