@@ -15,8 +15,8 @@ const pieces = [
     title: "AI risk synthesis — what ~50 academic sources say",
     tags: ["AI & emerging tech"],
     description: [
-      "The topic invites two failure modes: fearmongering and oversimplification. The piece works through roughly fifty academic and industry sources and sorts them into what's actually settled, what's still contested, and what no one can answer yet.",
-      "The harder editorial call was leaving the open questions open. Resolving them would have made for a cleaner read and a less accurate one — and on a subject this contested, the accuracy is the whole reason to publish.",
+      "The challenge with this piece was volume. The titular question has a significant research literature behind it, and most of the existing coverage tends to lean into sensationalism. The job was to synthesize the sources into an accurate picture of current evidence — not averaging positions, but distinguishing established findings from open questions and areas of genuine uncertainty.",
+      "This piece continues to rank well for a competitive query — evidence that synthesis-layer content grounded in primary research holds up in AI search.",
     ],
     href: "https://surfshark.com/blog/will-ai-take-over-the-world",
     linkLabel: "Read on Surfshark",
@@ -27,8 +27,8 @@ const pieces = [
     title: "Lead-gen ebook — a startup validation framework",
     tags: ["Startup strategy"],
     description: [
-      "Long-form lead-generation ebook for a software development and startup consultancy. The framework had to hold up across very different kinds of businesses — physical products, software, services — so a founder in any of them could work from the same set of questions.",
-      "That meant building a clear progression — customer demand, market opportunity, pricing, business model, competitive position, operational risk — rather than a glossary of validation concepts. It's written for founders at the idea stage who need something to apply, not a survey of what validation means.",
+      "Long-form ebook for a software development and startup consultancy. The piece needed to work across a wide range of business types without losing the identity of a single usable framework.",
+      "That meant building a clear progression: customer demand, market opportunity, pricing, business models, competitive positioning, operational risk. Rather than offering startup advice by checklist, the goal was to give founders a way to evaluate opportunities systematically and understand how each decision can affect the next.",
     ],
     href: "/ebook_Startup_Validation.pdf",
     linkLabel: "Open the .pdf",
@@ -39,8 +39,9 @@ const pieces = [
     title: "Product-launch explainer — post-quantum encryption",
     tags: ["Cybersecurity"],
     description: [
-      "Published alongside Surfshark's rollout of post-quantum encryption. The piece had two jobs at once: announce a product feature and explain the cryptography well enough that a reader who's never heard of quantum computing understands why it matters.",
-      "The challenge was tone. A launch piece carries some product enthusiasm, but the subject also needed real technical weight and a clear sense of why it matters now — without sliding into the alarmism that security marketing falls into so easily.",
+      "Published alongside Surfshark’s rollout of post-quantum encryption, this announcement/explainer introduced a complex cybersecurity feature to a general audience that might not yet recognize its relevance.",
+      "The editorial challenge was balancing product enthusiasm with technical depth, without oversimplifying the subject or slipping into alarmism.",
+
     ],
     href: "https://surfshark.com/blog/post-quantum-encryption",
     linkLabel: "Read on Surfshark",
@@ -51,8 +52,8 @@ const pieces = [
     title: "Mixed-audience guide — how P2P VPNs work",
     tags: ["Networking & privacy"],
     description: [
-      "The people searching for this don't share a starting point. Some know what a VPN is, some have never seen the term P2P, and the explanation has to land for both.",
-      "The editorial work was ordering a single explanation so it stays accurate the whole way down while never assuming knowledge the reader hasn't been given yet. Writing one piece that holds a mixed audience is harder than writing for one level and letting everyone else sort themselves out.",
+      "The people searching for this don't share a baseline. The editorial work was sequencing a single explanation so it stays accurate the whole way down while never assuming knowledge the reader hasn't been given yet.",
+      "The piece is built around comparison, using related VPN models as reference points to make P2P VPNs understandable in context rather than on their own.",
     ],
     href: "https://surfshark.com/blog/p2p-vpn",
     linkLabel: "Read on Surfshark",
