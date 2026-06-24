@@ -91,7 +91,7 @@ export default function PortfolioPage() {
         subheading= {
                       <>
                         Selected pieces and the editorial decisions behind them.
-                        <p>Organic data via Ahrefs, June 2026.</p>
+                        <p>Organic data via <span style={{ color: 'var(--color-text)' }}>Ahrefs, June 2026</span>.</p>
                       </>
                     }
         availability="Available for new projects · EEA · 2026"
