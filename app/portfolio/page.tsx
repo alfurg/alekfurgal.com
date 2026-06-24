@@ -25,7 +25,7 @@ const pieces: Piece[] = [
     title: "AI risk synthesis — what ~50 academic sources say",
     statLine: (
       <>
-        <strong>#1</strong>{" "}across intent cluster{" "}<span className="portfolio-item__stat-sep">·</span>{" "}<strong>~11K</strong>{" "}combined monthly searches{" "}<span className="portfolio-item__stat-sep">·</span>{" "}<strong>#1</strong>{" "} in AI Overview
+        <strong>#1</strong>{" "}across intent cluster{" "}<span className="portfolio-item__stat-sep">·</span>{" "}<strong>~11K</strong>{" "}combined searches/mo{" "}<span className="portfolio-item__stat-sep">·</span>{" "}<strong>#1</strong>{" "} in AI Overview
       </>
     ),
     descBefore:

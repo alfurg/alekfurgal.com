@@ -25,23 +25,21 @@ export default function BlogPage() {
             </div>
             <div className="split__aside-hline" aria-hidden="true" />
             <div className="split__aside-body">
-              <div className="split-left article-left">
+              <div className="split-left">
                 <p className="split-left__eyebrow">Blog</p>
 
-                <div className="blog-left__heading-group">
-                  <h1 className="split-left__h1">
-                    Notes on <em>content</em> and search
-                  </h1>
+                <h1 className="split-left__h1">
+                  Notes on <em>content</em> and search
+                </h1>
 
-                  <p className="article-left__sub">
-                   <> I write about <HighlightText>decisions, systems, and the craft </HighlightText> 
-                   behind good content. </>
-                  </p>
-                  
+                <div className="split-left__sub">
+                  I write about <HighlightText>decisions, systems, and the craft </HighlightText>
+                  behind good content.
                 </div>
-                   <div className="split-left__availability">
-                    <span>Available for new projects · EEA · 2026</span>
-                  </div>
+
+                <div className="split-left__availability">
+                  <span>Available for new projects · EEA · 2026</span>
+                </div>
               </div>
             </div>
           </div>
