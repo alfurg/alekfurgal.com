@@ -39,7 +39,7 @@ const pieces: Piece[] = [
   {
     image: "/port2.png",
     title: "Ebook — a startup validation framework",
-    statLine: <>Lead-gen resource{" "}<span className="portfolio-item__stat-sep">·</span>{" "}gated asset</>,
+    statLine: <>Lead-gen resource{" "}<span className="portfolio-item__stat-sep">·</span>{" "}B2B</>,
     descBefore:
       "Long-form ebook for a software development and startup consultancy. The piece needed to work across a wide range of business types without losing the identity of a single usable framework.",
     descAfter:
