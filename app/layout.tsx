@@ -25,17 +25,33 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/apple-touch-icon.png",
-  },
-  manifest: "/site.webmanifest",
   metadataBase: new URL("https://www.alekfurgal.com"),
+  title: "Alek Furgal — Content Strategist & Writer",
   description:
-    "I help founders, marketers, and content leads at SaaS and technical businesses build content that ranks, converts, and makes the product clear.",
+    "I help founders, marketers, and content leads at SaaS businesses build content that ranks, converts, and makes the product clear.",
+  openGraph: {
+    siteName: "Alek Furgal",
+    title: "Alek Furgal — Content Strategist & Writer",
+    description:
+      "I help founders, marketers, and content leads at SaaS businesses build content that ranks, converts, and makes the product clear.",
+    url: "https://www.alekfurgal.com",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Alek Furgal — Content Strategist & Writer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alek Furgal — Content Strategist & Writer",
+    description:
+      "I help founders, marketers, and content leads at SaaS businesses build content that ranks, converts, and makes the product clear.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

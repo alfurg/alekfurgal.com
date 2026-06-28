@@ -76,7 +76,7 @@ export default function Home() {
         hideMobileCta={false}
         cta={{
           heading: <>Get a <em>free</em> content audit</>,
-          body: "Send me a link to your website and I'll reply with a prioritized audit of your content library.",
+          body: "Send me a link to your website and I'll get back to you with a prioritized audit of your content library.",
           href: "mailto:hello@alekfurgal.com",
           label: "Get in touch",
           urlInput: true,

@@ -3,6 +3,7 @@ import { SiteSidebar } from "@/components/SiteSidebar";
 import BlogCardGrid from "@/components/BlogCardGrid";
 import { HighlightText } from "@/components/HighlightText";
 import type { Metadata } from "next";
+import { CopyEmailButton } from "@/components/CopyEmailButton";
 
 export const metadata: Metadata = {
   title: "Blog | Alek Furgal",
@@ -40,9 +41,12 @@ export default function BlogPage() {
                 <div className="split-left__cta-service">
                   <p className="hp-label">Contact</p>
                   <div className="split-left__cta-service-actions">
-                    <a href="mailto:hello@alekfurgal.com" className="split-left__cta-service-btn split-left__cta-service-btn--primary">
-                      hello@alekfurgal.com
-                    </a>
+                    <div className="split-left__cta-email-row">
+                      <a href="mailto:hello@alekfurgal.com" className="split-left__cta-service-btn split-left__cta-service-btn--primary">
+                        hello@alekfurgal.com
+                      </a>
+                      <CopyEmailButton email="hello@alekfurgal.com" />
+                    </div>
                     <a href="https://www.linkedin.com/in/alek-furgal/" className="split-left__cta-service-btn split-left__cta-service-btn--secondary">
                       /in/alek-furgal
                     </a>

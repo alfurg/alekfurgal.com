@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 function CopyIcon() {
   return (
@@ -20,23 +20,30 @@ function CheckIcon() {
 }
 
 export function CopyEmailButton({ email }: { email: string }) {
-  const [copied, setCopied] = useState(false);
+  const [state, setState] = useState<'idle' | 'copied' | 'fading'>('idle');
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function handleCopy(e: React.MouseEvent) {
     e.preventDefault();
     navigator.clipboard.writeText(email).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setState('copied');
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => setState('fading'), 2000);
     });
+  }
+
+  function handleTransitionEnd() {
+    if (state === 'fading') setState('idle');
   }
 
   return (
     <button
-      className={`contact-copy-btn${copied ? ' contact-copy-btn--done' : ''}`}
+      className={`contact-copy-btn${state === 'copied' ? ' contact-copy-btn--done' : ''}`}
       onClick={handleCopy}
-      aria-label={copied ? 'Copied' : 'Copy email address'}
+      onTransitionEnd={handleTransitionEnd}
+      aria-label={state === 'copied' ? 'Copied' : 'Copy email address'}
     >
-      {copied ? <CheckIcon /> : <CopyIcon />}
+      {state === 'idle' ? <CopyIcon /> : <CheckIcon />}
     </button>
   );
 }

@@ -1711,7 +1711,7 @@ h1, h2, h3 { font-weight: 400; }
   display: flex;
   gap: 0.6rem;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: .8rem;
   letter-spacing: 0.04em;
   text-decoration: none;
   transition: color 0.2s;
@@ -1773,7 +1773,7 @@ h1, h2, h3 { font-weight: 400; }
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  transition: color 0.2s;
+  transition: color 0.4s ease;
 }
 
 .contact-copy-btn--done {
