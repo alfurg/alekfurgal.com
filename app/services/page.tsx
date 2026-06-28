@@ -86,13 +86,13 @@ export default function ServicesPage() {
         availability="Available for new projects · EEA · 2026"
         hideMobileCta={true}
         cta={{
-          heading: <>You can <em>contact me</em> via:</>,
-          body: "",
-          href: "mailto:aleksanderfurgal@gmail.com",
-          label: "email",
-          secondaryHref: "https://www.linkedin.com/in/alek-furgal/",
-          secondaryLabel: "LinkedIn",
-        }}
+            heading: <></>,
+            body: "",
+            href: "mailto:hello@alekfurgal.com",
+            label: "hello@alekfurgal.com",
+            secondaryHref: "https://www.linkedin.com/in/alek-furgal/",
+            secondaryLabel: "/in/alek-furgal",
+          }}
       >
         <div className="hp-section" style={{ paddingBottom: 0 }}>
 

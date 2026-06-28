@@ -77,7 +77,7 @@ export default function Home() {
         cta={{
           heading: <>Get a <em>free</em> content audit</>,
           body: "Send me a link to your website and I'll reply with a prioritized audit of your content library.",
-          href: "mailto:aleksanderfurgal@gmail.com",
+          href: "mailto:hello@alekfurgal.com",
           label: "Get in touch",
           urlInput: true,
         }}

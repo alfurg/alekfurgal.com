@@ -36,11 +36,11 @@ export function ContactDrawer() {
 
             <div className="contact-drawer__links">
               <a
-                href="mailto:aleksanderfurgal@gmail.com"
+                href="mailto:hello@alekfurgal.com"
                 className="contact-drawer__link"
               >
                 <span className="contact-drawer__link-label">Email</span>
-                <span className="contact-drawer__link-value">aleksanderfurgal@gmail.com</span>
+                <span className="contact-drawer__link-value">hello@alekfurgal.com</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/alek-furgal/"

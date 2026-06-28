@@ -72,8 +72,7 @@ export default function SplitPageLayout({
                     )}
                     {!cta.urlInput && (
                       <div className="split-left__cta-service">
-                        <h3 className="split-left__cta-service-heading">{cta.heading}</h3>
-                        <p className="split-left__cta-service-body">{cta.body}</p>
+                        <p className="hp-label">Contact</p>
                         <div className="split-left__cta-service-actions">
                           <a href={cta.href} className="split-left__cta-service-btn split-left__cta-service-btn--primary">
                             {cta.label}
@@ -118,24 +117,23 @@ export default function SplitPageLayout({
                   <CtaUrlInput href={cta.href} label={cta.label} />
                 </div>
               )}
-              {!cta.urlInput && (
-                <div className="split-left__cta-service">
-                  <h3 className="split-left__cta-service-heading">{cta.heading}</h3>
-                  <p className="split-left__cta-service-body">{cta.body}</p>
-                  <div className="split-left__cta-service-actions">
-                    <a href={cta.href} className="split-left__cta-service-btn split-left__cta-service-btn--primary">
-                      {cta.label}
-                    </a>
-                    {cta.secondaryHref && (
-                      <a href={cta.secondaryHref} className="split-left__cta-service-btn split-left__cta-service-btn--secondary">
-                        {cta.secondaryLabel}
-                      </a>
-                    )}
-                  </div>
-                </div>
-              )}
+              
+          {!cta.urlInput && (
+            <div className="split-left__cta">
+              <div className="split-left__cta-service-actions">
+                <a href={cta.href} className="split-left__cta-contact-link split-left__cta-contact-link--primary">
+                  {cta.label}
+                </a>
+                {cta.secondaryHref && (
+                  <a href={cta.secondaryHref} target="_blank" rel="noreferrer" className="split-left__cta-contact-link split-left__cta-contact-link--secondary">
+                    {cta.secondaryLabel}
+                  </a>
+                )}
+              </div>
             </div>
           )}
+        </div>
+      )}
 
           {children}
         </section>
