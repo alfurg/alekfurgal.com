@@ -1,8 +1,8 @@
 import "./globals.css";
-import { DM_Serif_Display, DM_Mono, Poppins } from "next/font/google";
+import { DM_Serif_Text, DM_Mono, Poppins } from "next/font/google";
 import type { Metadata } from "next";
 
-const dmSerif = DM_Serif_Display({
+const dmSerif = DM_Serif_Text({
   subsets: ["latin"],
   weight: ["400"],
   style: ["normal", "italic"],
