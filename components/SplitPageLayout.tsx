@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { SiteSidebar } from "./SiteSidebar";
 import { CtaUrlInput } from "./CtaUrlInput";
+import { CopyEmailButton } from './CopyEmailButton';
 
 type CtaBlock = {
   heading: ReactNode;
@@ -74,9 +75,12 @@ export default function SplitPageLayout({
                       <div className="split-left__cta-service">
                         <p className="hp-label">Contact</p>
                         <div className="split-left__cta-service-actions">
-                          <a href={cta.href} className="split-left__cta-service-btn split-left__cta-service-btn--primary">
-                            {cta.label}
-                          </a>
+                          <div className="split-left__cta-email-row">
+                            <a href={cta.href} className="split-left__cta-service-btn split-left__cta-service-btn--primary">
+                              {cta.label}
+                            </a>
+                            <CopyEmailButton email="hello@alekfurgal.com" />
+                          </div>
                           {cta.secondaryHref && (
                             <a href={cta.secondaryHref} className="split-left__cta-service-btn split-left__cta-service-btn--secondary">
                               {cta.secondaryLabel}
@@ -117,7 +121,7 @@ export default function SplitPageLayout({
                   <CtaUrlInput href={cta.href} label={cta.label} />
                 </div>
               )}
-              
+
           {!cta.urlInput && (
             <div className="split-left__cta">
               <div className="split-left__cta-service-actions">

@@ -138,7 +138,7 @@ export default function Home() {
            Most of the opportunity is already on your site. I audit what you have, 
            fix what's underperforming, and build from there.
         </p>
-        <a href="/services" className="hp-ghost-link">
+        <a href="/offer" className="hp-ghost-link">
           See my offer →
         </a>
       </section>

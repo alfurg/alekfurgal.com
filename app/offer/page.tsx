@@ -67,7 +67,7 @@ const services = [
   },
   {
     title: "Something else entirely",
-    price: "Let's talk",
+    price: "Custom",
     body: "I've taken on editorial direction, content strategy, SEO audits, and one-off writing across SaaS and technical businesses. Tell me what you're trying to solve and I'll tell you if I'm the right person for it.",
     goodFor: "Scoped projects, one-off requests, retainers, and anything in between.",
     icon: <QuestionMarkIcon />,

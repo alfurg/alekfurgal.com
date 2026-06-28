@@ -8,9 +8,9 @@ type LogoIconProps = {
 
 export function LogoIcon({
   className,
-  backgroundColor = "--color-accent",
-  emblemColor = "--color-bg",
-  radius = 100,
+  backgroundColor = "var(--color-accent)",
+  emblemColor = "var(--color-bg)",
+  radius = 94,
   size = 256,
 }: LogoIconProps) {
   return (
@@ -22,21 +22,11 @@ export function LogoIcon({
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <g clipPath="url(#clip0_logoicon)">
-        <path
-          d="M924 -6H100C44.7715 -6 0 38.7715 0 94V918C0 973.228 44.7715 1018 100 1018H924C979.228 1018 1024 973.228 1024 918V94C1024 38.7715 979.228 -6 924 -6Z"
-          fill={backgroundColor}
-        />
-        <path
-          d="M512 90C748 90 958 208 958 460V732C958 776 958 776 905 776H735C685 776 685 776 685 732V668C685 625 684 625 660 625H518C490 625 490 625 490 603V535C490 515 490 515 518 515H705C745 515 745 515 745 480V390C745 340 745 330 705 330H305C270 330 270 340 270 390V880C270 920 270 920 215 920H105C55 920 55 920 55 880V460C55 208 265 90 512 90Z"
-          fill={emblemColor}
-        />
-      </g>
-      <defs>
-        <clipPath id="clip0_logoicon">
-          <rect width="1024" height="1024" fill="white" />
-        </clipPath>
-      </defs>
+      <rect width="1024" height="1024" rx={radius} fill={backgroundColor} />
+      <path
+        d="M512 90C748 90 958 208 958 460V732C958 776 958 776 905 776H735C685 776 685 776 685 732V668C685 625 684 625 660 625H518C490 625 490 625 490 603V535C490 515 490 515 518 515H705C745 515 745 515 745 480V390C745 340 745 330 705 330H305C270 330 270 340 270 390V880C270 920 270 920 215 920H105C55 920 55 920 55 880V460C55 208 265 90 512 90Z"
+        fill={emblemColor}
+      />
     </svg>
   );
 }

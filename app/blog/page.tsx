@@ -37,6 +37,18 @@ export default function BlogPage() {
                   behind good content.
                 </div>
 
+                <div className="split-left__cta-service">
+                  <p className="hp-label">Contact</p>
+                  <div className="split-left__cta-service-actions">
+                    <a href="mailto:hello@alekfurgal.com" className="split-left__cta-service-btn split-left__cta-service-btn--primary">
+                      hello@alekfurgal.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/alek-furgal/" className="split-left__cta-service-btn split-left__cta-service-btn--secondary">
+                      /in/alek-furgal
+                    </a>
+                  </div>
+                </div>
+
                 <div className="split-left__availability">
                   <span>Available for new projects · EEA · 2026</span>
                 </div>

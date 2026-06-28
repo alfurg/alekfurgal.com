@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { HighlightText } from './HighlightText';
+import { CopyEmailButton } from './CopyEmailButton';
 
 export function ContactDrawer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,28 +28,25 @@ export function ContactDrawer() {
               ✕
             </button>
 
-            <div className="contact-drawer__eyebrow">Contact</div>
-            <h2 className="contact-drawer__heading">Let's work together</h2>
-            <p className="contact-drawer__sub">
-              Tell me about your content and strategy goals.
-            </p>
+            <p className="hp-label contact-drawer__eyebrow">Contact</p>
 
             <div className="contact-drawer__links">
-              <a
-                href="mailto:hello@alekfurgal.com"
-                className="contact-drawer__link"
-              >
-                <span className="contact-drawer__link-label">Email</span>
-                <span className="contact-drawer__link-value">hello@alekfurgal.com</span>
-              </a>
+              <div className="contact-drawer__email-row">
+                <a
+                  href="mailto:hello@alekfurgal.com"
+                  className="contact-drawer__link contact-drawer__link--primary"
+                >
+                  hello@alekfurgal.com
+                </a>
+                <CopyEmailButton email="hello@alekfurgal.com" />
+              </div>
               <a
                 href="https://www.linkedin.com/in/alek-furgal/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-drawer__link"
+                className="contact-drawer__link contact-drawer__link--secondary"
               >
-                <span className="contact-drawer__link-label">LinkedIn</span>
-                <span className="contact-drawer__link-value">/alek-furgal</span>
+                /in/alek-furgal
               </a>
             </div>
 
