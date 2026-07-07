@@ -1,0 +1,103 @@
+import ArticleLayout from "@/components/ArticleLayout";
+import { getPostBySlug } from "@/lib/blog";
+
+export const metadata = {
+  title: "When synthesis gets cited",
+  description:
+    "TMost synthesis content gets absorbed by AI without credit. This piece explains why judgment — not new data — is what earns the citation.",
+    openGraph: {
+    url: "https://www.alekfurgal.com/blog/when-synthesis-gets-cited",
+    type: "article",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Alek Furgal",
+      },
+    ],
+  },
+};
+
+export const article = {
+  order: 4,
+  heading: "When synthesis get cited",
+  subheading: "Why AI search cites some synthesis and absorbs the rest.",
+  status: "published",
+  categories: ["AI Search"],
+  featured: false,  
+  publishedAt: "2026-07-07",
+  updatedAt: "",
+};
+
+export const post = getPostBySlug("when-synthesis-gets-cited");
+
+<ArticleLayout
+  eyebrow="Blog post"
+  heading={article.heading}
+  subheading={article.subheading}
+  readingTime={post?.readingTime}
+  toc={post?.toc}
+  availability="Available for new projects · EEA · 2026"
+>
+AI search cites original work — research, proprietary data, a framework nobody had named yet — because a model can’t reconstruct it from anywhere else. Conversely, everything derivative gets folded into the answer, no source attached.
+
+A synthesis of fifty academic papers should be the clearest example of this sort of content. It produces no new data, and every source it draws on has already been indexed and made available to the model directly. In terms of the claims made, there’s nothing a model couldn’t reach on its own.
+
+So it’s worth exploring why the AI Overview for the “will AI take over the world” query cites [my synthesis piece](https://www.surfshark.com/blog/will-ai-take-over-the-world) more heavily than any other source; not once, but throughout the response. By the logic above, it should have dissolved into the answer. Instead, it’s the spine of it.
+
+Something in the synthesis earned attribution the fifty underlying papers couldn’t. Here, I’ll argue this is replicable — although it’s not what most synthesis is built to do.
+
+## What the piece actually did
+The sources weren't equal, and treating them as equal was the mistake to avoid. On one side sat peer-reviewed research measuring what AI actually does — its documented, quantifiable impact. On the other sat claims from people with something to sell: industry leaders and their companies, including a [widely circulated, sensationalized Microsoft paper](https://arxiv.org/pdf/2507.07935) that framed the stakes in far larger terms than the evidence supported.
+
+The synthesis built its answer on the measured data and treated the claims as claims — weighed against the evidence rather than added on top of it. That sorting is the editorial core of the piece. What AI is measurably capable of, and what the loudest voices assert it's capable of, are different questions, and the gap between them is where most of the noise on this topic lives.
+
+That judgment existed nowhere in the source material. Each paper reported its own findings; the industry pieces made their own case. None of them drew the line between measured impact and marketed claim, because none of them was in a position to — the line only appears when you read across the set and decide what carries evidentiary weight.
+
+So when the model assembled its response, that sorting was the thing it couldn't source anywhere else. It could reach every paper and every claim directly. It couldn't reach the distinction between them, because no single source contained it. The synthesis had become the origin.
+
+## What made it citable
+The piece took a position, staking a claim about where the evidence lands. Most synthesis avoids this — the safe move is to lay out every side and let the reader judge for themself. 
+
+But an AI model can lay out every side too, and it does so faster. The part it can’t confidently generate is the judgment about which side the evidence favors, so that’s the part it cites.
+
+It also answered a sharper question than the one on the page. The query was “will AI take over the world.” The cited papers answered narrower, more technically — alignment, capability timelines, specific failure modes. The synthesis answered the question underneath, one an actual person means when they type those words: „Setting hype and skepticism aside, what does the evidence actually suggest is possible?”
+
+The piece was written for someone who wanted signal, not coverage. The implied reader wasn’t a researcher collecting complementary reading; it was a person trying to think clearly about a question buried under noise. The profile of the reader informed editorial decisions — what to include, what to cut, what deserved weight. 
+
+Lastly, the piece sorted the sources instead of just listing them. The final fifty didn't carry equal evidentiary weight: measured, peer-reviewed findings on one side, and on the other, skewed claims funded by people with something to sell. Distinguishing between them, and building the conclusion only on what held, is the analytical core of the piece. It’s also the thing a reader can’t get by reading any single paper, and the thing the model can’t get without the synthesis.
+
+None of these is a writing trick. They’re editorial decisions, and they’re the reason the filtering produced information gain instead of just a tidy summary.
+
+## What "add your own take" leaves out
+The idea that curation is real work isn't new, and the people who write about it aren't naive about the difference between curating and aggregating either. [Heidi Cohen, whose definition of content curation is about as canonical as the field has](https://heidicohen.com/content-curation-19-definitions), builds the distinction into the definition itself: curation is "the assembling, categorizing, commenting and presenting the best content available." Aggregation collects; curation comments and presents. The value is in what you add.
+
+The refinement worth making is about what kind of addition earns citation, because "commenting and presenting" covers two different things that behave very differently in AI search.
+
+First is commentary laid over sources. You gather the material, frame it, and add a point of view about it — but the sources underneath stay exactly as accessible as they were before. The perspective is real, but it sits on top. A model reading your piece can take the framing or leave it and still reach everything you were framing, which means it doesn't need to cite you to use what you assembled.
+
+The other is judgment that changes what the sources amount to. Not a view about the material but an operation performed on it — sorting the measured from the asserted, resolving what a contested set actually establishes, and ultimately producing a conclusion that wasn't sitting in any of the inputs. That kind of addition isn't reachable underneath, because it didn't exist until the reading was done. The Surfshark piece cited well because its editorial work was this exactly: the sorting of evidence was its value, not the decorative perspective on top.
+
+So the consensus is right that curation means adding value. The part worth pressing on is that not all added value survives being read by a machine. Commentary on top of the sources leaves them citable in your place. Judgment that resolves them becomes the thing that has to be cited, because nothing else contains it.
+
+## When synthesis is worth doing
+So, if you're publishing content and watching more of it get absorbed into AI answers, here's the decision this leaves you with.
+
+Synthesis is worth doing when you're willing to resolve the sources, not just present them. Decide what the material adds up to for a specific reader with a specific question, and commit to that judgment on the page. The work is in the resolving. Pulling the sources together and adding a view on top is the easy part, and it's the part that gets absorbed.
+
+Comprehensiveness is the clearest example of the trap. Covering everything  — is the one job a model does arguably better than you. What it can't do is the resolving: reading a contested, noisy field and telling the reader what actually holds. That judgment is where the citation lives, so that's where the effort should go.
+
+For most content programs this reorders the work. The instinct is to widen: more topics, more coverage, more pages answering more queries. But a page that filters a hard question for a defined reader does more for your authority than ten pages that survey easy queries. It’s the filtered page that a model has to name. Fewer pieces, each resolving something, beats broad coverage that resolves nothing, any time.
+
+None of this asks you to run original research you can’t run. But it’s the writer’s job to do the reading nobody else bothered to finish, and take a position they can defend.
+
+## Conclusion: the correction underneath
+For years the fastest way to rank was to find what already ranked and rebuild it a little better. Take the top results, absorb their coverage, reorganize it, hit publish. The synthesis was the product, and for a long time that product sold.
+
+AI search ends that paradigm. When the model can do the reorganizing itself, the value of it drops to nothing — and the pages built on it stop earning anything. What survives is the work the model can’t do: reading a hard question all the way to a conclusion, weighing the answer, and standing behind it. 
+
+That’s a narrower kind of value, and a more demanding one. It rewards the reading you actually finished over the coverage you assembled, the judgment you’ll defend over the consensus you restated. My synthesis of fifty papers got cited because I did that reading and reached a verdict individual sources couldn’t. The method is available to anyone willing to do the same — not produce more, but decide more, on questions that reward the deciding.
+
+
+</ArticleLayout>

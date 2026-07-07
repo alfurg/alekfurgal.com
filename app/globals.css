@@ -66,6 +66,9 @@ html, body {
   background: var(--color-bg);
   color: var(--color-text);
   overscroll-behavior-y: none;
+}
+
+html {
   overflow-x: hidden;
 }
 
@@ -2329,8 +2332,13 @@ h1, h2, h3 { font-weight: 400; }
     box-shadow: none !important;
     border: none !important;
     width: 210mm !important;
-    height: 297mm !important;
-    min-height: unset !important;
+    height: auto !important;
+    min-height: 297mm !important;
+    overflow: visible !important;
     page-break-after: avoid;
+  }
+  .cv-sheet__inner {
+    overflow: visible !important;
+    height: auto !important;
   }
 }
