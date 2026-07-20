@@ -29,9 +29,9 @@ const pieces: Piece[] = [
       </>
     ),
     descBefore:
-      "The challenge with this piece was volume. The titular question has a significant research literature behind it, and most of the existing coverage tends to lean into sensationalism. The job was to synthesize the sources into an accurate picture of current evidence — not averaging positions, but distinguishing established findings from open questions and areas of genuine uncertainty.",
+      "The question — will AI take over the world — has a sprawling research literature behind it, but most coverage leans into sensationalism or far-out speculation. My approach was to ground the argument: I hand-picked nearly 50 academic sources, separated established findings from open questions, and synthesized an answer that doesn’t hedge or sensationalize — just a clear read on where the evidence actually stands. The reader is guided through it step by step, with a high degree of intellectual honesty.",
     descAfter:
-      "The piece ranks first across every meaningful variant of the query and appears as the first citation in Google\u2019s AI Overview for the topic. An honest synthesis that builds on its sources well turns out to be something a model has to attribute rather than absorb.",
+      "The result speaks for itself: the piece ranks first across every meaningful variant of the query, including Google’s AI Overview. It’s proof that a thorough synthesis, well-grounded in its sources, is something a model has to attribute rather than absorb.",
     href: "https://surfshark.com/blog/will-ai-take-over-the-world",
     linkLabel: "Read on Surfshark",
   },
@@ -97,13 +97,13 @@ export default function PortfolioPage() {
         availability="Available for new projects · EEA · 2026"
         hideMobileCta={true}
         cta={{
-  heading: <></>,
-  body: "",
-  href: "mailto:hello@alekfurgal.com",
-  label: "hello@alekfurgal.com",
-  secondaryHref: "https://www.linkedin.com/in/alek-furgal/",
-  secondaryLabel: "/in/alek-furgal",
-}}
+          heading: <></>,
+          body: "",
+          href: "mailto:hello@alekfurgal.com",
+          label: "hello@alekfurgal.com",
+          secondaryHref: "https://www.linkedin.com/in/alek-furgal/",
+          secondaryLabel: "/in/alek-furgal",
+        }}
       >
         <div className="hp-section">
           <div className="portfolio-list">
