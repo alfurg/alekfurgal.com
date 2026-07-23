@@ -37,18 +37,6 @@ const pieces: Piece[] = [
   },
 
   {
-    image: "/port2.png",
-    title: "Ebook — a startup validation framework",
-    statLine: <>Lead-gen resource{" "}<span className="portfolio-item__stat-sep">·</span>{" "}B2B</>,
-    descBefore:
-      "Long-form ebook for a software development and startup consultancy. The piece needed to work across a wide range of business types without losing the identity of a single usable framework.",
-    descAfter:
-      "That meant building a clear progression: customer demand, market opportunity, pricing, business models, competitive positioning, operational risk. Rather than offering startup advice by checklist, the goal was to give founders a way to evaluate opportunities systematically and understand how each decision affects the next.",
-    href: "/ebook_Startup_Validation.pdf",
-    linkLabel: "Open the .pdf",
-  },
-
-  {
     image: "/port5.png",
     title: "Reference guide — best DNS servers for gaming",
     statLine: (
@@ -62,6 +50,18 @@ const pieces: Piece[] = [
       "A 100% dofollow rate across 1,900 linking domains suggests the citations are editorial \u2014 gaming sites, tech guides, and forum threads treating the page as a reference rather than a courtesy link.",
     href: "https://surfshark.com/blog/best-dns-servers-for-gaming",
     linkLabel: "Read on Surfshark",
+  },
+
+  {
+    image: "/port2.png",
+    title: "Ebook — startup validation framework",
+    statLine: <>Lead-gen resource{" "}<span className="portfolio-item__stat-sep">·</span>{" "}B2B</>,
+    descBefore:
+      "Long-form ebook for a software development and startup consultancy. The piece needed to work across a wide range of business types without losing the identity of a single usable framework.",
+    descAfter:
+      "That meant building a clear progression: customer demand, market opportunity, pricing, business models, competitive positioning, operational risk. Rather than offering startup advice by checklist, the goal was to give founders a way to evaluate opportunities systematically and understand how each decision affects the next.",
+    href: "/ebook_Startup_Validation.pdf",
+    linkLabel: "Open the .pdf",
   },
 
   {
