@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Your content, cited",
   description:
-    "I help founders, marketers, and content leads at SaaS and technical businesses build content that ranks, converts, and makes the product clear.",
+    "I help founders, marketers, and leads build content that ranks, converts, and builds trust.",
 };
 
 const whatIDo = [
@@ -63,13 +63,13 @@ export default function Home() {
         heading={<>Your content, <em>cited</em></>}
         subheading={
           <>
-            I work with <HighlightText>founders, marketers, and content leads</HighlightText> at SaaS and technical businesses on:
+            I work with <HighlightText>founders, marketers, and content leads</HighlightText> on:
             <ul style={{ margin: "0.75rem 0 0", paddingLeft: "1.25rem", fontSize: "0.95rem", listStyle: "none"}}>
               <li>pages that should rank but don&apos;t;</li>
               <li>high-traffic content that doesn&apos;t convert;</li>
               <li>ideas worth citing, buried under weak copy.</li>
             </ul>
-      <p style={{ margin: "2.5rem 0 0" }}>An audit is usually where I start.</p>
+      <p style={{ margin: "1.8rem 0 0" }}>An audit is usually where I start.</p>
           </>
         }
         availability="Available for new projects · EEA · 2026"
