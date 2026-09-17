@@ -3,7 +3,7 @@ import { HighlightText } from "@/components/HighlightText";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Your content, cited",
+  title: "Your content, cited | Alek Furgal",
   description:
     "I help founders, marketers, and leads build content that ranks, converts, and builds trust.",
 };
